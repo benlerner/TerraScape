@@ -2241,12 +2241,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 100
+  healthBar: {fileID: 0}
+  staminaBar: {fileID: 0}
   maxStamina: 50
   currentStamina: 50
+  minBarValue: 0
+  maxBarValue: 0
+  healthBarX: 0
+  staminaBarX: 0
+  healthY: 0
+  staminaY: 0
   staminaRegen: 3
   inventory:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11426600, guid: 6c1b70fa0c35775428166e180b611dfb, type: 2}
   journal: []
   selectedIndex: 0
 --- !u!114 &11479162

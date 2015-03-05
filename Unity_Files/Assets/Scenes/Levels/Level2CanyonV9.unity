@@ -73,7 +73,35 @@ NavMeshSettings:
     minRegionArea: 2
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
+    tileSizeHint: 0
   m_NavMesh: {fileID: 0}
+--- !u!1 &7457858
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 126606, guid: 6c1b70fa0c35775428166e180b611dfb, type: 2}
+  m_PrefabInternal: {fileID: 777340468}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 7457859}
+  m_Layer: 0
+  m_Name: transform1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7457859
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 426602, guid: 6c1b70fa0c35775428166e180b611dfb, type: 2}
+  m_PrefabInternal: {fileID: 777340468}
+  m_GameObject: {fileID: 7457858}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 246910063}
+  m_RootOrder: 0
 --- !u!1 &10755051
 GameObject:
   m_ObjectHideFlags: 0
@@ -82,7 +110,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 10755052}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +297,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 17439432}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +325,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 23951721}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -397,7 +425,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 36754960}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -425,7 +453,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 37203711}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandRing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -453,7 +481,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 39622409}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -766,6 +794,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 48009999}
   m_Mesh: {fileID: 4300004, guid: e9aff8d6127e008478274e5258dbcc07, type: 3}
+--- !u!1 &48856123
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 126604, guid: 6c1b70fa0c35775428166e180b611dfb, type: 2}
+  m_PrefabInternal: {fileID: 777340468}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 48856124}
+  m_Layer: 0
+  m_Name: polySurface1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &48856124
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 426610, guid: 6c1b70fa0c35775428166e180b611dfb, type: 2}
+  m_PrefabInternal: {fileID: 777340468}
+  m_GameObject: {fileID: 48856123}
+  m_LocalRotation: {x: 0, y: -0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1847199984}
+  m_Father: {fileID: 1401100885}
+  m_RootOrder: 3
 --- !u!1 &52729066
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,7 +832,7 @@ GameObject:
   - 4: {fileID: 52729069}
   - 65: {fileID: 52729068}
   - 114: {fileID: 52729067}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: deathBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -859,7 +915,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 56517874}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint13 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -887,7 +943,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 57261503}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1227,7 +1283,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 68644748}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandRing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1327,7 +1383,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 71491064}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1417,7 +1473,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 78637566}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_Spine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1588,7 +1644,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 81515258}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1616,7 +1672,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 83803615}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint12 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1937,7 +1993,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 105944693}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1965,7 +2021,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 108880094}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint34
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2020,7 +2076,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 113940389}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2048,7 +2104,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 117033494}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint36
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2427,7 +2483,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 127752486}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2459,7 +2515,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 129687618}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint26
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2899,6 +2955,65 @@ Prefab:
   m_RootGameObject: {fileID: 2097558801}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &147034918
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 126620, guid: 6c1b70fa0c35775428166e180b611dfb, type: 2}
+  m_PrefabInternal: {fileID: 777340468}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 147034919}
+  - 114: {fileID: 147034921}
+  - 65: {fileID: 147034920}
+  m_Layer: 0
+  m_Name: noTool
+  m_TagString: Item
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &147034919
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 426620, guid: 6c1b70fa0c35775428166e180b611dfb, type: 2}
+  m_PrefabInternal: {fileID: 777340468}
+  m_GameObject: {fileID: 147034918}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 111.266449, y: 5.00213623, z: -314.058289}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1401100885}
+  m_Father: {fileID: 2023880875}
+  m_RootOrder: 2
+--- !u!65 &147034920
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6526600, guid: 6c1b70fa0c35775428166e180b611dfb,
+    type: 2}
+  m_PrefabInternal: {fileID: 777340468}
+  m_GameObject: {fileID: 147034918}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &147034921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11426600, guid: 6c1b70fa0c35775428166e180b611dfb,
+    type: 2}
+  m_PrefabInternal: {fileID: 777340468}
+  m_GameObject: {fileID: 147034918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6fab82913a3404e8f319010860e001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  itemName: None
+  itemDesc: No item selected
+  itemType: 1
 --- !u!1 &148207147
 GameObject:
   m_ObjectHideFlags: 0
@@ -2907,7 +3022,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 148207148}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandThumb4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2934,7 +3049,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 153642893}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2962,7 +3077,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 153891261}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3062,7 +3177,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 165024704}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3600,7 +3715,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 195599581}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint14 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3631,7 +3746,7 @@ GameObject:
   - 33: {fileID: 195963986}
   - 65: {fileID: 195963985}
   - 23: {fileID: 195963984}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: playerHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3892,7 +4007,7 @@ Prefab:
     - target: {fileID: 11430592, guid: a302dd0fd7139eb419f8cd68669dc458, type: 2}
       propertyPath: inventory.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 147034921}
     - target: {fileID: 11430592, guid: a302dd0fd7139eb419f8cd68669dc458, type: 2}
       propertyPath: selectedIndex
       value: 0
@@ -3956,7 +4071,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 208472587}
   - 137: {fileID: 208472588}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: zen_rightEye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4150,7 +4265,7 @@ GameObject:
   - 65: {fileID: 217799655}
   - 23: {fileID: 217799654}
   - 114: {fileID: 217799653}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: sceneTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4614,7 +4729,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 228631538}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandPinky4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4753,7 +4868,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 229766037}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4891,7 +5006,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 240503446}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandRing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4919,7 +5034,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 242430103}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4948,7 +5063,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 245550751}
   - 95: {fileID: 245550752}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: zenobia_v12_003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4990,6 +5105,34 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!1 &246910062
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 126608, guid: 6c1b70fa0c35775428166e180b611dfb, type: 2}
+  m_PrefabInternal: {fileID: 777340468}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 246910063}
+  m_Layer: 0
+  m_Name: pCylinder1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &246910063
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 426612, guid: 6c1b70fa0c35775428166e180b611dfb, type: 2}
+  m_PrefabInternal: {fileID: 777340468}
+  m_GameObject: {fileID: 246910062}
+  m_LocalRotation: {x: 0, y: -0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -.0128500732, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7457859}
+  m_Father: {fileID: 1401100885}
+  m_RootOrder: 2
 --- !u!1 &250130456
 GameObject:
   m_ObjectHideFlags: 0
@@ -5275,7 +5418,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 257565333}
   - 137: {fileID: 257565334}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: shieldCreature_v7:Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5572,7 +5715,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 267902893}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint39
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5599,7 +5742,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 270631608}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5627,7 +5770,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 272045853}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5787,7 +5930,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 283373593}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint11 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5902,7 +6045,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 288882755}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5930,7 +6073,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 292777005}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5958,7 +6101,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 293887167}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint38 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6013,7 +6156,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 301667076}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint13 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6041,7 +6184,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 304452772}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint36
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6299,7 +6442,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 318425423}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint40
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6354,7 +6497,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 327187995}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6749,7 +6892,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 338243213}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6777,7 +6920,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 338571938}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6805,7 +6948,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 339225800}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint26 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6833,7 +6976,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 342265666}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint14 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6861,7 +7004,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 349119636}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandPinky2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7078,7 +7221,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 360707080}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint35
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7189,7 +7332,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 365063527}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7220,7 +7363,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 373142065}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandMiddle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7379,7 +7522,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 373628650}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandRing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7543,7 +7686,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 375822341}
   - 65: {fileID: 375822340}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: placeholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7633,6 +7776,70 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 378079043}
   m_Mesh: {fileID: 4300000, guid: 9382d83612367f34898929b8e3985a89, type: 3}
+--- !u!1 &380082026
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 144240, guid: af8d73c0531f08946aa54ebecbca55a1, type: 2}
+  m_PrefabInternal: {fileID: 1131283783}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 380082027}
+  - 222: {fileID: 380082029}
+  - 114: {fileID: 380082028}
+  m_Layer: 5
+  m_Name: health
+  m_TagString: health
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &380082027
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22444240, guid: af8d73c0531f08946aa54ebecbca55a1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1131283783}
+  m_GameObject: {fileID: 380082026}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: .320192039, y: .717263937, z: .717252612}
+  m_Children: []
+  m_Father: {fileID: 1917051930}
+  m_RootOrder: 0
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: -31.2000008, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &380082028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11444240, guid: af8d73c0531f08946aa54ebecbca55a1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1131283783}
+  m_GameObject: {fileID: 380082026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &380082029
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22244240, guid: af8d73c0531f08946aa54ebecbca55a1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1131283783}
+  m_GameObject: {fileID: 380082026}
 --- !u!1001 &387558278
 Prefab:
   m_ObjectHideFlags: 0
@@ -7689,7 +7896,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 388592934}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint39 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7912,6 +8119,70 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1185126398}
   m_RootOrder: 3
+--- !u!1 &397109595
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 144232, guid: af8d73c0531f08946aa54ebecbca55a1, type: 2}
+  m_PrefabInternal: {fileID: 1131283783}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 397109596}
+  - 222: {fileID: 397109598}
+  - 114: {fileID: 397109597}
+  m_Layer: 5
+  m_Name: barSOutline
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &397109596
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22444232, guid: af8d73c0531f08946aa54ebecbca55a1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1131283783}
+  m_GameObject: {fileID: 397109595}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: -2.0054121, y: 1.62054801, z: 1.620574}
+  m_Children: []
+  m_Father: {fileID: 1198928168}
+  m_RootOrder: 2
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: -352.5, y: 180.800003}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &397109597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11444230, guid: af8d73c0531f08946aa54ebecbca55a1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1131283783}
+  m_GameObject: {fileID: 397109595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 77a89f85c9ef88f46ace4c41e9891204, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &397109598
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22244232, guid: af8d73c0531f08946aa54ebecbca55a1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1131283783}
+  m_GameObject: {fileID: 397109595}
 --- !u!1001 &398182113
 Prefab:
   m_ObjectHideFlags: 0
@@ -8153,7 +8424,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 406686085}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint12 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8181,7 +8452,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 407180364}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8208,7 +8479,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 410483038}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint39 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8307,7 +8578,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 413154425}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint33
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8362,7 +8633,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 419640260}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint26 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8461,7 +8732,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 439233804}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint37
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8489,7 +8760,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 443480721}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint28
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8518,7 +8789,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 445459130}
   - 137: {fileID: 445459131}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: shieldCreature_v7:Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8700,7 +8971,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 448862914}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8932,7 +9203,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 456479951}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandPinky4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8959,7 +9230,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 458567543}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9131,7 +9402,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 466438126}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint28 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9159,7 +9430,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 477668295}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandPinky1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9319,7 +9590,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 481599970}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint11 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9479,7 +9750,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 484512450}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandThumb4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9506,7 +9777,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 487770677}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9534,7 +9805,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 488141564}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint27 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9777,7 +10048,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 496655000}
   - 65: {fileID: 496655001}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: placeholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9817,7 +10088,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 497131012}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9873,7 +10144,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 501132734}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandPinky3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9960,7 +10231,7 @@ GameObject:
   - 65: {fileID: 509472428}
   - 82: {fileID: 509472427}
   - 146: {fileID: 509472426}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Dune Roamer V2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10211,7 +10482,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 510314365}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint14 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10242,7 +10513,7 @@ GameObject:
   - 33: {fileID: 511395529}
   - 65: {fileID: 511395528}
   - 23: {fileID: 511395527}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: playerHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10620,7 +10891,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 519734683}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10647,7 +10918,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 522130417}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint15 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10747,7 +11018,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 526842232}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint13 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10834,7 +11105,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 534394297}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10864,7 +11135,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 536950156}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11024,7 +11295,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 545433483}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint34
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11051,7 +11322,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 553328473}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11482,7 +11753,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 571230601}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint26 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11875,7 +12146,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 592561554}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11902,7 +12173,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 594186252}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandPinky3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11974,6 +12245,64 @@ Prefab:
   m_RootGameObject: {fileID: 2084663152}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &604066627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 126600, guid: 6c1b70fa0c35775428166e180b611dfb, type: 2}
+  m_PrefabInternal: {fileID: 777340468}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 604066628}
+  - 33: {fileID: 604066630}
+  - 23: {fileID: 604066629}
+  m_Layer: 0
+  m_Name: polySurface2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &604066628
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 426608, guid: 6c1b70fa0c35775428166e180b611dfb, type: 2}
+  m_PrefabInternal: {fileID: 777340468}
+  m_GameObject: {fileID: 604066627}
+  m_LocalRotation: {x: 0, y: -0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1401100885}
+  m_RootOrder: 4
+--- !u!23 &604066629
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2326600, guid: 6c1b70fa0c35775428166e180b611dfb,
+    type: 2}
+  m_PrefabInternal: {fileID: 777340468}
+  m_GameObject: {fileID: 604066627}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: c69d59ce53b874a43a378e70be6b702a, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &604066630
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3326600, guid: 6c1b70fa0c35775428166e180b611dfb,
+    type: 2}
+  m_PrefabInternal: {fileID: 777340468}
+  m_GameObject: {fileID: 604066627}
+  m_Mesh: {fileID: 4300000, guid: 9382d83612367f34898929b8e3985a89, type: 3}
 --- !u!1001 &609269565
 Prefab:
   m_ObjectHideFlags: 0
@@ -12101,7 +12430,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 621664513}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12129,7 +12458,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 625189982}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12376,7 +12705,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 633427829}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint37
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12527,7 +12856,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 653434218}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandThumb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12569,7 +12898,7 @@ GameObject:
   - 136: {fileID: 657348634}
   - 114: {fileID: 657348624}
   - 114: {fileID: 657348628}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: zenobia
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -12721,6 +13050,9 @@ MonoBehaviour:
   animSpeed: 1.5
   lookSmoother: 3
   useCurves: 0
+  notPlayer:
+    serializedVersion: 2
+    m_Bits: 1
   movable: 1
   hanging: 0
   ledgeClimbSpeed: 4
@@ -12731,11 +13063,12 @@ MonoBehaviour:
   checkPoint: {fileID: 0}
   laserPrefab: {fileID: 100002, guid: ac1c48d40149d12419da3a4bb4cd5255, type: 2}
   blastPrefab: {fileID: 0}
+  snapperPrefab: {fileID: 0}
   walkSpeed: 7
   trotSpeed: 7
   runSpeed: 15
   inAirControlAcceleration: 3
-  jumpHeight: .5
+  jumpHeight: .600000024
   gravity: 20
   speedSmoothing: 10
   rotateSpeed: 500
@@ -12751,6 +13084,9 @@ MonoBehaviour:
   - {fileID: 657348636}
   - {fileID: 657348635}
   - {fileID: 657348634}
+  snapDuration: 3
+  snapTimer: 0
+  projectileOffset: {x: 0, y: 2, z: .5}
 --- !u!95 &657348626
 Animator:
   serializedVersion: 3
@@ -12817,11 +13153,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 100
+  healthBar: {fileID: 0}
+  staminaBar: {fileID: 0}
   maxStamina: 50
   currentStamina: 50
+  minBarValue: 0
+  maxBarValue: 0
+  healthBarX: 0
+  staminaBarX: 0
+  healthY: 0
+  staminaY: 0
   staminaRegen: 3
   inventory:
-  - {fileID: 0}
+  - {fileID: 147034921}
   - {fileID: 826005915}
   journal: []
   selectedIndex: 0
@@ -12901,7 +13245,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 661287271}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12929,7 +13273,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 662624974}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12960,7 +13304,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 663695411}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint39 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13051,6 +13395,85 @@ MeshFilter:
   m_PrefabInternal: {fileID: 793679940}
   m_GameObject: {fileID: 672798909}
   m_Mesh: {fileID: 4300114, guid: 1413d7263ed6e40e4b8ce2f8ddad72f7, type: 3}
+--- !u!1 &675594237
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 144234, guid: af8d73c0531f08946aa54ebecbca55a1, type: 2}
+  m_PrefabInternal: {fileID: 1131283783}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 675594238}
+  - 222: {fileID: 675594241}
+  - 114: {fileID: 675594240}
+  - 114: {fileID: 675594239}
+  m_Layer: 5
+  m_Name: barSBackground
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &675594238
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22444234, guid: af8d73c0531f08946aa54ebecbca55a1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1131283783}
+  m_GameObject: {fileID: 675594237}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: -2.0054121, y: 1.62054801, z: 1.620574}
+  m_Children:
+  - {fileID: 699906784}
+  m_Father: {fileID: 1198928168}
+  m_RootOrder: 1
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: -352.5, y: 180.800003}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &675594239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11444228, guid: af8d73c0531f08946aa54ebecbca55a1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1131283783}
+  m_GameObject: {fileID: 675594237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1200242548, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowMaskGraphic: 1
+--- !u!114 &675594240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11444232, guid: af8d73c0531f08946aa54ebecbca55a1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1131283783}
+  m_GameObject: {fileID: 675594237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 12020f06dadf46a4db848fd102ee4739, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &675594241
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22244234, guid: af8d73c0531f08946aa54ebecbca55a1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1131283783}
+  m_GameObject: {fileID: 675594237}
 --- !u!1 &676858145
 GameObject:
   m_ObjectHideFlags: 0
@@ -13059,7 +13482,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 676858146}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint29
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13114,7 +13537,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 679767899}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint25 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13142,7 +13565,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 685178755}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint33
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13222,7 +13645,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 686126404}
   - 65: {fileID: 686126403}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: placeholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13394,7 +13817,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 691493447}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13618,6 +14041,70 @@ Prefab:
   m_RootGameObject: {fileID: 119920101}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &699906783
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 144230, guid: af8d73c0531f08946aa54ebecbca55a1, type: 2}
+  m_PrefabInternal: {fileID: 1131283783}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 699906784}
+  - 222: {fileID: 699906786}
+  - 114: {fileID: 699906785}
+  m_Layer: 5
+  m_Name: stamina
+  m_TagString: stamina
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &699906784
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22444230, guid: af8d73c0531f08946aa54ebecbca55a1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1131283783}
+  m_GameObject: {fileID: 699906783}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: .320192039, y: .717263937, z: .717252612}
+  m_Children: []
+  m_Father: {fileID: 675594238}
+  m_RootOrder: 0
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: -31.2000008, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &699906785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11444226, guid: af8d73c0531f08946aa54ebecbca55a1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1131283783}
+  m_GameObject: {fileID: 699906783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: .751724243, b: 1, a: 1}
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &699906786
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22244230, guid: af8d73c0531f08946aa54ebecbca55a1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1131283783}
+  m_GameObject: {fileID: 699906783}
 --- !u!1 &700537565
 GameObject:
   m_ObjectHideFlags: 0
@@ -13861,7 +14348,7 @@ GameObject:
   - 4: {fileID: 707634453}
   - 65: {fileID: 707634455}
   - 114: {fileID: 707634454}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: checkPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14527,7 +15014,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 722671540}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandIndex4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14687,7 +15174,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 737945803}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint39
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14714,7 +15201,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 740312341}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint36
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15088,7 +15575,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 752732856}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint11 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15248,7 +15735,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 760465756}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint15 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15408,7 +15895,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 763072247}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15463,7 +15950,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 768557091}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15483,6 +15970,50 @@ Transform:
   - {fileID: 782842313}
   m_Father: {fileID: 1063290385}
   m_RootOrder: 0
+--- !u!1001 &777340468
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2023880875}
+    m_Modifications:
+    - target: {fileID: 426620, guid: 6c1b70fa0c35775428166e180b611dfb, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 111.266449
+      objectReference: {fileID: 0}
+    - target: {fileID: 426620, guid: 6c1b70fa0c35775428166e180b611dfb, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 5.00213623
+      objectReference: {fileID: 0}
+    - target: {fileID: 426620, guid: 6c1b70fa0c35775428166e180b611dfb, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -314.058289
+      objectReference: {fileID: 0}
+    - target: {fileID: 426620, guid: 6c1b70fa0c35775428166e180b611dfb, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 426620, guid: 6c1b70fa0c35775428166e180b611dfb, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 426620, guid: 6c1b70fa0c35775428166e180b611dfb, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 426620, guid: 6c1b70fa0c35775428166e180b611dfb, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 426620, guid: 6c1b70fa0c35775428166e180b611dfb, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 6c1b70fa0c35775428166e180b611dfb, type: 2}
+  m_RootGameObject: {fileID: 147034918}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &777831467
 GameObject:
   m_ObjectHideFlags: 0
@@ -15794,7 +16325,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 782842313}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15824,7 +16355,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 784121506}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint16 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16571,7 +17102,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 802411547}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint25
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16599,7 +17130,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 803719914}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17270,7 +17801,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 832803798}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint27
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17298,7 +17829,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 832891563}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint27
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18102,7 +18633,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 858675610}
   - 137: {fileID: 858675611}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: zen_leftEye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18166,7 +18697,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 862491140}
   - 65: {fileID: 862491141}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: placeholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18474,7 +19005,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0797559, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &874348275
 GameObject:
   m_ObjectHideFlags: 0
@@ -18483,7 +19014,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 874348276}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint35
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18512,7 +19043,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 877245165}
   - 65: {fileID: 877245164}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: placeholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18626,7 +19157,7 @@ GameObject:
   - 4: {fileID: 891987226}
   - 65: {fileID: 891987225}
   - 114: {fileID: 891987224}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: checkPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18679,7 +19210,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 897527057}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cameraTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18706,7 +19237,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 905757331}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19044,7 +19575,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1432275860}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!132 &923674311
 GUIText:
   m_ObjectHideFlags: 0
@@ -19052,7 +19583,7 @@ GUIText:
     type: 2}
   m_PrefabInternal: {fileID: 1131283783}
   m_GameObject: {fileID: 923674309}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Text: 'Stamina: 20'
   m_Anchor: 0
@@ -19078,7 +19609,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 924894247}
   - 137: {fileID: 924894248}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: zen_hair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19148,7 +19679,7 @@ GameObject:
   - 4: {fileID: 927514680}
   - 65: {fileID: 927514679}
   - 114: {fileID: 927514678}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: deathBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19200,7 +19731,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 927793155}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint38
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19228,7 +19759,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 930963113}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint15 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19364,7 +19895,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 947966339}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint25
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19524,7 +20055,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 948607784}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandPinky1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19815,6 +20346,70 @@ Prefab:
   m_RootGameObject: {fileID: 927514677}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &968883661
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 144228, guid: af8d73c0531f08946aa54ebecbca55a1, type: 2}
+  m_PrefabInternal: {fileID: 1131283783}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 968883662}
+  - 222: {fileID: 968883664}
+  - 114: {fileID: 968883663}
+  m_Layer: 5
+  m_Name: itemBackground
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &968883662
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22444228, guid: af8d73c0531f08946aa54ebecbca55a1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1131283783}
+  m_GameObject: {fileID: 968883661}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.11095953, y: 1.70584035, z: 1.70586669}
+  m_Children: []
+  m_Father: {fileID: 1198928168}
+  m_RootOrder: 0
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: -341, y: 180.800003}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &968883663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11444224, guid: af8d73c0531f08946aa54ebecbca55a1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1131283783}
+  m_GameObject: {fileID: 968883661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: aa0aaef15568a6145a3c0ddca569fcfe, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &968883664
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22244228, guid: af8d73c0531f08946aa54ebecbca55a1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1131283783}
+  m_GameObject: {fileID: 968883661}
 --- !u!1 &970254056
 GameObject:
   m_ObjectHideFlags: 0
@@ -19846,6 +20441,33 @@ Transform:
   - {fileID: 1642761850}
   m_Father: {fileID: 1035483109}
   m_RootOrder: 6
+--- !u!1 &970524876
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 126610, guid: 6c1b70fa0c35775428166e180b611dfb, type: 2}
+  m_PrefabInternal: {fileID: 777340468}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 970524877}
+  m_Layer: 0
+  m_Name: transform2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &970524877
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 426604, guid: 6c1b70fa0c35775428166e180b611dfb, type: 2}
+  m_PrefabInternal: {fileID: 777340468}
+  m_GameObject: {fileID: 970524876}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1684665243}
+  m_RootOrder: 0
 --- !u!1 &975331418
 GameObject:
   m_ObjectHideFlags: 0
@@ -20143,7 +20765,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 982722747}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint16 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20317,7 +20939,7 @@ GameObject:
   - 33: {fileID: 989235054}
   - 65: {fileID: 989235053}
   - 23: {fileID: 989235052}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cameraHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20601,7 +21223,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1000368091}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint26
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20792,7 +21414,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1432275860}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!132 &1010182751
 GUIText:
   m_ObjectHideFlags: 0
@@ -20825,7 +21447,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1017525702}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20924,7 +21546,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1028415643}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20951,7 +21573,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1029736214}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint37
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21204,7 +21826,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1063290385}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21306,7 +21928,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1065812386}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint16 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21333,7 +21955,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1072708284}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21420,7 +22042,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1089780860}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint27 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21506,7 +22128,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1095511108}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21534,7 +22156,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1095638886}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21562,7 +22184,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1105790272}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21723,7 +22345,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1118728514}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandMiddle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21966,7 +22588,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1126663041}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint38 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22096,7 +22718,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1133011056}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint29 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22256,7 +22878,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1138006485}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_Hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22549,7 +23171,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1153844753}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22577,7 +23199,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1159494176}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint40
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22973,7 +23595,7 @@ GameObject:
   - 65: {fileID: 1191113470}
   - 82: {fileID: 1191113469}
   - 146: {fileID: 1191113468}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Dune Roamer V2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23374,6 +23996,104 @@ Prefab:
   m_RootGameObject: {fileID: 516648670}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1198928167
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 144226, guid: af8d73c0531f08946aa54ebecbca55a1, type: 2}
+  m_PrefabInternal: {fileID: 1131283783}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1198928168}
+  - 223: {fileID: 1198928171}
+  - 114: {fileID: 1198928170}
+  - 114: {fileID: 1198928169}
+  m_Layer: 5
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1198928168
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22444226, guid: af8d73c0531f08946aa54ebecbca55a1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1131283783}
+  m_GameObject: {fileID: 1198928167}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 968883662}
+  - {fileID: 675594238}
+  - {fileID: 397109596}
+  - {fileID: 1917051930}
+  - {fileID: 2100744237}
+  m_Father: {fileID: 1432275860}
+  m_RootOrder: 0
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!114 &1198928169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11444222, guid: af8d73c0531f08946aa54ebecbca55a1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1131283783}
+  m_GameObject: {fileID: 1198928167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1198928170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11444220, guid: af8d73c0531f08946aa54ebecbca55a1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1131283783}
+  m_GameObject: {fileID: 1198928167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1980459831, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+--- !u!223 &1198928171
+Canvas:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22344240, guid: af8d73c0531f08946aa54ebecbca55a1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1131283783}
+  m_GameObject: {fileID: 1198928167}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!1 &1200786622
 GameObject:
   m_ObjectHideFlags: 0
@@ -23382,7 +24102,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1200786623}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint35
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23410,7 +24130,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1202817703}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint27 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23465,7 +24185,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1202865730}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint28
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23565,7 +24285,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1210402058}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint29 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23621,7 +24341,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1218328318}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint34
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23682,7 +24402,7 @@ Transform:
   - {fileID: 76633979}
   - {fileID: 1948730705}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
 --- !u!1 &1221546393
 GameObject:
   m_ObjectHideFlags: 0
@@ -23819,7 +24539,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1226430255}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandMiddle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23933,7 +24653,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1237505851}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23961,7 +24681,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1245786882}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24135,7 +24855,7 @@ GameObject:
   - 4: {fileID: 1255124828}
   - 65: {fileID: 1255124830}
   - 114: {fileID: 1255124829}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: checkPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24452,7 +25172,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1262739012}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_Reference1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24480,7 +25200,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1263973128}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24581,7 +25301,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1281280379}
   - 137: {fileID: 1281280380}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: zen_torso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24768,7 +25488,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1288919747}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24928,7 +25648,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1291592453}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25004,7 +25724,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1293200746}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25092,7 +25812,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1309570734}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25120,7 +25840,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1311075590}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25148,7 +25868,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1315055044}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint27
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25333,7 +26053,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1336652901}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint38 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25379,6 +26099,33 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2130793709}
+  m_RootOrder: 0
+--- !u!1 &1339090712
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 126614, guid: 6c1b70fa0c35775428166e180b611dfb, type: 2}
+  m_PrefabInternal: {fileID: 777340468}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1339090713}
+  m_Layer: 0
+  m_Name: transform4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1339090713
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 426606, guid: 6c1b70fa0c35775428166e180b611dfb, type: 2}
+  m_PrefabInternal: {fileID: 777340468}
+  m_GameObject: {fileID: 1339090712}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1897866694}
   m_RootOrder: 0
 --- !u!1 &1341513439
 GameObject:
@@ -25639,7 +26386,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1347551035}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25739,7 +26486,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1360782235}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint38
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25798,7 +26545,7 @@ GameObject:
   - 65: {fileID: 1368192739}
   - 23: {fileID: 1368192738}
   - 114: {fileID: 1368192737}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: sceneTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25941,7 +26688,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1369106241}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandIndex4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25969,7 +26716,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1375364617}
   - 137: {fileID: 1375364618}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: shieldCreature_v7:Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26080,7 +26827,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1379352855}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint38
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26189,7 +26936,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1387150701}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26216,7 +26963,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1387874821}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26244,7 +26991,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1399386580}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandPinky2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26334,6 +27081,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 981050198}
   m_RootOrder: 0
+--- !u!1 &1401100884
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 126618, guid: 6c1b70fa0c35775428166e180b611dfb, type: 2}
+  m_PrefabInternal: {fileID: 777340468}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1401100885}
+  m_Layer: 0
+  m_Name: shovel_004
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1401100885
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 426618, guid: 6c1b70fa0c35775428166e180b611dfb, type: 2}
+  m_PrefabInternal: {fileID: 777340468}
+  m_GameObject: {fileID: 1401100884}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.73492026, y: 1.73492026, z: 1.73492026}
+  m_Children:
+  - {fileID: 1897866694}
+  - {fileID: 1684665243}
+  - {fileID: 246910063}
+  - {fileID: 48856124}
+  - {fileID: 604066628}
+  m_Father: {fileID: 147034919}
+  m_RootOrder: 0
 --- !u!1 &1418940932
 GameObject:
   m_ObjectHideFlags: 0
@@ -26342,7 +27121,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1418940933}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26370,7 +27149,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1419303906}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint28 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26579,6 +27358,7 @@ Transform:
   m_LocalPosition: {x: 96.2479782, y: 260.842865, z: -532.546936}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1198928168}
   - {fileID: 1788753171}
   - {fileID: 923674310}
   - {fileID: 2059932624}
@@ -26594,7 +27374,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1437580762}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26622,7 +27402,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1437763533}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26652,7 +27432,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1437925515}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26880,7 +27660,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1455175189}
   - 95: {fileID: 1455175190}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: duneRoamer_idle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27100,7 +27880,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1461451884}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27129,7 +27909,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1461958762}
   - 95: {fileID: 1461958763}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: duneRoamer_idle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27174,7 +27954,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1464754735}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint33
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27201,7 +27981,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1471217238}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27609,7 +28389,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1503276025}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27769,7 +28549,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1506644799}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandRing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27816,7 +28596,7 @@ Transform:
   m_LocalScale: {x: 0, y: 0, z: 1}
   m_Children: []
   m_Father: {fileID: 1432275860}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!131 &1508458813
 GUITexture:
   m_ObjectHideFlags: 0
@@ -27917,7 +28697,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1511729262}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint28
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28016,7 +28796,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1516676986}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28055,7 +28835,7 @@ GameObject:
   - 65: {fileID: 1517201504}
   - 82: {fileID: 1517201503}
   - 146: {fileID: 1517201502}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Dune Roamer V2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28306,7 +29086,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1517227574}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint25 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28334,7 +29114,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1517326090}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28363,7 +29143,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1528702564}
   - 137: {fileID: 1528702565}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: zen_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28432,7 +29212,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1530467585}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28623,7 +29403,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1550087520}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28651,7 +29431,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1555544680}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint29
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28680,7 +29460,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1576085219}
   - 95: {fileID: 1576085220}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: duneRoamer_idle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28725,7 +29505,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1579682004}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandRing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28753,7 +29533,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1592363177}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29259,7 +30039,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1631039885}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint12 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29432,7 +30212,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1641679797}
   - 65: {fileID: 1641679796}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: placeholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29615,7 +30395,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1643351371}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandMiddle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29661,7 +30441,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!1001 &1644473138
 Prefab:
   m_ObjectHideFlags: 0
@@ -29950,7 +30730,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1666902622}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29978,7 +30758,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1671165882}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30006,7 +30786,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1682597463}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30026,6 +30806,34 @@ Transform:
   - {fileID: 1118728514}
   m_Father: {fileID: 153642893}
   m_RootOrder: 0
+--- !u!1 &1684665242
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 126612, guid: 6c1b70fa0c35775428166e180b611dfb, type: 2}
+  m_PrefabInternal: {fileID: 777340468}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1684665243}
+  m_Layer: 0
+  m_Name: pCube2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1684665243
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 426614, guid: 6c1b70fa0c35775428166e180b611dfb, type: 2}
+  m_PrefabInternal: {fileID: 777340468}
+  m_GameObject: {fileID: 1684665242}
+  m_LocalRotation: {x: 0, y: -0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: .144215062, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 970524877}
+  m_Father: {fileID: 1401100885}
+  m_RootOrder: 1
 --- !u!1 &1685941423
 GameObject:
   m_ObjectHideFlags: 0
@@ -30034,7 +30842,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1685941424}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandRing4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30061,7 +30869,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1686342183}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30118,7 +30926,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1698403361}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint28 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30167,7 +30975,7 @@ Transform:
   - {fileID: 336812509}
   - {fileID: 533302592}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
 --- !u!1 &1700535766
 GameObject:
   m_ObjectHideFlags: 0
@@ -30619,7 +31427,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1729545087}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint30
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30718,7 +31526,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1731582600}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30748,7 +31556,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1733143028}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint39
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30775,7 +31583,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1735108507}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30805,7 +31613,7 @@ GameObject:
   - 4: {fileID: 1746275328}
   - 65: {fileID: 1746275327}
   - 114: {fileID: 1746275326}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: levelEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30930,7 +31738,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1750622732}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30958,7 +31766,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1754274285}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandRing4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30988,7 +31796,7 @@ GameObject:
   - 33: {fileID: 1762200546}
   - 65: {fileID: 1762200545}
   - 23: {fileID: 1762200544}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cameraHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31057,7 +31865,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1764309964}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31143,7 +31951,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1771944310}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31321,7 +32129,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1432275860}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!132 &1788753172
 GUIText:
   m_ObjectHideFlags: 0
@@ -31329,7 +32137,7 @@ GUIText:
     type: 2}
   m_PrefabInternal: {fileID: 1131283783}
   m_GameObject: {fileID: 1788753170}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Text: 'Health: 100'
   m_Anchor: 0
@@ -31467,7 +32275,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1794867010}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31567,7 +32375,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1797921764}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint26
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31595,7 +32403,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1803017631}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32089,7 +32897,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1814273428}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32301,7 +33109,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1822168247}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32400,7 +33208,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1825760526}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint40
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32560,7 +33368,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1829080239}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32659,7 +33467,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1829844833}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32718,7 +33526,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1836500065}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_Spine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32748,7 +33556,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1837851320}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32776,7 +33584,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1840994318}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint30 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32867,7 +33675,34 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0797559, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
+--- !u!1 &1847199983
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 126602, guid: 6c1b70fa0c35775428166e180b611dfb, type: 2}
+  m_PrefabInternal: {fileID: 777340468}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1847199984}
+  m_Layer: 0
+  m_Name: transform3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1847199984
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 426600, guid: 6c1b70fa0c35775428166e180b611dfb, type: 2}
+  m_PrefabInternal: {fileID: 777340468}
+  m_GameObject: {fileID: 1847199983}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 48856124}
+  m_RootOrder: 0
 --- !u!1001 &1848091418
 Prefab:
   m_ObjectHideFlags: 0
@@ -33123,7 +33958,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1860170335}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint30
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33730,7 +34565,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1880986486}
   - 137: {fileID: 1880986487}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: zen_skirt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34197,6 +35032,34 @@ Prefab:
   m_RootGameObject: {fileID: 1699456696}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1897866693
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 126616, guid: 6c1b70fa0c35775428166e180b611dfb, type: 2}
+  m_PrefabInternal: {fileID: 777340468}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1897866694}
+  m_Layer: 0
+  m_Name: pCube1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1897866694
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 426616, guid: 6c1b70fa0c35775428166e180b611dfb, type: 2}
+  m_PrefabInternal: {fileID: 777340468}
+  m_GameObject: {fileID: 1897866693}
+  m_LocalRotation: {x: 0, y: -0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -.143937573, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1339090713}
+  m_Father: {fileID: 1401100885}
+  m_RootOrder: 0
 --- !u!1 &1898855847
 GameObject:
   m_ObjectHideFlags: 0
@@ -34449,7 +35312,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1907567301}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34529,6 +35392,85 @@ Prefab:
   m_RootGameObject: {fileID: 1918498539}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1917051929
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 144236, guid: af8d73c0531f08946aa54ebecbca55a1, type: 2}
+  m_PrefabInternal: {fileID: 1131283783}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1917051930}
+  - 222: {fileID: 1917051933}
+  - 114: {fileID: 1917051932}
+  - 114: {fileID: 1917051931}
+  m_Layer: 5
+  m_Name: barHBackground
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1917051930
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22444236, guid: af8d73c0531f08946aa54ebecbca55a1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1131283783}
+  m_GameObject: {fileID: 1917051929}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.0054121, y: 1.62054801, z: 1.620574}
+  m_Children:
+  - {fileID: 380082027}
+  m_Father: {fileID: 1198928168}
+  m_RootOrder: 3
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: -340.299988, y: 180.800003}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &1917051931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11444238, guid: af8d73c0531f08946aa54ebecbca55a1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1131283783}
+  m_GameObject: {fileID: 1917051929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1200242548, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowMaskGraphic: 1
+--- !u!114 &1917051932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11444234, guid: af8d73c0531f08946aa54ebecbca55a1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1131283783}
+  m_GameObject: {fileID: 1917051929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 12020f06dadf46a4db848fd102ee4739, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1917051933
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22244236, guid: af8d73c0531f08946aa54ebecbca55a1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1131283783}
+  m_GameObject: {fileID: 1917051929}
 --- !u!1 &1918498539
 GameObject:
   m_ObjectHideFlags: 0
@@ -34654,7 +35596,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1919945167}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint30
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34932,7 +35874,7 @@ GameObject:
   - 4: {fileID: 1928807661}
   - 65: {fileID: 1928807660}
   - 114: {fileID: 1928807662}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: checkPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35093,7 +36035,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1935623330}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint25 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35364,7 +36306,7 @@ GameObject:
   - 65: {fileID: 1967904647}
   - 23: {fileID: 1967904646}
   - 114: {fileID: 1967904645}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: sceneTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35641,7 +36583,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1985910522}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint30 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35695,7 +36637,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1989459359}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35943,7 +36885,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1996909906}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36042,7 +36984,7 @@ GameObject:
   - 4: {fileID: 2002793529}
   - 65: {fileID: 2002793531}
   - 114: {fileID: 2002793530}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: checkPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36122,7 +37064,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2004620151}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint29 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36153,7 +37095,7 @@ GameObject:
   - 33: {fileID: 2004769440}
   - 65: {fileID: 2004769439}
   - 23: {fileID: 2004769438}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: playerHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36283,7 +37225,7 @@ GameObject:
   - 4: {fileID: 2007695206}
   - 65: {fileID: 2007695205}
   - 114: {fileID: 2007695204}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: deathBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36335,7 +37277,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2008713984}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36363,7 +37305,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2009569355}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint29
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36478,6 +37420,7 @@ Transform:
   m_Children:
   - {fileID: 791699337}
   - {fileID: 826005914}
+  - {fileID: 147034919}
   m_Father: {fileID: 1221256415}
   m_RootOrder: 11
 --- !u!1 &2037684403
@@ -36587,7 +37530,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2038702696}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint30 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36641,7 +37584,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2039758526}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36669,7 +37612,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2044423397}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36914,7 +37857,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2057364046}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint25
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37125,7 +38068,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1432275860}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!132 &2059932625
 GUIText:
   m_ObjectHideFlags: 0
@@ -37942,7 +38885,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2093508795}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37970,7 +38913,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2097378921}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandThumb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38000,7 +38943,7 @@ GameObject:
   - 4: {fileID: 2097558802}
   - 65: {fileID: 2097558804}
   - 114: {fileID: 2097558803}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: checkPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38053,7 +38996,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2099540292}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38073,6 +39016,70 @@ Transform:
   - {fileID: 497131012}
   m_Father: {fileID: 1592363177}
   m_RootOrder: 0
+--- !u!1 &2100744236
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 144238, guid: af8d73c0531f08946aa54ebecbca55a1, type: 2}
+  m_PrefabInternal: {fileID: 1131283783}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 2100744237}
+  - 222: {fileID: 2100744239}
+  - 114: {fileID: 2100744238}
+  m_Layer: 5
+  m_Name: barHOutline
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2100744237
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22444238, guid: af8d73c0531f08946aa54ebecbca55a1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1131283783}
+  m_GameObject: {fileID: 2100744236}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.0054121, y: 1.62054801, z: 1.620574}
+  m_Children: []
+  m_Father: {fileID: 1198928168}
+  m_RootOrder: 4
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: -340.299988, y: 180.800003}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &2100744238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11444236, guid: af8d73c0531f08946aa54ebecbca55a1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1131283783}
+  m_GameObject: {fileID: 2100744236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 77a89f85c9ef88f46ace4c41e9891204, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &2100744239
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22244238, guid: af8d73c0531f08946aa54ebecbca55a1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1131283783}
+  m_GameObject: {fileID: 2100744236}
 --- !u!1 &2100786268
 GameObject:
   m_ObjectHideFlags: 0
@@ -38081,7 +39088,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2100786269}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38430,7 +39437,7 @@ GameObject:
   - 33: {fileID: 2122298275}
   - 65: {fileID: 2122298274}
   - 23: {fileID: 2122298273}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cameraHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38659,7 +39666,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2137588186}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38819,7 +39826,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2140230851}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38917,7 +39924,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2144244223}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39077,7 +40084,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2144581748}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39105,7 +40112,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2146132903}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint24
   m_TagString: Untagged
   m_Icon: {fileID: 0}

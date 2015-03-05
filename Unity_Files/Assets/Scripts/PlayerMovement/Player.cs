@@ -8,9 +8,16 @@ public class Player : MonoBehaviour
     //The Player class handles game logic, such as the handling of health, stamina, items, etc.
     public float maxHealth = 100;
     public float currentHealth = 100;
-
+	public RectTransform healthBar;
+	public RectTransform staminaBar;
     public float maxStamina = 50;
     public float currentStamina = 50;
+	public float minBarValue;
+	public float maxBarValue;
+	public float healthBarX;
+	public float staminaBarX;
+	public float healthY;
+	public float staminaY;
 
 	public float staminaRegen = 3; //stamina regained per second
 	private bool regenStaminaNow = true; //don't regenerate stamina when it's being used
@@ -32,6 +39,12 @@ public class Player : MonoBehaviour
     {
         instance = this;
 		controller = GetComponent<ThirdPersonController> ();
+		healthBar = GameObject.FindGameObjectWithTag ("health").GetComponent<RectTransform>();
+		staminaBar = GameObject.FindGameObjectWithTag ("stamina").GetComponent<RectTransform>();
+		healthBarX = healthBar.localPosition.x;
+		staminaBarX = staminaBar.localPosition.x;
+		maxBarValue = healthBar.position.y;
+		minBarValue = healthBar.position.y - healthBar.rect.height;
         journalXML = new XmlDocument();
         TextAsset filename = Resources.Load("journalEntries") as TextAsset;
         journalXML.LoadXml(filename.text);
@@ -74,7 +87,21 @@ public class Player : MonoBehaviour
 				controller.toolInUse = 0;
 			}
 		}
+		else{
+			controller.toolInUse = 0;
+		}
+		healthY = MapValues (currentHealth, 0, maxHealth, minBarValue, maxBarValue);
+		staminaY = MapValues (currentStamina, 0, maxStamina, minBarValue, maxBarValue);
+		//float staminaY = MapValues (currentStamina, 0, maxStamina, maxBarValue, minBarValue);
+		healthBar.transform.localPosition = new Vector3 (healthBarX, healthY);
+		staminaBar.transform.localPosition = new Vector3 (staminaBarX, staminaY);
 	}
+
+	
+	private float MapValues(float x, float inMin, float inMax, float outMin, float outMax){
+		return(x - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
+	}
+
 
 	//try to use staminaBurn amount of stamina, return false if player doesn't have enough
 	public bool useStamina(float staminaBurn)
