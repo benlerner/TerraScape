@@ -82,7 +82,7 @@ public class PlaytesterMenu : MonoBehaviour {
 			throw new UnityException("No player object in this scene.");
 		}
 
-		drEnemy = GameObject.Find ("shieldCreature_inProgress_v5_unsmoothed_walk").GetComponent<BasicEnemyAI> ();
+		drEnemy = GameObject.FindGameObjectWithTag("Roamer").GetComponent<BasicEnemyAI> ();
 
 		//make the overlay the same size as the screen
 		textureOverlay.transform.position = new Vector3(0, 0, overlayDepth);

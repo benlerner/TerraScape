@@ -15,7 +15,7 @@ TagManager:
   - health
   - stamina
   - inventory
-  - 
+  - journal
   - canvas
   - 
   Builtin Layer 0: Default

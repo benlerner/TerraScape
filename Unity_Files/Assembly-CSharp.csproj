@@ -85,6 +85,8 @@
      <Compile Include="Assets\Scripts\faultRotateObject.cs" />
      <Compile Include="Assets\Scripts\grabbableLedge.cs" />
      <Compile Include="Assets\Scripts\inventoryGUI.cs" />
+     <Compile Include="Assets\Scripts\journalGUI.cs" />
+     <Compile Include="Assets\Scripts\journalPageAdder.cs" />
      <Compile Include="Assets\Scripts\levelTransition.cs" />
      <Compile Include="Assets\Scripts\rockBridgeTrigger.cs" />
      <Compile Include="Assets\Scripts\screenFade.cs" />
