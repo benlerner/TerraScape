@@ -1095,6 +1095,7 @@ MonoBehaviour:
   itemName: Snapper
   itemDesc: Snapping Tool
   itemType: 1
+  itemImage: 3
 --- !u!114 &11482716
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1110,6 +1111,7 @@ MonoBehaviour:
   itemName: Shield
   itemDesc: Blocking tool
   itemType: 1
+  itemImage: 2
 --- !u!114 &11482718
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1125,6 +1127,7 @@ MonoBehaviour:
   itemName: Laser
   itemDesc: A digging tool
   itemType: 1
+  itemImage: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

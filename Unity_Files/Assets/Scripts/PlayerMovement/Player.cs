@@ -8,16 +8,16 @@ public class Player : MonoBehaviour
     //The Player class handles game logic, such as the handling of health, stamina, items, etc.
     public float maxHealth = 100;
     public float currentHealth = 100;
-	public RectTransform healthBar;
-	public RectTransform staminaBar;
+	private RectTransform healthBar;
+	private RectTransform staminaBar;
     public float maxStamina = 50;
     public float currentStamina = 50;
-	public float minBarValue;
-	public float maxBarValue;
-	public float healthBarX;
-	public float staminaBarX;
-	public float healthY;
-	public float staminaY;
+	private float minBarValue;
+	private float maxBarValue;
+	private float healthBarX;
+	private float staminaBarX;
+	private float healthY;
+	private float staminaY;
 
 	public float staminaRegen = 3; //stamina regained per second
 	private bool regenStaminaNow = true; //don't regenerate stamina when it's being used
@@ -30,15 +30,21 @@ public class Player : MonoBehaviour
 
 
     //The currently selected inventory item; for an empty inventory it is set to -1.
-    public int selectedIndex = -1;
+    public int selectedIndex = 0;
+	public int forIndex = 0;
+	public int backIndex = 0;
 
     public static Player instance;
 	private ThirdPersonController controller;
+	private GameObject inventoryObj;
+	private inventoryGUI inventoryGui;
 
     void Awake()
     {
         instance = this;
 		controller = GetComponent<ThirdPersonController> ();
+		inventoryObj = GameObject.FindGameObjectWithTag ("inventory");
+		inventoryGui = inventoryObj.GetComponent<inventoryGUI>();
 		healthBar = GameObject.FindGameObjectWithTag ("health").GetComponent<RectTransform>();
 		staminaBar = GameObject.FindGameObjectWithTag ("stamina").GetComponent<RectTransform>();
 		healthBarX = healthBar.localPosition.x;
@@ -48,7 +54,9 @@ public class Player : MonoBehaviour
         journalXML = new XmlDocument();
         TextAsset filename = Resources.Load("journalEntries") as TextAsset;
         journalXML.LoadXml(filename.text);
-
+		selectedIndex = 0;
+		forIndex = 1;
+		backIndex = inventory.Count - 1;
         foreach (XmlNode node in journalXML.DocumentElement.ChildNodes)
         {
             journalSrc.Add(node);
@@ -95,6 +103,9 @@ public class Player : MonoBehaviour
 		//float staminaY = MapValues (currentStamina, 0, maxStamina, maxBarValue, minBarValue);
 		healthBar.transform.localPosition = new Vector3 (healthBarX, healthY);
 		staminaBar.transform.localPosition = new Vector3 (staminaBarX, staminaY);
+		inventoryGui.setImage = inventory[selectedIndex].itemImage;
+		inventoryGui.forImage = inventory[forIndex].itemImage;
+		inventoryGui.backImage = inventory [backIndex].itemImage;
 	}
 
 	
@@ -153,8 +164,11 @@ public class Player : MonoBehaviour
         else
         {
             inventory.Add(item);
+			forIndex = 0;
+			backIndex = selectedIndex;
             selectedIndex = inventory.Count - 1;
             GUI_Manager.selectedItem.text = "Current item: " + inventory[selectedIndex].itemName;
+			inventoryGui.setImage = inventory[selectedIndex].itemImage;
         }
     }
 
@@ -234,16 +248,25 @@ public class Player : MonoBehaviour
 		GameItem useItem = inventory[selectedIndex];
         if (left)
         {
+			forIndex = selectedIndex;
             selectedIndex--;
             if (selectedIndex < 0)
                 selectedIndex = inventory.Count - 1;
+			backIndex = selectedIndex - 1;
+			if (backIndex < 0)
+				backIndex = inventory.Count - 1;
         }
         else
         {
+			backIndex = selectedIndex;
             selectedIndex++;
             if (selectedIndex >= inventory.Count)
                 selectedIndex = 0;
+			forIndex = selectedIndex + 1;
+			if (forIndex >= inventory.Count)
+				forIndex = 0;
         }
         GUI_Manager.selectedItem.text = "Current item: " + inventory[selectedIndex].itemName;
+
     }
 }

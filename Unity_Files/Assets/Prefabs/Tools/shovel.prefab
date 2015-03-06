@@ -365,6 +365,7 @@ MonoBehaviour:
   itemName: Shovel
   itemDesc: A digging tool
   itemType: 1
+  itemImage: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
