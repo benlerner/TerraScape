@@ -88,6 +88,7 @@
      <Compile Include="Assets\Scripts\journalGUI.cs" />
      <Compile Include="Assets\Scripts\journalPageAdder.cs" />
      <Compile Include="Assets\Scripts\levelTransition.cs" />
+     <Compile Include="Assets\Scripts\manualCheckpointSystem.cs" />
      <Compile Include="Assets\Scripts\rockBridgeTrigger.cs" />
      <Compile Include="Assets\Scripts\screenFade.cs" />
      <Compile Include="Assets\Scripts\selfDestruct.cs" />
@@ -97,6 +98,7 @@
      <None Include="Assets\Prefabs\Skyboxes\dunes\Note.txt" />
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>C:/Users/Ben/Documents/GitHub/TerraScape/Unity_Files/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>C:/Users/Alex/Desktop/Senior Project/ProjectFolder/TerraScape/Unity_Files/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.3/UnityEngine.UI.dll</HintPath>
