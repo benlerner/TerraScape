@@ -3989,15 +3989,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 468074, guid: b3220545614321e43a6d0f4937edb4bc, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.81988943
+      value: -1.82000005
       objectReference: {fileID: 0}
     - target: {fileID: 468074, guid: b3220545614321e43a6d0f4937edb4bc, type: 2}
       propertyPath: m_LocalPosition.y
-      value: .100036621
+      value: .469999999
       objectReference: {fileID: 0}
     - target: {fileID: 468074, guid: b3220545614321e43a6d0f4937edb4bc, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 55.4231606
+      value: 55.4199982
       objectReference: {fileID: 0}
     - target: {fileID: 468074, guid: b3220545614321e43a6d0f4937edb4bc, type: 2}
       propertyPath: m_LocalRotation.x
@@ -4018,6 +4018,26 @@ Prefab:
     - target: {fileID: 468074, guid: b3220545614321e43a6d0f4937edb4bc, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568028, guid: b3220545614321e43a6d0f4937edb4bc, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568030, guid: b3220545614321e43a6d0f4937edb4bc, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5468028, guid: b3220545614321e43a6d0f4937edb4bc, type: 2}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 14600000, guid: b3220545614321e43a6d0f4937edb4bc, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19518242, guid: b3220545614321e43a6d0f4937edb4bc, type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b3220545614321e43a6d0f4937edb4bc, type: 2}
@@ -13545,16 +13565,14 @@ GameObject:
   m_Component:
   - 4: {fileID: 2022193278}
   - 95: {fileID: 2022193289}
-  - 114: {fileID: 2022193288}
-  - 114: {fileID: 2022193287}
-  - 114: {fileID: 2022193286}
   - 65: {fileID: 2022193285}
   - 54: {fileID: 2022193284}
-  - 114: {fileID: 2022193283}
   - 136: {fileID: 2022193282}
   - 65: {fileID: 2022193281}
   - 82: {fileID: 2022193280}
   - 146: {fileID: 2022193279}
+  - 114: {fileID: 2022193286}
+  - 195: {fileID: 2022193283}
   m_Layer: 10
   m_Name: Dune Roamer V2
   m_TagString: Roamer
@@ -13569,7 +13587,7 @@ Transform:
   m_PrefabInternal: {fileID: 523196706}
   m_GameObject: {fileID: 2022193277}
   m_LocalRotation: {x: 0, y: .678039551, z: 0, w: .735025525}
-  m_LocalPosition: {x: -1.81988943, y: .100036621, z: 55.4231606}
+  m_LocalPosition: {x: -1.82000005, y: .469999999, z: 55.4199982}
   m_LocalScale: {x: .458432972, y: .458433062, z: .458433062}
   m_Children:
   - {fileID: 1719061530}
@@ -13582,14 +13600,14 @@ WheelCollider:
     type: 2}
   m_PrefabInternal: {fileID: 523196706}
   m_GameObject: {fileID: 2022193277}
-  m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 1
+  m_Center: {x: 0, y: 3.5, z: 0}
+  m_Radius: 3
   m_SuspensionDistance: .100000001
   m_SuspensionSpring:
     spring: 1
     damper: 0
     targetPosition: 0
-  m_Mass: 1
+  m_Mass: 200
   m_ForwardFriction:
     extremumSlip: 1
     extremumValue: 20000
@@ -13689,18 +13707,27 @@ CapsuleCollider:
   m_Height: 14.8199997
   m_Direction: 2
   m_Center: {x: 0, y: 2.0999999, z: 0}
---- !u!114 &2022193283
-MonoBehaviour:
+--- !u!195 &2022193283
+NavMeshAgent:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11468034, guid: b3220545614321e43a6d0f4937edb4bc,
+  m_PrefabParentObject: {fileID: 19518242, guid: b3220545614321e43a6d0f4937edb4bc,
     type: 2}
   m_PrefabInternal: {fileID: 523196706}
   m_GameObject: {fileID: 2022193277}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c65927ec895187409ada28ef6646a3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Enabled: 1
+  m_Radius: 12
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!54 &2022193284
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13733,55 +13760,37 @@ BoxCollider:
 --- !u!114 &2022193286
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11468030, guid: b3220545614321e43a6d0f4937edb4bc,
-    type: 2}
-  m_PrefabInternal: {fileID: 523196706}
-  m_GameObject: {fileID: 2022193277}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e6a18b4ef3591142a96d549b5f1e708, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2022193287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11468032, guid: b3220545614321e43a6d0f4937edb4bc,
-    type: 2}
-  m_PrefabInternal: {fileID: 523196706}
-  m_GameObject: {fileID: 2022193277}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc40b2b1a880b604d9136eded41a3dca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2022193288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11468028, guid: b3220545614321e43a6d0f4937edb4bc,
+  m_PrefabParentObject: {fileID: 11427124, guid: b3220545614321e43a6d0f4937edb4bc,
     type: 2}
   m_PrefabInternal: {fileID: 523196706}
   m_GameObject: {fileID: 2022193277}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 892c8dbda02e6a04a9f2042dce001ee3, type: 3}
+  m_Script: {fileID: 11500000, guid: 0be7ddcd4bcd82944900a8243d2279cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSpeed: .300000012
-  attackDamage: 20
+  navAgent: {fileID: 2022193283}
+  player: {fileID: 0}
+  attackDamage: 30
   walkSpeed: 3.5
   chargeSpeed: 10
   chaseWaitTime: 5
   rotationSpeed: 0
-  fieldOfView: 90
-  viewRange: 20
-  attackRange: 5
+  fieldOfView: 200
+  viewRange: 60
+  attackRange: 7
   rollRange: 30
-  attackArea: {fileID: 2022193281}
+  attackArea: {fileID: 0}
   MaxHealth: 1000
   currentHealth: 1000
   rollSpeed: 15
   rollRotationSpeed: 5
   rollDamage: 70
+  hitObject: 0
+  rollingCollider: {fileID: 2022193279}
+  walkingColliders:
+  - {fileID: 2022193285}
+  - {fileID: 2022193282}
 --- !u!95 &2022193289
 Animator:
   serializedVersion: 3

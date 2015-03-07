@@ -94,6 +94,9 @@ public class Player : MonoBehaviour
 			else {
 				controller.toolInUse = 0;
 			}
+			inventoryGui.setImage = inventory[selectedIndex].itemImage;
+			inventoryGui.forImage = inventory[forIndex].itemImage;
+			inventoryGui.backImage = inventory [backIndex].itemImage;
 		}
 		else{
 			controller.toolInUse = 0;
@@ -103,9 +106,6 @@ public class Player : MonoBehaviour
 		//float staminaY = MapValues (currentStamina, 0, maxStamina, maxBarValue, minBarValue);
 		healthBar.transform.localPosition = new Vector3 (healthBarX, healthY);
 		staminaBar.transform.localPosition = new Vector3 (staminaBarX, staminaY);
-		inventoryGui.setImage = inventory[selectedIndex].itemImage;
-		inventoryGui.forImage = inventory[forIndex].itemImage;
-		inventoryGui.backImage = inventory [backIndex].itemImage;
 	}
 
 	

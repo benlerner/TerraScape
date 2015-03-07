@@ -37,50 +37,82 @@ public class DuneRoamerController : MonoBehaviour {
 
 	public DuneRoamerHit hitObject;
 	public WheelCollider rollingCollider;
+	public Collider[] walkingColliders;
+
+	//how long the object waits after dying before fading out
+	private float persistDuration = 5f;
+	private float persistTimer = 0f;
+	//how long the object takes to fade out
+	private float fadeTime = 3f;
+	private float startAlpha;
 
 	// Use this for initialization
 	void Start () {
-		navAgent = GetComponent<NavMeshAgent> ();
 		player = GameObject.FindWithTag ("Player");
 		MakeFSM ();
 		hitObject = DuneRoamerHit.None;
+		//startAlpha = renderer.material.color.a;
+		navAgent.speed = walkSpeed;
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		fsm.CurrentState.Reason (player, gameObject);
-		fsm.CurrentState.Act (player, gameObject);
+		if (currentHealth > 0)
+		{
+			fsm.CurrentState.Reason (player, gameObject);
+			fsm.CurrentState.Act (player, gameObject);
+		}
+	}
+
+
+
+	void Update()
+	{
+		if (currentHealth == 0)
+		{
+			//[ANIMATE] play death animation
+			if ((persistTimer += Time.deltaTime) >= persistDuration)
+			{
+				Destroy (gameObject);
+				/* Doesn't work yet
+				renderer.material.color.a = Mathf.Lerp(startAlpha, 0f, fadeTime);
+				if (renderer.material.color.a == 0)
+				{
+					Destroy(gameObject);
+				}*/
+			}
+		}
 	}
 
 	public void SetTransition(Transition t) { fsm.PerformTransition(t); }
 
 	private void MakeFSM()
 	{
-		IdleDRState idle = new IdleDRState ();
+		IdleDRState idle = new IdleDRState (this);
 		idle.AddTransition (Transition.PlayerAppears, StateID.ApproachStateID);
 
-		ApproachDRState approach = new ApproachDRState ();
+		ApproachDRState approach = new ApproachDRState (this);
 		approach.AddTransition (Transition.RollRange, StateID.RollStateID);
 		approach.AddTransition (Transition.AttackRange, StateID.AttackStateID);
 		approach.AddTransition (Transition.OutOfRange, StateID.IdleStateID);
 
-		RollDRState roll = new RollDRState ();
+		RollDRState roll = new RollDRState (this);
 		roll.AddTransition (Transition.PlayerImpact, StateID.ApproachStateID);
 		roll.AddTransition (Transition.TrapImpact, StateID.TrappedStateID);
 		roll.AddTransition (Transition.OtherImpact, StateID.StunnedStateID);
 		roll.AddTransition (Transition.InAir, StateID.FallingStateID);
 
-		AttackDRState attack = new AttackDRState ();
+		AttackDRState attack = new AttackDRState (this);
 		attack.AddTransition (Transition.PlayerAppears, StateID.ApproachStateID);
 		attack.AddTransition (Transition.RollRange, StateID.RollStateID);
 
-		TrappedDRState trapped = new TrappedDRState ();
+		TrappedDRState trapped = new TrappedDRState (this);
 		trapped.AddTransition (Transition.BreakFree, StateID.IdleStateID);
 
-		StunnedDRState stunned = new StunnedDRState ();
+		StunnedDRState stunned = new StunnedDRState (this);
 		stunned.AddTransition (Transition.BreakFree, StateID.IdleStateID);
 
-		FallingDRState falling = new FallingDRState ();
+		FallingDRState falling = new FallingDRState (this);
 		falling.AddTransition (Transition.Crash, StateID.IdleStateID);
 
 		fsm = new FSMSystem ();
@@ -126,7 +158,7 @@ public enum DuneRoamerHit
 
 public class IdleDRState : FSMState
 {
-	public float wanderRange = 10f;
+	public float wanderRange = 50f;
 	public DuneRoamerController controller;
 
 	//what the Dune roamer could be doing while idle: standing still,
@@ -143,6 +175,17 @@ public class IdleDRState : FSMState
 	//update timer for idle state - only change action once per second
 	private float updatePeriod = 1f;
 	private float timer = 0f;
+
+	public IdleDRState(DuneRoamerController ctrlr)
+	{
+		stateID = StateID.IdleStateID;
+		controller = ctrlr;
+	}
+
+	public override void DoBeforeEntering ()
+	{
+		Debug.Log ("Entered idle state.");
+	}
 	
 	public override void Reason (GameObject player, GameObject npc)
 	{
@@ -178,6 +221,7 @@ public class IdleDRState : FSMState
 						                                                          0,
 						                                                          Random.Range(-wanderRange, wanderRange));
 						controller.navAgent.SetDestination(wanderPoint);
+						Debug.Log("New wander point: " + wanderPoint);
 					}
 				}
 			}
@@ -189,6 +233,17 @@ public class ApproachDRState : FSMState
 {
 	public DuneRoamerController controller;
 
+	public ApproachDRState (DuneRoamerController ctrlr)
+	{
+		stateID = StateID.ApproachStateID;
+		controller = ctrlr;
+	}
+
+	public override void DoBeforeEntering ()
+	{
+		Debug.Log ("Entered approach state.");
+	}
+
 	public override void Reason (GameObject player, GameObject npc)
 	{
 		RaycastHit hitInfo;
@@ -198,7 +253,7 @@ public class ApproachDRState : FSMState
 		}
 		//if dune roamer is in attack range and facing player and has line of sight to player, start attacking
 		else if (Vector3.Distance(controller.transform.position, player.transform.position) < controller.attackRange - 3f &&
-		         Vector3.Angle(controller.transform.TransformDirection(Vector3.forward),player.transform.position) < 5f &&
+		         Vector3.Angle(controller.transform.forward, player.transform.position - controller.transform.position) < 5f &&
 		         Physics.Raycast(controller.transform.position, (player.transform.position - controller.transform.position), out hitInfo, controller.attackRange))
 		{
 			if (hitInfo.transform == player.transform)
@@ -208,13 +263,19 @@ public class ApproachDRState : FSMState
 		}
 		//if dune roamer is in roll range and facing player and has line of sight to player, start rolling
 		else if (Vector3.Distance(controller.transform.position, player.transform.position) < controller.rollRange - 5f &&
-		         Vector3.Angle(controller.transform.TransformDirection(Vector3.forward), player.transform.position) < 5f &&
+		         Vector3.Angle(controller.transform.forward, player.transform.position - controller.transform.position) < 5f &&
 		         Physics.Raycast(controller.transform.position, (player.transform.position - controller.transform.position), out hitInfo, controller.rollRange))
 		{
 			if (hitInfo.transform == player.transform)
 			{
 				controller.SetTransition(Transition.RollRange);
 			}
+		}
+		if (Vector3.Distance(controller.transform.position, player.transform.position) < controller.rollRange -5f)
+		{
+			Physics.Raycast(controller.transform.position, (player.transform.position - controller.transform.position), out hitInfo);
+			Debug.Log("In roll range: Raycast = " + hitInfo.transform + ", Player = " + player.transform);
+			Debug.DrawLine(controller.transform.position, hitInfo.transform.position, Color.red, 0.1f);
 		}
 	}
 
@@ -229,6 +290,22 @@ public class RollDRState : FSMState
 	public DuneRoamerController controller;
 	public WheelCollider collider;
 	private float lastFrameSpeed;
+
+	public RollDRState (DuneRoamerController ctrlr)
+	{
+		stateID = StateID.RollStateID;
+		controller = ctrlr;
+	}
+
+	public override void DoBeforeEntering ()
+	{
+		Debug.Log ("Entered roll state.");
+		foreach (Collider c in controller.walkingColliders)
+		{
+			c.enabled = false;
+		}
+		controller.rollingCollider.enabled = true;
+	}
 
 	public override void Reason (GameObject player, GameObject npc)
 	{
@@ -272,8 +349,11 @@ public class RollDRState : FSMState
 
 	public override void DoBeforeLeaving ()
 	{
+		foreach (Collider c in controller.walkingColliders)
+		{
+			c.enabled = true;
+		}
 		controller.rollingCollider.enabled = false;
-
 	}
 
 
@@ -282,32 +362,58 @@ public class RollDRState : FSMState
 public class AttackDRState : FSMState
 {
 	public DuneRoamerController controller;
-	private Vector3 target;
+	private float chargeForce = 200f;
+
+	private float chargeDuration = 1f;
+	private float chargeTimer = 0f;
+
+	public AttackDRState (DuneRoamerController ctrlr)
+	{
+		stateID = StateID.AttackStateID;
+		controller = ctrlr;
+	}
 
 	public override void DoBeforeEntering ()
 	{
-		Ray chargePath = new Ray (controller.transform.position, controller.player.transform.position);
-		target = chargePath.GetPoint (Vector3.Distance (controller.transform.position, controller.player.transform.position)
-						+ 10f);
+		Debug.Log ("Entered attack state.");
+		controller.transform.LookAt(controller.player.transform);
+		chargeDuration = Vector3.Distance (controller.transform.position, controller.player.transform.position) / controller.chargeSpeed + 1f;
 	}
 	public override void Reason (GameObject player, GameObject npc)
 	{
-
+		if (controller.rigidbody.velocity.y < -10f)
+		{
+			controller.SetTransition(Transition.InAir);
+		} else if (chargeTimer > chargeDuration)
+		{
+			controller.SetTransition(Transition.PlayerAppears);
+		}
 	}
 
 	public override void Act (GameObject player, GameObject npc)
 	{
 		//[ANIMATE] play charging animation
-		controller.navAgent.SetDestination(target);
+		controller.transform.Translate (Vector3.forward * controller.chargeSpeed * Time.deltaTime, Space.Self);
+		chargeTimer += Time.deltaTime;
 	}
 }
 
 public class TrappedDRState : FSMState
 {
-	public DuneRoamerController controller;
+	private DuneRoamerController controller;
 	private float trapDuration = 10f;
 	private float trapTimer = 0f;
-	
+
+	public override void DoBeforeEntering ()
+	{
+		Debug.Log ("Entered trapped state.");
+	}
+	public TrappedDRState (DuneRoamerController ctrlr)
+	{
+		stateID = StateID.TrappedStateID;
+		controller = ctrlr;
+	}
+
 	public override void Reason (GameObject player, GameObject npc)
 	{
 		if (trapTimer >= trapDuration) 
@@ -326,9 +432,19 @@ public class TrappedDRState : FSMState
 
 public class StunnedDRState : FSMState
 {
-	public DuneRoamerController controller;
+	private DuneRoamerController controller;
 	private float stunDuration = 5f;
 	private float stunTimer = 0f;
+
+	public override void DoBeforeEntering ()
+	{
+		Debug.Log ("Entered stunned state.");
+	}
+	public StunnedDRState (DuneRoamerController ctrlr)
+	{
+		stateID = StateID.StunnedStateID;
+		controller = ctrlr;
+	}
 
 	public override void Reason (GameObject player, GameObject npc)
 	{
@@ -338,7 +454,7 @@ public class StunnedDRState : FSMState
 			stunTimer = 0;
 		}
 	}
-	
+
 	public override void Act (GameObject player, GameObject npc)
 	{
 		//play stunned animation
@@ -348,8 +464,18 @@ public class StunnedDRState : FSMState
 
 public class FallingDRState : FSMState
 {
-	public DuneRoamerController controller;
+	private DuneRoamerController controller;
 	private float fallingSpeed;
+
+	public override void DoBeforeEntering ()
+	{
+		Debug.Log ("Entered falling state.");
+	}
+	public FallingDRState (DuneRoamerController ctrlr)
+	{
+		stateID = StateID.FallingStateID;
+		controller = ctrlr;
+	}
 
 	public override void Reason (GameObject player, GameObject npc)
 	{

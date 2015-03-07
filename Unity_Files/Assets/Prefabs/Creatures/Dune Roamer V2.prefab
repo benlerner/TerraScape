@@ -821,16 +821,14 @@ GameObject:
   m_Component:
   - 4: {fileID: 468074}
   - 95: {fileID: 9500002}
-  - 114: {fileID: 11468028}
-  - 114: {fileID: 11468032}
-  - 114: {fileID: 11468030}
   - 65: {fileID: 6568028}
   - 54: {fileID: 5468028}
-  - 114: {fileID: 11468034}
   - 136: {fileID: 13668028}
   - 65: {fileID: 6568030}
   - 82: {fileID: 8268028}
   - 146: {fileID: 14600000}
+  - 114: {fileID: 11427124}
+  - 195: {fileID: 19518242}
   m_Layer: 10
   m_Name: Dune Roamer V2
   m_TagString: Roamer
@@ -1587,7 +1585,7 @@ BoxCollider:
   m_GameObject: {fileID: 168074}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 5, y: 6, z: 5}
   m_Center: {x: 0, y: 3, z: 8}
@@ -1679,7 +1677,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11468028
+--- !u!114 &11427124
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1687,58 +1685,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 168074}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 892c8dbda02e6a04a9f2042dce001ee3, type: 3}
+  m_Script: {fileID: 11500000, guid: 0be7ddcd4bcd82944900a8243d2279cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSpeed: .300000012
-  attackDamage: 20
+  navAgent: {fileID: 19518242}
+  player: {fileID: 0}
+  attackDamage: 30
   walkSpeed: 3.5
   chargeSpeed: 10
   chaseWaitTime: 5
   rotationSpeed: 0
-  fieldOfView: 90
-  viewRange: 20
-  attackRange: 5
+  fieldOfView: 200
+  viewRange: 60
+  attackRange: 7
   rollRange: 30
-  attackArea: {fileID: 6568030}
+  attackArea: {fileID: 0}
   MaxHealth: 1000
   currentHealth: 1000
   rollSpeed: 15
   rollRotationSpeed: 5
   rollDamage: 70
---- !u!114 &11468030
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 168074}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e6a18b4ef3591142a96d549b5f1e708, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11468032
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 168074}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc40b2b1a880b604d9136eded41a3dca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11468034
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 168074}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c65927ec895187409ada28ef6646a3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  hitObject: 0
+  rollingCollider: {fileID: 14600000}
+  walkingColliders:
+  - {fileID: 6568028}
+  - {fileID: 13668028}
 --- !u!136 &13668028
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -1841,14 +1812,14 @@ WheelCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 168074}
-  m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 1
+  m_Center: {x: 0, y: 3.5, z: 0}
+  m_Radius: 3
   m_SuspensionDistance: .100000001
   m_SuspensionSpring:
     spring: 1
     damper: 0
     targetPosition: 0
-  m_Mass: 1
+  m_Mass: 200
   m_ForwardFriction:
     extremumSlip: 1
     extremumValue: 20000
@@ -1861,7 +1832,27 @@ WheelCollider:
     asymptoteSlip: 2
     asymptoteValue: 10000
     stiffnessFactor: 1
+  m_Enabled: 0
+--- !u!195 &19518242
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 168074}
   m_Enabled: 1
+  m_Radius: 12
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

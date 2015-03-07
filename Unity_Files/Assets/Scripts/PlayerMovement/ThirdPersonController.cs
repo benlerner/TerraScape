@@ -388,7 +388,6 @@ public class ThirdPersonController : MonoBehaviour
 		//Debug.Log (transform.eulerAngles.y);
 		if (verticalSpeed <= -50)
 			moveSpeed = 0;
-		Debug.Log (IsGrounded ());
 		if (Input.GetKeyDown (KeyCode.P) && Input.GetKeyDown (KeyCode.O)){
 			Application.LoadLevel(Application.loadedLevel);
 		}
