@@ -1,6 +1,6 @@
 //Maya ASCII 2015 scene
-//Name: env_level3_volcanoV5.ma
-//Last modified: Sat, Mar 07, 2015 06:30:08 PM
+//Name: env_level3_volcanoV6.ma
+//Last modified: Sat, Mar 07, 2015 06:30:19 PM
 //Codeset: UTF-8
 requires maya "2015";
 requires -nodeType "mentalrayFramebuffer" -nodeType "mentalrayOptions" -nodeType "mentalrayGlobals"
@@ -55674,4 +55674,4 @@ connectAttr ":perspShape.msg" ":defaultRenderGlobals.sc";
 dataStructure -fmt "raw" -as "name=externalContentTable:string=node:string=key:string=upath:uint32=upathcrc:string=rpath:string=roles";
 applyMetadata -fmt "raw" -v "channel\nname externalContentTable\nstream\nname v1.0\nindexType numeric\nstructure externalContentTable\n0\n\"file3\" \"fileTextureName\" \"/Users/jeremymousin/Documents/maya/projects/terrascape/sourceimages/RocksArid0019_33_S.jpg\" 224435431 \"\" \"sourceImages\"\n1\n\"file4\" \"fileTextureName\" \"/Users/jeremymousin/Documents/maya/projects/terrascape/sourceimages/RocksArid0019_33_S_NRM.png\" 587263365 \"\" \"sourceImages\"\nendStream\nendChannel\nendAssociations\n" 
 		-scn;
-// End of env_level3_volcanoV5.ma
+// End of env_level3_volcanoV6.ma
