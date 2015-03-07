@@ -87,4 +87,18 @@ public class journalGUI : MonoBehaviour {
 		selectedPage = pages.Count - 1;
 		popUp ();
 	}
+
+	public void turnPage(bool direction){
+		if (direction){
+			selectedPage++;
+			if (selectedPage >= pages.Count)
+				selectedPage = 0;
+		}
+		else {
+			selectedPage--;
+			if (selectedPage < 0)
+				selectedPage = pages.Count - 1;
+		}
+		page.sprite = pages [selectedPage];
+	}
 }
