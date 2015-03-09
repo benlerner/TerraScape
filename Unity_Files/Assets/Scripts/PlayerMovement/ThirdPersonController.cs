@@ -342,8 +342,7 @@ public class ThirdPersonController : MonoBehaviour
 
 	void  ApplyGravity ()
 	{
-		if (isControllable)	// don't move player at all if not controllable.
-		{
+
 			// Apply gravity
 			bool jumpButton= Input.GetButton("Jump");
 			
@@ -361,7 +360,7 @@ public class ThirdPersonController : MonoBehaviour
 				}
 			else
 				verticalSpeed -= gravity * Time.deltaTime;
-		}
+
 	}
 
 	public float CalculateJumpVerticalSpeed ( float targetJumpHeight  )
@@ -409,10 +408,10 @@ public class ThirdPersonController : MonoBehaviour
 		{
 			lastJumpButtonTime = Time.time;
 		}
-		if (Input.GetKeyDown(KeyCode.N) && !hanging && !jumping && cutScene == 0)
+		/*if (Input.GetKeyDown(KeyCode.N) && !hanging && !jumping && cutScene == 0)
 		{
 			slide();
-		}
+		}*/
 		if (!hanging && !isSliding && !jumping && cutScene==0){
 			if (Input.GetKey(KeyCode.Z))
 			{
@@ -708,8 +707,8 @@ public class ThirdPersonController : MonoBehaviour
 	{
 		//return (collisionFlags & CollisionFlags.CollidedBelow) != 0;
 		Vector3 center = transform.position;
-		center.y = transform.position.y + 0.2f;
-		return (Physics.OverlapSphere(center, 0.2f, notPlayer).Length) !=0;
+		center.y = transform.position.y + 0.3f;
+		return (Physics.OverlapSphere(center, 0.3f, notPlayer).Length) !=0;
 	}
 
 	public Vector3 GetDirection ()

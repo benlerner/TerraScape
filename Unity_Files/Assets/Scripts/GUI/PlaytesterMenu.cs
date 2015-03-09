@@ -101,7 +101,7 @@ public class PlaytesterMenu : MonoBehaviour {
 		maxHealth = playerStats.maxHealth.ToString();
 		maxStamina = playerStats.maxStamina.ToString();
 		staminaRegen = playerStats.staminaRegen.ToString();
-		drHealth = drEnemy.MaxHealth.ToString();
+/*		drHealth = drEnemy.MaxHealth.ToString();
 		drWalkSpeed = drEnemy.walkSpeed.ToString();
 		drChargeSpeed = drEnemy.chargeSpeed.ToString();
 		drRollSpeed = drEnemy.rollSpeed.ToString();
@@ -110,7 +110,7 @@ public class PlaytesterMenu : MonoBehaviour {
 		drRollDamage = drEnemy.rollDamage.ToString();
 		drAttackRange = drEnemy.attackRange.ToString();
 		drRollRange = drEnemy.rollRange.ToString();
-		drDetectRange = drEnemy.viewRange.ToString();
+		drDetectRange = drEnemy.viewRange.ToString();*/
 		#endregion
 	}
 	
@@ -269,7 +269,7 @@ public class PlaytesterMenu : MonoBehaviour {
 
 
 
-		if (float.TryParse(drHealth, out newDRHealth)){
+/*		if (float.TryParse(drHealth, out newDRHealth)){
 			drEnemy.MaxHealth = newDRHealth;
 		} else {
 			drHealth = drEnemy.MaxHealth.ToString();
@@ -331,6 +331,7 @@ public class PlaytesterMenu : MonoBehaviour {
 		} else {
 			drDetectRange = drEnemy.viewRange.ToString();
 		}
+*/
 	}
 
 	//create a label with a text field next to it using automatic layout

@@ -49,8 +49,8 @@ public class Player : MonoBehaviour
 		staminaBar = GameObject.FindGameObjectWithTag ("stamina").GetComponent<RectTransform>();
 		healthBarX = healthBar.localPosition.x;
 		staminaBarX = staminaBar.localPosition.x;
-		maxBarValue = healthBar.position.y;
-		minBarValue = healthBar.position.y - healthBar.rect.height;
+		maxBarValue = healthBar.localPosition.y;
+		minBarValue = healthBar.localPosition.y - healthBar.rect.height;
         journalXML = new XmlDocument();
         TextAsset filename = Resources.Load("journalEntries") as TextAsset;
         journalXML.LoadXml(filename.text);
@@ -61,6 +61,9 @@ public class Player : MonoBehaviour
         {
             journalSrc.Add(node);
         }
+		inventoryGui.setImage = inventory[selectedIndex].itemImage;
+		inventoryGui.forImage = inventory[forIndex].itemImage;
+		inventoryGui.backImage = inventory [backIndex].itemImage;
     }
 
 	void Update()
@@ -94,9 +97,7 @@ public class Player : MonoBehaviour
 			else {
 				controller.toolInUse = 0;
 			}
-			inventoryGui.setImage = inventory[selectedIndex].itemImage;
-			inventoryGui.forImage = inventory[forIndex].itemImage;
-			inventoryGui.backImage = inventory [backIndex].itemImage;
+
 		}
 		else{
 			controller.toolInUse = 0;
@@ -170,6 +171,9 @@ public class Player : MonoBehaviour
             GUI_Manager.selectedItem.text = "Current item: " + inventory[selectedIndex].itemName;
 			inventoryGui.setImage = inventory[selectedIndex].itemImage;
         }
+		inventoryGui.setImage = inventory[selectedIndex].itemImage;
+		inventoryGui.forImage = inventory[forIndex].itemImage;
+		inventoryGui.backImage = inventory [backIndex].itemImage;
     }
 
     public void UseItem(int itemID)
@@ -267,6 +271,8 @@ public class Player : MonoBehaviour
 				forIndex = 0;
         }
         GUI_Manager.selectedItem.text = "Current item: " + inventory[selectedIndex].itemName;
-
+		inventoryGui.setImage = inventory[selectedIndex].itemImage;
+		inventoryGui.forImage = inventory[forIndex].itemImage;
+		inventoryGui.backImage = inventory [backIndex].itemImage;
     }
 }
