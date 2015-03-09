@@ -28,7 +28,7 @@ public class journalGUI : MonoBehaviour {
 		normalPos = this.transform.localPosition;
 		normalScale = this.transform.localScale;
 		shiftJournal = this.transform.localPosition;
-		popUpPos.y = -350;
+		popUpPos.y = -381;
 	}
 	
 	// Update is called once per frame
@@ -52,14 +52,12 @@ public class journalGUI : MonoBehaviour {
 				Time.timeScale = 1;
 				instance.localPosition = normalPos;
 				instance.localScale = normalScale;
-				Camera.main.GetComponent<TP_Camera>().enabled=true;
 				paused = false;
 			}
 			else if (!paused) {
 				Time.timeScale = 0;
 				instance.localPosition = openPos;
 				instance.localScale = normalScale * scaleFactor;
-				Camera.main.GetComponent<TP_Camera>().enabled=false;
 				paused = true;
 			}
 		}

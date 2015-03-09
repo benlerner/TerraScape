@@ -49,6 +49,7 @@
      <Compile Include="Assets\Editor\createAsChild.cs" />
      <Compile Include="Assets\Editor\replaceobjects.cs" />
      <None Include="Assets\Resources\journalEntries.xml" />
+     <None Include="Assets\Materials\shaders\rock.shader" />
      <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
      <None Include="Assets\Prefabs\Skyboxes\dunes\Note.txt" />
  <Reference Include="Assembly-UnityScript-firstpass">
@@ -56,6 +57,10 @@
  </Reference>
  <Reference Include="Assembly-UnityScript">
  <HintPath>C:/Users/amf336/Desktop/SProj/Unity_Files/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
+ <HintPath>C:/Users/jc3347/Documents/TerraScape/Unity_Files/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ </Reference>
+ <Reference Include="Assembly-UnityScript">
+ <HintPath>C:/Users/jc3347/Documents/TerraScape/Unity_Files/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
