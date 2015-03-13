@@ -2228,6 +2228,7 @@ MonoBehaviour:
   controller: {fileID: 14300000}
   maxSpeed: 20
   turnForce: 50
+  extraForce: 1000
 --- !u!114 &11430592
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2241,21 +2242,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 100
-  healthBar: {fileID: 0}
-  staminaBar: {fileID: 0}
   maxStamina: 50
   currentStamina: 50
-  minBarValue: 0
-  maxBarValue: 0
-  healthBarX: 0
-  staminaBarX: 0
-  healthY: 0
-  staminaY: 0
   staminaRegen: 3
   inventory:
   - {fileID: 11426600, guid: 6c1b70fa0c35775428166e180b611dfb, type: 2}
   journal: []
   selectedIndex: 0
+  forIndex: 0
+  backIndex: 0
 --- !u!114 &11479162
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2303,9 +2298,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   m_Radius: .200000003
-  m_Height: 1.70000005
+  m_Height: 2
   m_Direction: 2
-  m_Center: {x: -.300000012, y: .100000001, z: .5}
+  m_Center: {x: -.300000012, y: .100000001, z: .200000003}
 --- !u!136 &13600004
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -2316,9 +2311,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   m_Radius: .200000003
-  m_Height: 1.70000005
+  m_Height: 2
   m_Direction: 2
-  m_Center: {x: .300000012, y: .100000001, z: .5}
+  m_Center: {x: .300000012, y: .100000001, z: .200000003}
 --- !u!137 &13765844
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

@@ -14,9 +14,10 @@ public class PlayerSlider : MonoBehaviour {
 	public float maxSpeed = 20f;
 	public static PlayerSlider instance;
 	public float turnForce = 50f;
+	public float extraForce = 1000f;
 
 	private float elevationAngle = 0;
-	private float turnAngle = 0;//negative is right, positive is left (from behind)
+
 
 	//public TrailRenderer trailRenderer;
 
@@ -92,9 +93,8 @@ public class PlayerSlider : MonoBehaviour {
 					Mathf.Sin(Vector3.Angle(velocityDirection, facingDirection) * Mathf.Deg2Rad);
 				rigidbody.AddRelativeForce(rotateForce);
 			}
-		} else
-		{
-			rigidbody.AddForce (-Vector3.up * gravity);
+
+			rigidbody.AddForce(Vector3.down * extraForce);
 		}
 		//limit speed
 		if (rigidbody.velocity.sqrMagnitude > maxSpeed * maxSpeed)

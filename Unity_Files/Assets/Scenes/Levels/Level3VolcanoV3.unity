@@ -316,7 +316,7 @@ RectTransform:
   m_RootOrder: 6
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: -466}
+  m_AnchoredPosition: {x: 0, y: -485}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &21111314
@@ -1499,6 +1499,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 17
       objectReference: {fileID: 0}
+    - target: {fileID: 11439892, guid: a515aea159831ba458adceb34a0e8142, type: 2}
+      propertyPath: textureOverlay
+      value: 
+      objectReference: {fileID: 2028818190}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a515aea159831ba458adceb34a0e8142, type: 2}
   m_RootGameObject: {fileID: 2002313093}
@@ -2753,6 +2757,50 @@ MonoBehaviour:
   movementTime: 5
   activeTime: 10
   activePosition: {x: 60.5499992, y: -15, z: 76.8300018}
+--- !u!1001 &409626273
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 454050, guid: 0fd3df90543c27c42b6cac627c953c73, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 454050, guid: 0fd3df90543c27c42b6cac627c953c73, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 454050, guid: 0fd3df90543c27c42b6cac627c953c73, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 454050, guid: 0fd3df90543c27c42b6cac627c953c73, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 454050, guid: 0fd3df90543c27c42b6cac627c953c73, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 454050, guid: 0fd3df90543c27c42b6cac627c953c73, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 454050, guid: 0fd3df90543c27c42b6cac627c953c73, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 454050, guid: 0fd3df90543c27c42b6cac627c953c73, type: 2}
+      propertyPath: m_RootOrder
+      value: 25
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 0fd3df90543c27c42b6cac627c953c73, type: 2}
+  m_RootGameObject: {fileID: 2028818189}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &420661685
 GameObject:
   m_ObjectHideFlags: 0
@@ -5451,9 +5499,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   m_Radius: .200000003
-  m_Height: 1.70000005
+  m_Height: 2
   m_Direction: 2
-  m_Center: {x: .300000012, y: .100000001, z: .5}
+  m_Center: {x: .300000012, y: .100000001, z: .200000003}
 --- !u!136 &934407017
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5465,9 +5513,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   m_Radius: .200000003
-  m_Height: 1.70000005
+  m_Height: 2
   m_Direction: 2
-  m_Center: {x: -.300000012, y: .100000001, z: .5}
+  m_Center: {x: -.300000012, y: .100000001, z: .200000003}
 --- !u!136 &934407018
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5602,6 +5650,7 @@ MonoBehaviour:
   controller: {fileID: 934407027}
   maxSpeed: 20
   turnForce: 50
+  extraForce: 1000
 --- !u!114 &934407024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11369,17 +11418,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuOpen: 0
-  textureOverlay: {fileID: 0}
+  textureOverlay: {fileID: 2028818190}
   overlayDepth: 1
   player: {fileID: 0}
   slider: {fileID: 0}
   playerStats: {fileID: 0}
-  drEnemy: {fileID: 0}
+  drEnemies: []
   headerStyle:
     m_Name: 
     m_Normal:
       m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+      m_TextColor: {r: 1, g: 1, b: 1, a: 1}
     m_Hover:
       m_Background: {fileID: 0}
       m_TextColor: {r: 0, g: 0, b: 0, a: 1}
@@ -11414,7 +11463,7 @@ MonoBehaviour:
     m_Padding:
       m_Left: 0
       m_Right: 0
-      m_Top: 0
+      m_Top: 10
       m_Bottom: 0
     m_Overflow:
       m_Left: 0
@@ -11422,7 +11471,7 @@ MonoBehaviour:
       m_Top: 0
       m_Bottom: 0
     m_Font: {fileID: 0}
-    m_FontSize: 0
+    m_FontSize: 16
     m_FontStyle: 0
     m_Alignment: 0
     m_WordWrap: 0
@@ -11434,6 +11483,7 @@ MonoBehaviour:
     m_FixedHeight: 0
     m_StretchWidth: 1
     m_StretchHeight: 0
+  GUIManager: {fileID: 0}
 --- !u!114 &2002313095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11615,6 +11665,54 @@ Transform:
   - {fileID: 991664888}
   m_Father: {fileID: 471422194}
   m_RootOrder: 2
+--- !u!1 &2028818189
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 154050, guid: 0fd3df90543c27c42b6cac627c953c73, type: 2}
+  m_PrefabInternal: {fileID: 409626273}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2028818191}
+  - 131: {fileID: 2028818190}
+  m_Layer: 0
+  m_Name: PlaytesterMenuGUITexture
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!131 &2028818190
+GUITexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 13154050, guid: 0fd3df90543c27c42b6cac627c953c73,
+    type: 2}
+  m_PrefabInternal: {fileID: 409626273}
+  m_GameObject: {fileID: 2028818189}
+  m_Enabled: 1
+  m_Texture: {fileID: 2800000, guid: c9b444c081f28a04180701ae9b844bb3, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: .278431386}
+  m_PixelInset:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
+  m_LeftBorder: 0
+  m_RightBorder: 0
+  m_TopBorder: 0
+  m_BottomBorder: 0
+--- !u!4 &2028818191
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 454050, guid: 0fd3df90543c27c42b6cac627c953c73, type: 2}
+  m_PrefabInternal: {fileID: 409626273}
+  m_GameObject: {fileID: 2028818189}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 25
 --- !u!1001 &2045421536
 Prefab:
   m_ObjectHideFlags: 0

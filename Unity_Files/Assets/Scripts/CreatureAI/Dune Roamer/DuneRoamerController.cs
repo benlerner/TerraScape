@@ -59,8 +59,8 @@ public class DuneRoamerController : MonoBehaviour {
 	void FixedUpdate () {
 		if (currentHealth > 0)
 		{
-			fsm.CurrentState.Reason (player, gameObject);
-			fsm.CurrentState.Act (player, gameObject);
+			//fsm.CurrentState.Reason (player, gameObject);
+			//fsm.CurrentState.Act (player, gameObject);
 		}
 	}
 
@@ -274,7 +274,7 @@ public class ApproachDRState : FSMState
 		if (Vector3.Distance(controller.transform.position, player.transform.position) < controller.rollRange -5f)
 		{
 			Physics.Raycast(controller.transform.position, (player.transform.position - controller.transform.position), out hitInfo);
-			Debug.Log("In roll range: Raycast = " + hitInfo.transform + ", Player = " + player.transform);
+			//Debug.Log("In roll range: Raycast = " + hitInfo.transform + ", Player = " + player.transform);
 			Debug.DrawLine(controller.transform.position, hitInfo.transform.position, Color.red, 0.1f);
 		}
 	}

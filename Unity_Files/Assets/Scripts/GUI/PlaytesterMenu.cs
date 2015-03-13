@@ -10,13 +10,15 @@ public class PlaytesterMenu : MonoBehaviour {
 	public PlayerSlider slider;
 	public Player playerStats;
 
-	public BasicEnemyAI drEnemy;
+	public DuneRoamerController[] drEnemies;
 
 	private string[] categories = {"Player", "Dune Roamer"};
 
 	private int currentCategory = 0;
 
 	public GUIStyle headerStyle;
+
+	public GUI_Manager GUIManager;
 
 
 	#region Editor Variables
@@ -29,6 +31,7 @@ public class PlaytesterMenu : MonoBehaviour {
 	maxSlideSpeed,
 	turnSpeed,
 	turnForce,
+	extraForce,
 	
 	maxHealth,
 	maxStamina,
@@ -38,7 +41,6 @@ public class PlaytesterMenu : MonoBehaviour {
 	drWalkSpeed,
 	drChargeSpeed,
 	drRollSpeed,
-	drRollTurnSpeed,
 	
 	drAttackDamage,
 	drRollDamage,
@@ -55,6 +57,7 @@ public class PlaytesterMenu : MonoBehaviour {
 	newMaxSlideSpeed,
 	newTurnSpeed,
 	newTurnForce,
+	newExtraForce,
 	
 	newMaxHealth,
 	newMaxStamina,
@@ -64,7 +67,6 @@ public class PlaytesterMenu : MonoBehaviour {
 	newDRWalkSpeed,
 	newDRChargeSpeed,
 	newDRRollSpeed,
-	newDRRollTurnSpeed,
 	
 	newDRAttackDamage,
 	newDRRollDamage,
@@ -77,12 +79,22 @@ public class PlaytesterMenu : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		player = GameObject.Find("zenobia").GetComponent<ThirdPersonController>();
-		playerStats = GameObject.FindWithTag ("Player").GetComponent<Player> ();
+		playerStats = GameObject.Find("zenobia").GetComponent<Player> ();
+		slider = GameObject.Find ("zenobia").GetComponent<PlayerSlider> ();
 		if (player == null) {
 			throw new UnityException("No player object in this scene.");
 		}
 
-		drEnemy = GameObject.FindGameObjectWithTag("Roamer").GetComponent<BasicEnemyAI> ();
+		GameObject[] duneRoamers = GameObject.FindGameObjectsWithTag ("Roamer");
+		drEnemies = new DuneRoamerController[duneRoamers.Length];
+
+		for (int i = 0; i < duneRoamers.Length; i++)
+		{
+			drEnemies[i] = duneRoamers[i].GetComponent<DuneRoamerController>();
+		}
+
+		textureOverlay = GameObject.Find ("PlaytesterMenuGUITexture").GetComponent<GUITexture> ();
+		GUIManager = GameObject.Find ("GUIManager").GetComponent<GUI_Manager> ();
 
 		//make the overlay the same size as the screen
 		textureOverlay.transform.position = new Vector3(0, 0, overlayDepth);
@@ -98,19 +110,23 @@ public class PlaytesterMenu : MonoBehaviour {
 		maxSlideSpeed = slider.maxSpeed.ToString();
 		turnSpeed = slider.rotateSpeed.ToString();
 		turnForce = slider.turnForce.ToString();
+		extraForce = slider.extraForce.ToString();
 		maxHealth = playerStats.maxHealth.ToString();
 		maxStamina = playerStats.maxStamina.ToString();
 		staminaRegen = playerStats.staminaRegen.ToString();
-/*		drHealth = drEnemy.MaxHealth.ToString();
-		drWalkSpeed = drEnemy.walkSpeed.ToString();
-		drChargeSpeed = drEnemy.chargeSpeed.ToString();
-		drRollSpeed = drEnemy.rollSpeed.ToString();
-		drRollTurnSpeed = drEnemy.rollRotationSpeed.ToString();
-		drAttackDamage = drEnemy.attackDamage.ToString();
-		drRollDamage = drEnemy.rollDamage.ToString();
-		drAttackRange = drEnemy.attackRange.ToString();
-		drRollRange = drEnemy.rollRange.ToString();
-		drDetectRange = drEnemy.viewRange.ToString();*/
+
+		if (drEnemies.Length > 0)
+		{
+			drHealth = drEnemies[0].MaxHealth.ToString();
+			drWalkSpeed = drEnemies[0].walkSpeed.ToString();
+			drChargeSpeed = drEnemies[0].chargeSpeed.ToString();
+			drRollSpeed = drEnemies[0].rollSpeed.ToString();
+			drAttackDamage = drEnemies[0].attackDamage.ToString();
+			drRollDamage = drEnemies[0].rollDamage.ToString();
+			drAttackRange = drEnemies[0].attackRange.ToString();
+			drRollRange = drEnemies[0].rollRange.ToString();
+			drDetectRange = drEnemies[0].viewRange.ToString();
+		}
 		#endregion
 	}
 	
@@ -124,12 +140,15 @@ public class PlaytesterMenu : MonoBehaviour {
 				updateValues();
 				menuOpen = false;
 				textureOverlay.enabled = false;
+				GUIManager.enabled = true;
 				Time.timeScale = 1;
+
 			}
 			else
 			{
 				menuOpen=true;
 				textureOverlay.enabled = true;
+				GUIManager.enabled = false;
 				Time.timeScale = 0;
 			}
 		}
@@ -163,6 +182,7 @@ public class PlaytesterMenu : MonoBehaviour {
 				maxSlideSpeed = labelTxtField(maxSlideSpeed, "Maximum Slide Speed");
 				turnSpeed = labelTxtField(turnSpeed, "Sliding Turn Speed");
 				turnForce = labelTxtField(turnForce, "Turning Force");
+				extraForce = labelTxtField(extraForce, "Extra Sliding Force");
 
 				GUILayout.Label("Stats", headerStyle);
 				maxHealth = labelTxtField(maxHealth, "Maximum Health");
@@ -171,12 +191,13 @@ public class PlaytesterMenu : MonoBehaviour {
 			break;
 
 		case "Dune Roamer":
+			if (drEnemies.Length > 0)
+			{
 				GUILayout.Label("Stats", headerStyle);
 				drHealth = labelTxtField(drHealth, "Health");
 				drWalkSpeed = labelTxtField(drWalkSpeed, "Walk Speed");
 				drChargeSpeed = labelTxtField(drChargeSpeed, "Charge Speed");
 				drRollSpeed = labelTxtField(drRollSpeed, "Roll Speed");
-				drRollTurnSpeed = labelTxtField(drRollTurnSpeed, "Roll Turn Speed");
 
 				GUILayout.Label("Combat", headerStyle);
 				drAttackDamage = labelTxtField(drAttackDamage, "Headbutt Damage");
@@ -184,6 +205,10 @@ public class PlaytesterMenu : MonoBehaviour {
 				drAttackRange = labelTxtField(drAttackRange, "Charge Range");
 				drRollRange = labelTxtField(drRollRange, "Approach Range");
 				drDetectRange = labelTxtField(drDetectRange, "Detection Range");
+			} else
+			{
+				GUILayout.Label("No Dune Roamers in scene.", headerStyle);
+			}
 			break;
 		}
 
@@ -266,72 +291,73 @@ public class PlaytesterMenu : MonoBehaviour {
 			staminaRegen = playerStats.staminaRegen.ToString();
 		}
 
-
-
-
-/*		if (float.TryParse(drHealth, out newDRHealth)){
-			drEnemy.MaxHealth = newDRHealth;
+		if (float.TryParse(extraForce, out newExtraForce)){
+			slider.extraForce = newExtraForce;
 		} else {
-			drHealth = drEnemy.MaxHealth.ToString();
-		}
-
-		if (float.TryParse(drWalkSpeed, out newDRWalkSpeed)){
-			drEnemy.walkSpeed = newDRWalkSpeed;
-		} else {
-			drWalkSpeed = drEnemy.walkSpeed.ToString();
-		}
-
-		if (float.TryParse(drChargeSpeed, out newDRChargeSpeed)){
-			drEnemy.chargeSpeed = newDRChargeSpeed;
-		} else {
-			drChargeSpeed = drEnemy.chargeSpeed.ToString();
-		}
-
-		if (float.TryParse(drRollSpeed, out newDRRollSpeed)){
-			drEnemy.rollSpeed = newDRRollSpeed;
-		} else {
-			drRollSpeed = drEnemy.rollSpeed.ToString();
-		}
-
-		if (float.TryParse(drRollTurnSpeed, out newDRRollTurnSpeed)){
-			drEnemy.rollRotationSpeed = newDRRollTurnSpeed;
-		} else {
-			drRollTurnSpeed = drEnemy.rollRotationSpeed.ToString();
+			extraForce = slider.extraForce.ToString();
 		}
 
 
 
+		foreach(DuneRoamerController dr in drEnemies)
+		{
+			if (float.TryParse(drHealth, out newDRHealth)){
+				dr.MaxHealth = newDRHealth;
+			} else {
+				drHealth = dr.MaxHealth.ToString();
+			}
 
-		if (float.TryParse(drAttackDamage, out newDRAttackDamage)){
-			drEnemy.attackDamage = newDRAttackDamage;
-		} else {
-			drAttackDamage = drEnemy.attackDamage.ToString();
-		}
+			if (float.TryParse(drWalkSpeed, out newDRWalkSpeed)){
+				dr.walkSpeed = newDRWalkSpeed;
+			} else {
+				drWalkSpeed = dr.walkSpeed.ToString();
+			}
 
-		if (float.TryParse(drRollDamage, out newDRRollDamage)){
-			drEnemy.rollDamage = newDRRollDamage;
-		} else {
-			drRollDamage = drEnemy.rollDamage.ToString();
-		}
+			if (float.TryParse(drChargeSpeed, out newDRChargeSpeed)){
+				dr.chargeSpeed = newDRChargeSpeed;
+			} else {
+				drChargeSpeed = dr.chargeSpeed.ToString();
+			}
 
-		if (float.TryParse(drAttackRange, out newDRAttackRange)){
-			drEnemy.attackRange = newDRAttackRange;
-		} else {
-			drAttackRange = drEnemy.attackRange.ToString();
-		}
+			if (float.TryParse(drRollSpeed, out newDRRollSpeed)){
+				dr.rollSpeed = newDRRollSpeed;
+			} else {
+				drRollSpeed = dr.rollSpeed.ToString();
+			}
 
-		if (float.TryParse(drRollRange, out newDRRollRange)){
-			drEnemy.rollRange = newDRRollRange;
-		} else {
-			drRollRange = drEnemy.rollRange.ToString();
-		}
 
-		if (float.TryParse(drDetectRange, out newDRDetectRange)){
-			drEnemy.viewRange = newDRDetectRange;
-		} else {
-			drDetectRange = drEnemy.viewRange.ToString();
+
+
+			if (float.TryParse(drAttackDamage, out newDRAttackDamage)){
+				dr.attackDamage = newDRAttackDamage;
+			} else {
+				drAttackDamage = dr.attackDamage.ToString();
+			}
+
+			if (float.TryParse(drRollDamage, out newDRRollDamage)){
+				dr.rollDamage = newDRRollDamage;
+			} else {
+				drRollDamage = dr.rollDamage.ToString();
+			}
+
+			if (float.TryParse(drAttackRange, out newDRAttackRange)){
+				dr.attackRange = newDRAttackRange;
+			} else {
+				drAttackRange = dr.attackRange.ToString();
+			}
+
+			if (float.TryParse(drRollRange, out newDRRollRange)){
+				dr.rollRange = newDRRollRange;
+			} else {
+				drRollRange = dr.rollRange.ToString();
+			}
+
+			if (float.TryParse(drDetectRange, out newDRDetectRange)){
+				dr.viewRange = newDRDetectRange;
+			} else {
+				drDetectRange = dr.viewRange.ToString();
+			}
 		}
-*/
 	}
 
 	//create a label with a text field next to it using automatic layout
