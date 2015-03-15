@@ -13690,6 +13690,8 @@ MonoBehaviour:
   maxSpeed: 20
   turnForce: 50
   extraForce: 1000
+  maxPitchAngle: 30
+  maxRollAngle: 20
 --- !u!114 &657348624
 MonoBehaviour:
   m_ObjectHideFlags: 0

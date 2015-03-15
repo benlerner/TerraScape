@@ -413,27 +413,13 @@ public class ThirdPersonController : MonoBehaviour
 			slide();
 		}*/
 		if (!hanging && !isSliding && !jumping && cutScene==0){
-			if (Input.GetKey(KeyCode.Z))
+			if (Input.GetKeyDown(KeyCode.Z))
 			{
-				switchTime+=1;
-				movable = false;
-				switching = true;
-				//cycle items LEFT
-				if (switchTime>=100){
-					management.CycleItems(true);
-					switchTime=0;
-				}
+				management.CycleItems(true);
 			}
-			else if (Input.GetKey(KeyCode.C))
+			else if (Input.GetKeyDown(KeyCode.C))
 			{
-				switchTime+=1;
-				movable = false;
-				switching = true;
-				//Cycle items RIGHT
-				if (switchTime>=100){
-					management.CycleItems(false);
-					switchTime=0;
-				}
+				management.CycleItems(false);
 			}
 			else if (switching == true && Input.GetKeyUp(KeyCode.C) || Input.GetKeyUp(KeyCode.Z)){
 				switchTime=0;

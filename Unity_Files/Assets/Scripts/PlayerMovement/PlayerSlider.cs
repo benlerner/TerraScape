@@ -15,6 +15,8 @@ public class PlayerSlider : MonoBehaviour {
 	public static PlayerSlider instance;
 	public float turnForce = 50f;
 	public float extraForce = 1000f;
+	public float maxPitchAngle = 30f;
+	public float maxRollAngle = 20f;
 
 	private float elevationAngle = 0;
 
@@ -96,6 +98,42 @@ public class PlayerSlider : MonoBehaviour {
 
 			rigidbody.AddForce(Vector3.down * extraForce);
 		}
+
+		//make sure zenobia does not tilt too far
+		//get pitch angle (X axis). Positive = tilt downwards, Negative = tilt upwards
+		float pitchAngle = transform.eulerAngles.x;
+		if (pitchAngle > 180)
+			pitchAngle -= 360;
+		//get roll angle (Z axis). Positive = tilt left, Negative = tilt right (from behind)
+		float rollAngle = transform.eulerAngles.z;
+		if (rollAngle > 180)
+			rollAngle -= 360;
+
+		if (Mathf.Abs(pitchAngle) > maxPitchAngle)
+		{
+			if (Mathf.Sign(pitchAngle) == 1)
+			{
+				pitchAngle = maxPitchAngle;
+			}
+			else{
+				pitchAngle = 360 - maxPitchAngle;
+			}
+
+		}
+
+		if (Mathf.Abs(rollAngle) > maxRollAngle)
+		{
+			if (Mathf.Sign(rollAngle) == 1)
+			{
+				rollAngle = maxRollAngle;
+			}
+			else
+			{
+				rollAngle = 360 - maxRollAngle;
+			}
+		}
+		transform.eulerAngles = new Vector3 (pitchAngle, transform.eulerAngles.y, rollAngle);
+	
 		//limit speed
 		if (rigidbody.velocity.sqrMagnitude > maxSpeed * maxSpeed)
 		{
