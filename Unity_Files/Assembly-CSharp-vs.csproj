@@ -74,6 +74,7 @@
      <Compile Include="Assets\Scripts\Level Triggers\deathBox.cs" />
      <Compile Include="Assets\Scripts\Level Triggers\levelTransition.cs" />
      <Compile Include="Assets\Scripts\Level Triggers\manualCheckpointSystem.cs" />
+     <Compile Include="Assets\Scripts\PlayerMovement\ImpactReceiver.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement\InterpolateToTarget.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement\Player.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement\PlayerSlider.cs" />

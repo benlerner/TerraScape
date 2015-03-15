@@ -826,9 +826,10 @@ GameObject:
   - 136: {fileID: 13668028}
   - 65: {fileID: 6568030}
   - 82: {fileID: 8268028}
-  - 146: {fileID: 14600000}
   - 114: {fileID: 11427124}
   - 195: {fileID: 19518242}
+  - 135: {fileID: 13500022}
+  - 146: {fileID: 14600000}
   m_Layer: 10
   m_Name: Dune Roamer V2
   m_TagString: Roamer
@@ -1696,9 +1697,9 @@ MonoBehaviour:
   chaseWaitTime: 5
   rotationSpeed: 0
   fieldOfView: 200
-  viewRange: 60
+  viewRange: 30
   attackRange: 7
-  rollRange: 30
+  rollRange: 20
   attackArea: {fileID: 0}
   MaxHealth: 1000
   currentHealth: 1000
@@ -1706,10 +1707,23 @@ MonoBehaviour:
   rollRotationSpeed: 5
   rollDamage: 70
   hitObject: 0
-  rollingCollider: {fileID: 14600000}
+  rollingCollider: {fileID: 0}
   walkingColliders:
   - {fileID: 6568028}
   - {fileID: 13668028}
+  animator: {fileID: 0}
+--- !u!135 &13500022
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 168074}
+  m_Material: {fileID: 13400000, guid: f372c6614c6b2f84498b7efcb88a1b5e, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: .5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &13668028
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -1808,7 +1822,7 @@ SkinnedMeshRenderer:
   m_DirtyAABB: 0
 --- !u!146 &14600000
 WheelCollider:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 168074}
@@ -1845,7 +1859,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

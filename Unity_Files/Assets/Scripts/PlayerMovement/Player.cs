@@ -38,6 +38,7 @@ public class Player : MonoBehaviour
 	private ThirdPersonController controller;
 	private GameObject inventoryObj;
 	private inventoryGUI inventoryGui;
+	private ImpactReceiver impactReciever;
 
     void Awake()
     {
@@ -47,6 +48,7 @@ public class Player : MonoBehaviour
 		inventoryGui = inventoryObj.GetComponent<inventoryGUI>();
 		healthBar = GameObject.FindGameObjectWithTag ("health").GetComponent<RectTransform>();
 		staminaBar = GameObject.FindGameObjectWithTag ("stamina").GetComponent<RectTransform>();
+		impactReciever = GetComponent<ImpactReceiver> ();
 		healthBarX = healthBar.localPosition.x;
 		staminaBarX = staminaBar.localPosition.x;
 		maxBarValue = healthBar.localPosition.y;
@@ -135,12 +137,23 @@ public class Player : MonoBehaviour
         //Reduces our current health and updates game information
         currentHealth -= dmgAmt;
         GUI_Manager.health.text = "Health: " + currentHealth;
-
+		Debug.Log ("Current health is " + currentHealth);
         if (currentHealth <= 0)
         {
             Die();
         }
     }
+
+	//causes Zenobia to take damage and be knocked in forceDirection
+	public void TakeImpactDamage (float dmgAmt, Vector3 forceDirection, float forceMagnitude)
+	{
+		if (forceMagnitude > 0)
+		{
+			impactReciever.AddImpact(forceDirection, forceMagnitude);
+		}
+
+		TakeDamage (dmgAmt);
+	}
 
     void Die()
     {
