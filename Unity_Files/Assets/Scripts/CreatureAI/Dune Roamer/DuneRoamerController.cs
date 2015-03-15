@@ -36,8 +36,10 @@ public class DuneRoamerController : MonoBehaviour {
 	public float rollDamage = 70f;
 
 	public DuneRoamerHit hitObject;
-	public WheelCollider rollingCollider;
+	public SphereCollider rollingCollider;
 	public Collider[] walkingColliders;
+
+	public Animator animator;
 
 	//how long the object waits after dying before fading out
 	private float persistDuration = 5f;
@@ -53,6 +55,12 @@ public class DuneRoamerController : MonoBehaviour {
 		hitObject = DuneRoamerHit.None;
 		//startAlpha = renderer.material.color.a;
 		navAgent.speed = walkSpeed;
+
+		//disable rigidbody
+		rigidbody.isKinematic = true;
+		rigidbody.detectCollisions = false;
+
+		animator = GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
@@ -185,6 +193,11 @@ public class IdleDRState : FSMState
 	public override void DoBeforeEntering ()
 	{
 		Debug.Log ("Entered idle state.");
+		controller.navAgent.enabled = true;
+		
+		//disable rigidbody
+		controller.rigidbody.isKinematic = true;
+		controller.rigidbody.detectCollisions = false;
 	}
 	
 	public override void Reason (GameObject player, GameObject npc)
@@ -198,10 +211,14 @@ public class IdleDRState : FSMState
 	//if the dune roamer has reached its target and it is time to do another action
 	public override void Act (GameObject player, GameObject npc)
 	{
+
 		if (!controller.navAgent.pathPending &&
 			controller.navAgent.remainingDistance <= controller.navAgent.stoppingDistance &&
 			(!controller.navAgent.hasPath || controller.navAgent.velocity.sqrMagnitude == 0f))
 		{
+			if (state == IdleState.Wander)
+				state = IdleState.Idle;
+
 			//wander point reached or as close as it can get
 			if ((timer += Time.deltaTime) >= updatePeriod)
 			{
@@ -211,7 +228,7 @@ public class IdleDRState : FSMState
 					//choose an action at random each second
 					float rand = Random.value;
 					
-					if (rand < 0.5)
+					if (rand < 0.7)
 					{
 						state = IdleState.Idle;
 					} else {
@@ -221,7 +238,6 @@ public class IdleDRState : FSMState
 						                                                          0,
 						                                                          Random.Range(-wanderRange, wanderRange));
 						controller.navAgent.SetDestination(wanderPoint);
-						Debug.Log("New wander point: " + wanderPoint);
 					}
 				}
 			}
@@ -232,29 +248,47 @@ public class IdleDRState : FSMState
 public class ApproachDRState : FSMState
 {
 	public DuneRoamerController controller;
+	private Vector3 playerPosition,
+					controllerPosition,
+					playerHeading;
 
 	public ApproachDRState (DuneRoamerController ctrlr)
 	{
 		stateID = StateID.ApproachStateID;
 		controller = ctrlr;
+		playerPosition = controller.player.transform.position;// + new Vector3 (0, 1.06f, 0);
+		controllerPosition = controller.transform.position;// + new Vector3 (0, 4f, 0);
 	}
 
 	public override void DoBeforeEntering ()
 	{
 		Debug.Log ("Entered approach state.");
+
+		controller.navAgent.enabled = true;
+		
+		//disnable rigidbody
+		controller.rigidbody.isKinematic = true;
+		controller.rigidbody.detectCollisions = false;
+		
+		controller.rigidbody.constraints = RigidbodyConstraints.None;
 	}
 
 	public override void Reason (GameObject player, GameObject npc)
 	{
-		RaycastHit hitInfo;
-		if (Vector3.Distance(controller.transform.position, player.transform.position) > controller.viewRange)
+		RaycastHit hitInfo = new RaycastHit();
+		playerPosition = controller.player.transform.position + new Vector3 (0, 1.06f, 0);
+		controllerPosition = controller.transform.position + new Vector3 (0, 2f, 0);
+		playerHeading = playerPosition - controllerPosition;
+		float playerDistance = playerHeading.magnitude;
+
+		if (playerDistance > controller.viewRange)
 		{
 			controller.SetTransition(Transition.OutOfRange);
 		}
 		//if dune roamer is in attack range and facing player and has line of sight to player, start attacking
-		else if (Vector3.Distance(controller.transform.position, player.transform.position) < controller.attackRange - 3f &&
-		         Vector3.Angle(controller.transform.forward, player.transform.position - controller.transform.position) < 5f &&
-		         Physics.Raycast(controller.transform.position, (player.transform.position - controller.transform.position), out hitInfo, controller.attackRange))
+		else if (playerDistance < controller.attackRange - 3f &&
+		         Vector3.Dot(controller.transform.forward, playerHeading) >= 0.9f &&
+		         Physics.Raycast(controllerPosition, playerHeading, out hitInfo, controller.attackRange))
 		{
 			if (hitInfo.transform == player.transform)
 			{
@@ -262,20 +296,14 @@ public class ApproachDRState : FSMState
 			}
 		}
 		//if dune roamer is in roll range and facing player and has line of sight to player, start rolling
-		else if (Vector3.Distance(controller.transform.position, player.transform.position) < controller.rollRange - 5f &&
-		         Vector3.Angle(controller.transform.forward, player.transform.position - controller.transform.position) < 5f &&
-		         Physics.Raycast(controller.transform.position, (player.transform.position - controller.transform.position), out hitInfo, controller.rollRange))
+		else if (playerDistance < controller.rollRange - 5f &&
+		         Vector3.Dot(controller.transform.forward, playerHeading) >= 0.9f &&
+		         Physics.Raycast(controllerPosition, playerHeading, out hitInfo, controller.rollRange))
 		{
 			if (hitInfo.transform == player.transform)
 			{
 				controller.SetTransition(Transition.RollRange);
 			}
-		}
-		if (Vector3.Distance(controller.transform.position, player.transform.position) < controller.rollRange -5f)
-		{
-			Physics.Raycast(controller.transform.position, (player.transform.position - controller.transform.position), out hitInfo);
-			Debug.Log("In roll range: Raycast = " + hitInfo.transform + ", Player = " + player.transform);
-			Debug.DrawLine(controller.transform.position, hitInfo.transform.position, Color.red, 0.1f);
 		}
 	}
 
@@ -305,6 +333,14 @@ public class RollDRState : FSMState
 			c.enabled = false;
 		}
 		controller.rollingCollider.enabled = true;
+		controller.navAgent.enabled = false;
+
+		//enable rigidbody
+		controller.rigidbody.isKinematic = false;
+		controller.rigidbody.detectCollisions = true;
+
+		//controller.rigidbody.constraints = RigidbodyConstraints.FreezeRotationY ^ RigidbodyConstraints.FreezeRotationZ;
+		//controller.rigidbody.constraints = RigidbodyConstraints.None;
 	}
 
 	public override void Reason (GameObject player, GameObject npc)
@@ -312,6 +348,8 @@ public class RollDRState : FSMState
 		switch (controller.hitObject)
 		{
 		case DuneRoamerHit.Player:
+			Debug.Log("Hit Zenobia!");
+			player.GetComponent<Player>().TakeImpactDamage(70, controller.player.transform.position - controller.transform.position, 10000);
 			controller.SetTransition(Transition.PlayerImpact);
 			return;
 
@@ -337,9 +375,7 @@ public class RollDRState : FSMState
 
 	public override void Act (GameObject player, GameObject npc)
 	{
-		//play rolling animation
-
-		controller.rigidbody.AddRelativeForce (Vector3.forward * 1000);
+		controller.rigidbody.AddRelativeTorque (Vector3.right * 5000);
 		if (controller.rigidbody.velocity.sqrMagnitude > controller.rollSpeed * controller.rollSpeed)
 		{
 			controller.rigidbody.velocity = controller.rigidbody.velocity.normalized * controller.rollSpeed;

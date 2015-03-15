@@ -16,11 +16,9 @@ public class checkPoint : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 		if (other != target) //The colliding object isn't our object
 		{
-			Debug.Log("Wat is dis?");
 			return; //don't do anything if it's not our target
 		}
 		else {
-			Debug.Log("It should work");
 			player.GetComponent<ThirdPersonController>().checkPoint = placeHolder;
 			//Destroy (gameObject, 0);
 		}
