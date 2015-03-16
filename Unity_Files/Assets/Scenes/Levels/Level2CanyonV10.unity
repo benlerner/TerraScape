@@ -49533,6 +49533,7 @@ GameObject:
   - 4: {fileID: 1951410620}
   - 33: {fileID: 1951410619}
   - 23: {fileID: 1951410618}
+  - 64: {fileID: 1951410621}
   m_Layer: 0
   m_Name: pCube104
   m_TagString: Untagged
@@ -49581,6 +49582,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!64 &1951410621
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1951410617}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 1
+  m_Convex: 0
+  m_Mesh: {fileID: 4300104, guid: 2cf92f0712b8b447faf0320c69c28cc4, type: 3}
 --- !u!1 &1951614222
 GameObject:
   m_ObjectHideFlags: 0
