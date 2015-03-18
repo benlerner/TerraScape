@@ -52,9 +52,9 @@ public class DuneRoamerController : MonoBehaviour {
 		//startAlpha = renderer.material.color.a;
 		navAgent.speed = walkSpeed;
 
-		//make sure rigidbody is enabled
-		rigidbody.isKinematic = false;
-		rigidbody.detectCollisions = true;
+		//disable rigidbody
+		rigidbody.isKinematic = true;
+		rigidbody.detectCollisions = false;
 
 		animator = GetComponent<Animator> ();		
 	}
@@ -215,6 +215,10 @@ public class IdleDRState : FSMState
 		Debug.Log ("Entered idle state.");
 		controller.navAgent.enabled = true;
 		controller.navAgent.Stop ();
+
+		//disable rigidbody
+		controller.rigidbody.isKinematic = true;
+		controller.rigidbody.detectCollisions = false;
 	}
 	
 	public override void Reason (GameObject player, GameObject npc)
@@ -286,13 +290,19 @@ public class ApproachDRState : FSMState
 		Debug.Log ("Entered approach state.");
 
 		controller.navAgent.enabled = true;
+		
+		//disnable rigidbody
+		controller.rigidbody.isKinematic = true;
+		controller.rigidbody.detectCollisions = false;
+		
+		controller.rigidbody.constraints = RigidbodyConstraints.None;
 	}
 
 	public override void Reason (GameObject player, GameObject npc)
 	{
 		RaycastHit hitInfo = new RaycastHit();
-		playerPosition = controller.player.transform.TransformPoint(new Vector3 (0, 1.06f, 0));
-		controllerPosition = controller.transform.TransformPoint(new Vector3 (0, 4f, 6f));
+		playerPosition = controller.player.transform.position + new Vector3 (0, 1.06f, 0);
+		controllerPosition = controller.transform.position + new Vector3 (0, 2f, 0);
 		playerHeading = playerPosition - controllerPosition;
 		playerHeading.Normalize ();
 		float playerDistance = playerHeading.magnitude;
@@ -327,7 +337,6 @@ public class ApproachDRState : FSMState
 				controller.SetTransition(Transition.RollRange);
 			}
 		}
-		Debug.DrawLine (controllerPosition, hitInfo.point, Color.red, 0.1f);
 	}
 
 	public override void Act (GameObject player, GameObject npc)
@@ -361,8 +370,13 @@ public class RollDRState : FSMState
 		controller.transform.LookAt(controller.player.transform);
 
 		//enable rigidbody
+		controller.rigidbody.isKinematic = false;
+		controller.rigidbody.detectCollisions = true;
+
 		controller.rigidbody.AddRelativeForce (Vector3.up * 7000, ForceMode.Impulse);
 		controller.rigidbody.AddRelativeForce (Vector3.forward * 60000, ForceMode.Impulse);
+		//controller.rigidbody.constraints = RigidbodyConstraints.FreezeRotationY ^ RigidbodyConstraints.FreezeRotationZ;
+		//controller.rigidbody.constraints = RigidbodyConstraints.None;
 	}
 
 	public override void Reason (GameObject player, GameObject npc)
@@ -400,7 +414,7 @@ public class RollDRState : FSMState
 
 		//also, if the dune roamer tips too far to the side, put it in stunned state as well.
 		float tipAngle = controller.transform.localEulerAngles.z;
-		if ((tipAngle < 90f && tipAngle > 15f) || (tipAngle > 270f && tipAngle - 360f < -15f))
+		if ((tipAngle < 90f && tipAngle > 10f) || (tipAngle > 270f && tipAngle - 360f < -10f))
 		{
 			Debug.Log("Tipped over! Z angle (roll): " + controller.transform.localEulerAngles.z);
 			controller.SetTransition(Transition.OtherImpact);
@@ -470,7 +484,6 @@ public class AttackDRState : FSMState
 		{
 			controller.SetTransition(Transition.PlayerAppears);
 			controller.animator.SetBool("walk", false);
-			chargeTimer = 0;
 		}
 	}
 
@@ -484,7 +497,6 @@ public class AttackDRState : FSMState
 		switch (controller.hitObject)
 		{
 		case DuneRoamerHit.Player:
-			Debug.Log("Headbutted player!");
 			controller.doPlayerImpact(40, 6000);
 			break;
 		}
@@ -551,12 +563,7 @@ public class StunnedDRState : FSMState
 	public override void Act (GameObject player, GameObject npc)
 	{
 		//play stunned animation
-
-		//only increase timer if not moving
-		if (controller.rigidbody.velocity.sqrMagnitude < 0.01)
-		{
-			stunTimer += Time.fixedDeltaTime;
-		}
+		stunTimer += Time.fixedDeltaTime;
 	}
 }
 
@@ -581,14 +588,8 @@ public class FallingDRState : FSMState
 		if (controller.rigidbody.velocity.y == 0)
 		{
 			//take damage only if falling speed over threshold
-			if (fallingSpeed > 5f)
-			{
-				controller.takeDamage(Mathf.Clamp(fallingSpeed - 5f, 0, float.PositiveInfinity) * 20);
-			}
-			if (controller.rigidbody.velocity.sqrMagnitude < 0.01)
-			{
-				controller.SetTransition(Transition.Crash);
-			}
+			controller.takeDamage(Mathf.Clamp(fallingSpeed - 5f, 0, float.PositiveInfinity) * 20);
+			controller.SetTransition(Transition.Crash);
 		}
 	}
 	
@@ -596,10 +597,5 @@ public class FallingDRState : FSMState
 	{
 		//play falling animation
 		fallingSpeed = controller.rigidbody.velocity.y;
-	}
-
-	public override void DoBeforeLeaving ()
-	{
-		//play getting up animation
 	}
 }
