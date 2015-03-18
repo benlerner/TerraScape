@@ -73,6 +73,7 @@ NavMeshSettings:
     minRegionArea: 3
     widthInaccuracy: 5.80000019
     heightInaccuracy: 2.5
+    tileSizeHint: 0
   m_NavMesh: {fileID: 19400000, guid: d188279a7093e0b44bbb82463c331977, type: 2}
 --- !u!1 &4868156
 GameObject:
@@ -4739,7 +4740,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 05c6464eb8fa4d845a307c49f4356f03, type: 2}
   m_PrefabInternal: {fileID: 1577169389}
   m_GameObject: {fileID: 597529518}
-  m_LocalRotation: {x: 0, y: -.668678284, z: 0, w: .74355185}
+  m_LocalRotation: {x: 0, y: -.668678343, z: 0, w: .74355191}
   m_LocalPosition: {x: -2.45819163, y: 2.77105284, z: 1.18865001}
   m_LocalScale: {x: .118613146, y: .056998387, z: 2.69711947}
   m_Children: []
@@ -12630,8 +12631,8 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ignoreReversedGraphics: 1
-  blockingObjects: 0
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -13706,7 +13707,7 @@ Transform:
   m_PrefabParentObject: {fileID: 411134, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
   m_PrefabInternal: {fileID: 1194578129}
   m_GameObject: {fileID: 1993018344}
-  m_LocalRotation: {x: .796863794, y: .461821824, z: -.150577351, w: -.35924226}
+  m_LocalRotation: {x: .796863914, y: .461821884, z: -.150577366, w: -.35924229}
   m_LocalPosition: {x: -.193245322, y: -.656920612, z: 1.17760837}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -14093,10 +14094,9 @@ MonoBehaviour:
   chaseWaitTime: 5
   rotationSpeed: 0
   fieldOfView: 200
-  viewRange: 30
-  attackRange: 7
-  rollRange: 20
-  attackArea: {fileID: 0}
+  viewRange: 70
+  attackRange: 25
+  rollRange: 55
   MaxHealth: 1000
   currentHealth: 1000
   rollSpeed: 15

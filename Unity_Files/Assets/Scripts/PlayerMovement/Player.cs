@@ -147,17 +147,17 @@ public class Player : MonoBehaviour
 	//causes Zenobia to take damage and be knocked in forceDirection
 	public void TakeImpactDamage (float dmgAmt, Vector3 forceDirection, float forceMagnitude)
 	{
-		if (forceMagnitude > 0)
+		TakeDamage (dmgAmt);
+		if (forceMagnitude > 0 && currentHealth > 0)
 		{
 			impactReciever.AddImpact(forceDirection, forceMagnitude);
 		}
-
-		TakeDamage (dmgAmt);
 	}
 
     void Die()
     {
         //restart the level
+		impactReciever.StopImpact ();
 		controller.respawn ();
 		currentHealth = maxHealth;
 		currentStamina = maxStamina;

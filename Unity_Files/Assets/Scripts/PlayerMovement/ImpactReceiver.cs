@@ -23,4 +23,10 @@ public class ImpactReceiver : MonoBehaviour {
 		if (dir.y < 0) dir.y = -dir.y; // reflect down force on the ground
 		impact += dir.normalized * force / mass;
 	}
+
+	//stop impact - when player health reaches 0
+	public void StopImpact()
+	{
+		impact = Vector3.zero;
+	}
 }

@@ -14,17 +14,10 @@ public class DuneRoamerController : MonoBehaviour {
 	public float chaseWaitTime = 5.0f; //amount of time to wait when last known position is reached.
 	float chaseTimer;
 	
-	public float rotationSpeed;
-	
 	public float fieldOfView = 200f;
 	public float viewRange = 60f;
 	public float attackRange = 7f;
 	public float rollRange = 30f;
-	
-	Vector3 lastPlayerSighting;
-	
-	Rigidbody collider;
-	public BoxCollider attackArea;
 	
 	public float MaxHealth = 1000f;
 	public float currentHealth = 1000f;
@@ -32,8 +25,11 @@ public class DuneRoamerController : MonoBehaviour {
 	bool alive = true;
 	
 	public float rollSpeed = 15f;
-	public float rollRotationSpeed = 5f;
 	public float rollDamage = 70f;
+
+	//has to wait 10 seconds before it can do another roll attack
+	public readonly float rollCooldown = 10f;
+	public float rollTimer = 0f;
 
 	public DuneRoamerHit hitObject;
 	public SphereCollider rollingCollider;
@@ -60,7 +56,7 @@ public class DuneRoamerController : MonoBehaviour {
 		rigidbody.isKinematic = true;
 		rigidbody.detectCollisions = false;
 
-		animator = GetComponent<Animator> ();
+		animator = GetComponent<Animator> ();		
 	}
 	
 	// Update is called once per frame
@@ -73,21 +69,25 @@ public class DuneRoamerController : MonoBehaviour {
 	}
 
 
+	//states where the dune roamer's roll cooldown does not decrease
+	private StateID[] noRollCooldownStates = {StateID.RollStateID, StateID.FallingStateID, StateID.TrappedStateID, StateID.StunnedStateID}; 
 
 	void Update()
 	{
+		//decrease roll cooldown if not in a state which forbids it
+		if (System.Array.IndexOf(noRollCooldownStates, fsm.CurrentStateID) == -1)
+		{
+			if ((rollTimer -= Time.deltaTime) < 0)
+			{
+				rollTimer = 0;
+			}
+		}
 		if (currentHealth == 0)
 		{
 			//[ANIMATE] play death animation
 			if ((persistTimer += Time.deltaTime) >= persistDuration)
 			{
 				Destroy (gameObject);
-				/* Doesn't work yet
-				renderer.material.color.a = Mathf.Lerp(startAlpha, 0f, fadeTime);
-				if (renderer.material.color.a == 0)
-				{
-					Destroy(gameObject);
-				}*/
 			}
 		}
 	}
@@ -105,13 +105,13 @@ public class DuneRoamerController : MonoBehaviour {
 		approach.AddTransition (Transition.OutOfRange, StateID.IdleStateID);
 
 		RollDRState roll = new RollDRState (this);
-		roll.AddTransition (Transition.PlayerImpact, StateID.ApproachStateID);
+		roll.AddTransition (Transition.PlayerImpact, StateID.IdleStateID);
 		roll.AddTransition (Transition.TrapImpact, StateID.TrappedStateID);
 		roll.AddTransition (Transition.OtherImpact, StateID.StunnedStateID);
 		roll.AddTransition (Transition.InAir, StateID.FallingStateID);
 
 		AttackDRState attack = new AttackDRState (this);
-		attack.AddTransition (Transition.PlayerAppears, StateID.ApproachStateID);
+		attack.AddTransition (Transition.PlayerAppears, StateID.IdleStateID);
 		attack.AddTransition (Transition.RollRange, StateID.RollStateID);
 
 		TrappedDRState trapped = new TrappedDRState (this);
@@ -131,6 +131,8 @@ public class DuneRoamerController : MonoBehaviour {
 		fsm.AddState (trapped);
 		fsm.AddState (stunned);
 		fsm.AddState (falling);
+
+		Debug.Log ("Entered idle state.");
 	}
 
 	void OnCollisionEnter (Collision other)
@@ -138,6 +140,7 @@ public class DuneRoamerController : MonoBehaviour {
 		if (other.gameObject.tag.Equals("Player"))
 		{
 			hitObject = DuneRoamerHit.Player;
+			Debug.Log("Hit the player");
 		} else if (other.gameObject.tag.Equals("Trap"))
 		{
 			hitObject = DuneRoamerHit.Trap;
@@ -154,6 +157,23 @@ public class DuneRoamerController : MonoBehaviour {
 		{
 			currentHealth -= dmg;
 		}
+	}
+
+	//hit the player, dealing damage and knocking the player back.
+	public void doPlayerImpact (float dmg, float impactForce)
+	{
+		Vector3 impactVector = player.transform.position - transform.position;
+		//remove vertical component
+		impactVector.y = 0;
+
+		//normalize and add small y component to make the vector point away and slightly up
+		impactVector.Normalize ();
+		impactVector.y = 0.2f;
+		impactVector.Normalize ();
+
+		Debug.Log("Hit Zenobia! Impact direction = " + impactVector);
+		player.GetComponent<Player>().TakeImpactDamage(dmg, impactVector, impactForce);
+		hitObject = DuneRoamerHit.None;
 	}
 }
 
@@ -194,7 +214,8 @@ public class IdleDRState : FSMState
 	{
 		Debug.Log ("Entered idle state.");
 		controller.navAgent.enabled = true;
-		
+		controller.navAgent.Stop ();
+
 		//disable rigidbody
 		controller.rigidbody.isKinematic = true;
 		controller.rigidbody.detectCollisions = false;
@@ -217,10 +238,13 @@ public class IdleDRState : FSMState
 			(!controller.navAgent.hasPath || controller.navAgent.velocity.sqrMagnitude == 0f))
 		{
 			if (state == IdleState.Wander)
+			{
 				state = IdleState.Idle;
+				controller.animator.SetBool("walk", false);
+			}
 
 			//wander point reached or as close as it can get
-			if ((timer += Time.deltaTime) >= updatePeriod)
+			if ((timer += Time.fixedDeltaTime) >= updatePeriod)
 			{
 				timer = 0;
 				if (state == IdleState.Idle)
@@ -238,6 +262,7 @@ public class IdleDRState : FSMState
 						                                                          0,
 						                                                          Random.Range(-wanderRange, wanderRange));
 						controller.navAgent.SetDestination(wanderPoint);
+						controller.animator.SetBool("walk", true);
 					}
 				}
 			}
@@ -279,29 +304,36 @@ public class ApproachDRState : FSMState
 		playerPosition = controller.player.transform.position + new Vector3 (0, 1.06f, 0);
 		controllerPosition = controller.transform.position + new Vector3 (0, 2f, 0);
 		playerHeading = playerPosition - controllerPosition;
+		playerHeading.Normalize ();
 		float playerDistance = playerHeading.magnitude;
+
+		float headingAngle = Vector3.Dot (controller.transform.forward, playerHeading);
 
 		if (playerDistance > controller.viewRange)
 		{
 			controller.SetTransition(Transition.OutOfRange);
 		}
 		//if dune roamer is in attack range and facing player and has line of sight to player, start attacking
-		else if (playerDistance < controller.attackRange - 3f &&
-		         Vector3.Dot(controller.transform.forward, playerHeading) >= 0.9f &&
+		else if (playerDistance < controller.attackRange &&
+		         headingAngle >= 0.99f &&
 		         Physics.Raycast(controllerPosition, playerHeading, out hitInfo, controller.attackRange))
 		{
 			if (hitInfo.transform == player.transform)
 			{
+				Debug.Log("Angle to player: " + headingAngle);
 				controller.SetTransition(Transition.AttackRange);
 			}
 		}
 		//if dune roamer is in roll range and facing player and has line of sight to player, start rolling
-		else if (playerDistance < controller.rollRange - 5f &&
-		         Vector3.Dot(controller.transform.forward, playerHeading) >= 0.9f &&
+		//also check if not too close to attack range and roll is off cooldown.
+		else if (playerDistance < controller.rollRange &&
+		         controller.rollTimer == 0 &&
+		         headingAngle >= 0.99f &&
 		         Physics.Raycast(controllerPosition, playerHeading, out hitInfo, controller.rollRange))
 		{
 			if (hitInfo.transform == player.transform)
 			{
+				Debug.Log("Angle to player: " + headingAngle);
 				controller.SetTransition(Transition.RollRange);
 			}
 		}
@@ -335,10 +367,14 @@ public class RollDRState : FSMState
 		controller.rollingCollider.enabled = true;
 		controller.navAgent.enabled = false;
 
+		controller.transform.LookAt(controller.player.transform);
+
 		//enable rigidbody
 		controller.rigidbody.isKinematic = false;
 		controller.rigidbody.detectCollisions = true;
 
+		controller.rigidbody.AddRelativeForce (Vector3.up * 7000, ForceMode.Impulse);
+		controller.rigidbody.AddRelativeForce (Vector3.forward * 60000, ForceMode.Impulse);
 		//controller.rigidbody.constraints = RigidbodyConstraints.FreezeRotationY ^ RigidbodyConstraints.FreezeRotationZ;
 		//controller.rigidbody.constraints = RigidbodyConstraints.None;
 	}
@@ -348,24 +384,43 @@ public class RollDRState : FSMState
 		switch (controller.hitObject)
 		{
 		case DuneRoamerHit.Player:
-			Debug.Log("Hit Zenobia!");
-			player.GetComponent<Player>().TakeImpactDamage(70, controller.player.transform.position - controller.transform.position, 10000);
+			//hit zenobia
+			controller.doPlayerImpact(90, 10000);
 			controller.SetTransition(Transition.PlayerImpact);
+			controller.rollTimer = controller.rollCooldown;
 			return;
 
 		case DuneRoamerHit.Trap:
+			controller.hitObject = DuneRoamerHit.None;
 			controller.SetTransition(Transition.TrapImpact);
+			controller.rollTimer = controller.rollCooldown;
 			return;
 		}
 
-		//if the dune roamer has slowed down a lot last frame, then it's hit something
-		if (lastFrameSpeed - controller.rigidbody.velocity.magnitude > controller.rollSpeed * 0.75)
+		Vector3 currentFrameVelocity = controller.rigidbody.velocity;
+		currentFrameVelocity.y = 0;
+		float currentFrameSpeed = currentFrameVelocity.magnitude;
+
+		//positive means slow down
+		float currentFrameAcceleration = (lastFrameSpeed - currentFrameSpeed) / Time.fixedDeltaTime;
+
+		//if the dune roamer has slowed down a lot last frame, then it's hit something so go to stunned state.
+		if (currentFrameAcceleration > 120 || (currentFrameSpeed < lastFrameSpeed * 0.6 && currentFrameSpeed > 10))
 		{
+			Debug.Log("Lost a lot of speed! Acceleration for this frame: " + currentFrameAcceleration);
 			controller.SetTransition(Transition.OtherImpact);
 			return;
 		}
 
-		//if vertical velocity is above a certain threshold and has been in air for some time, start falling
+		//also, if the dune roamer tips too far to the side, put it in stunned state as well.
+		float tipAngle = controller.transform.localEulerAngles.z;
+		if ((tipAngle < 90f && tipAngle > 10f) || (tipAngle > 270f && tipAngle - 360f < -10f))
+		{
+			Debug.Log("Tipped over! Z angle (roll): " + controller.transform.localEulerAngles.z);
+			controller.SetTransition(Transition.OtherImpact);
+		}
+
+		//if vertical velocity is above a certain threshold, start falling
 		if (controller.rigidbody.velocity.y < -10f)
 		{
 			controller.SetTransition(Transition.InAir);
@@ -375,12 +430,14 @@ public class RollDRState : FSMState
 
 	public override void Act (GameObject player, GameObject npc)
 	{
-		controller.rigidbody.AddRelativeTorque (Vector3.right * 5000);
+		//controller.rigidbody.AddRelativeTorque (Vector3.right * 5000);
 		if (controller.rigidbody.velocity.sqrMagnitude > controller.rollSpeed * controller.rollSpeed)
 		{
 			controller.rigidbody.velocity = controller.rigidbody.velocity.normalized * controller.rollSpeed;
 		}
-		lastFrameSpeed = controller.rigidbody.velocity.magnitude;
+		Vector3 lastFrameVelocity = controller.rigidbody.velocity;
+		lastFrameVelocity.y = 0;
+		lastFrameSpeed = lastFrameVelocity.magnitude;
 	}
 
 	public override void DoBeforeLeaving ()
@@ -413,24 +470,36 @@ public class AttackDRState : FSMState
 	{
 		Debug.Log ("Entered attack state.");
 		controller.transform.LookAt(controller.player.transform);
-		chargeDuration = Vector3.Distance (controller.transform.position, controller.player.transform.position) / controller.chargeSpeed + 1f;
+		chargeDuration = Vector3.Distance (controller.transform.position, controller.player.transform.position) / controller.chargeSpeed + 3f;
+		controller.animator.SetBool ("walk", true);
 	}
 	public override void Reason (GameObject player, GameObject npc)
 	{
+
 		if (controller.rigidbody.velocity.y < -10f)
 		{
 			controller.SetTransition(Transition.InAir);
+			controller.animator.SetBool("walk", false);
 		} else if (chargeTimer > chargeDuration)
 		{
 			controller.SetTransition(Transition.PlayerAppears);
+			controller.animator.SetBool("walk", false);
 		}
 	}
 
 	public override void Act (GameObject player, GameObject npc)
 	{
 		//[ANIMATE] play charging animation
-		controller.transform.Translate (Vector3.forward * controller.chargeSpeed * Time.deltaTime, Space.Self);
-		chargeTimer += Time.deltaTime;
+
+		controller.navAgent.Move (controller.transform.TransformDirection(Vector3.forward) * controller.chargeSpeed * Time.fixedDeltaTime);
+		chargeTimer += Time.fixedDeltaTime;
+
+		switch (controller.hitObject)
+		{
+		case DuneRoamerHit.Player:
+			controller.doPlayerImpact(40, 6000);
+			break;
+		}
 	}
 }
 
@@ -462,7 +531,7 @@ public class TrappedDRState : FSMState
 	public override void Act (GameObject player, GameObject npc)
 	{
 		//play stunned animation
-		trapTimer += Time.deltaTime;
+		trapTimer += Time.fixedDeltaTime;
 	}
 }
 
@@ -494,7 +563,7 @@ public class StunnedDRState : FSMState
 	public override void Act (GameObject player, GameObject npc)
 	{
 		//play stunned animation
-		stunTimer += Time.deltaTime;
+		stunTimer += Time.fixedDeltaTime;
 	}
 }
 

@@ -36,7 +36,6 @@ GameObject:
   - 136: {fileID: 13600002}
   - 136: {fileID: 13600004}
   - 114: {fileID: 11417440}
-  - 114: {fileID: 11400002}
   - 114: {fileID: 11452100}
   m_Layer: 8
   m_Name: zenobia
@@ -2061,7 +2060,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: d0537dc79732bd440a0cd279ba3b0603, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -2191,27 +2190,6 @@ MonoBehaviour:
   snapDuration: 3
   snapTimer: 0
   projectileOffset: {x: 0, y: 2, z: .5}
---- !u!114 &11400002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8557c72e16c73fb41b3f0a7fcc9c7358, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  forwardSpeed: 10
-  sprintSpeed: 15
-  backwardSpeed: 8
-  strafingSpeed: 6
-  slideSpeed: 10
-  jumpSpeed: 6
-  gravity: 21
-  terminalVelocity: 20
-  slideThreshold: .800000012
-  maxControllableSlideMagnitude: .400000006
 --- !u!114 &11400228
 MonoBehaviour:
   m_ObjectHideFlags: 1
