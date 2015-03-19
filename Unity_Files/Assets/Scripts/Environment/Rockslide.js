@@ -6,8 +6,8 @@ function OnTriggerEnter (other : Collider) {
 	var speed : float = rb.velocity.magnitude;
 	//do more damage to roamer
 	if (target.tag.Equals("Roamer") && speed > 2){
-		target.SendMessage("TakeDamage", 500);
+		target.SendMessage("TakeDamage", 350, SendMessageOptions.DontRequireReceiver);
 	}else if (target.tag.Equals("Player" && speed > 2)){
-		target.SendMessage("TakeDamage", 10);
+		target.SendMessage("TakeDamage", 10, SendMessageOptions.DontRequireReceiver);
 	}
 }

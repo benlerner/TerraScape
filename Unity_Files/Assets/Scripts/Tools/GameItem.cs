@@ -40,13 +40,16 @@ public class GameItem : MonoBehaviour
 
 	void OnTriggerStay(Collider other) {
 		GUI_Manager.message.text = "Press Q to pick up the " + itemName;
+		Debug.Log("Something touching item");
 		if (other != target) //The colliding object isn't our object
 		{
+
 			//Debug.Log("something's wrong");
 			return; //don't do anything if it's not our target
 		}
 		else {
 			if(Input.GetKeyDown(KeyCode.Q)){
+				Debug.Log("Player touching item");
 				player.GetComponent<Player>().CollectItem(this.GetComponent<GameItem>());
 				//inventoryGui.GetComponent<inventoryGUI>().sprites.Add(toolSprite);
 				Destroy (gameObject, 0);

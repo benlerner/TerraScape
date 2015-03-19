@@ -78,6 +78,7 @@ GameObject:
   - 136: {fileID: 13695394}
   - 136: {fileID: 13695392}
   - 136: {fileID: 13695390}
+  - 136: {fileID: 13651974}
   m_Layer: 10
   m_Name: Dune Roamer V3
   m_TagString: Roamer
@@ -893,8 +894,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 111126}
-  m_LocalRotation: {x: -.00448944792, y: .390582293, z: -.0250477269, w: -.920216262}
-  m_LocalPosition: {x: 3.9000001, y: .810000002, z: 89.6999969}
+  m_LocalRotation: {x: .0247603953, y: -.897153318, z: -.00587084005, w: -.440985709}
+  m_LocalPosition: {x: 11.1497288, y: -8.20357609, z: 226.929611}
   m_LocalScale: {x: .458432972, y: .458433092, z: .458433062}
   m_Children:
   - {fileID: 411148}
@@ -1687,10 +1688,14 @@ MonoBehaviour:
   viewRange: 70
   attackRange: 25
   rollRange: 55
+  detectionRangeAbove: 4
+  detectionRangeBelow: -4
   MaxHealth: 1000
   currentHealth: 1000
   rollSpeed: 15
   rollDamage: 70
+  rollAngle: 5
+  rollForce: 65000
   rollTimer: 0
   hitObject: 0
   rollingCollider: {fileID: 13511226}
@@ -1699,7 +1704,11 @@ MonoBehaviour:
   - {fileID: 13695394}
   - {fileID: 13695392}
   - {fileID: 13695390}
+  - {fileID: 13651974}
   animator: {fileID: 0}
+  shouldWander: 1
+  detectedPlayer: 0
+  centerCollider: {fileID: 6511226}
 --- !u!135 &13511226
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1712,6 +1721,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 5
   m_Center: {x: 0, y: 5.0999999, z: 0}
+--- !u!136 &13651974
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111126}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.95000005
+  m_Height: 17
+  m_Direction: 2
+  m_Center: {x: 0, y: 2.0999999, z: 0}
 --- !u!136 &13695390
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -1719,7 +1741,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 111126}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 1.95000005
   m_Height: 17
@@ -1732,7 +1754,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 111126}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 1.95000005
   m_Height: 8
@@ -1745,7 +1767,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 111126}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 1.95000005
   m_Height: 8
@@ -1841,7 +1863,7 @@ NavMeshAgent:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 111126}
   m_Enabled: 1
-  m_Radius: 9
+  m_Radius: 6
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50

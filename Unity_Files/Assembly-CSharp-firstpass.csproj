@@ -52,6 +52,7 @@
      <None Include="Assets\Resources\journalEntries.xml" />
      <None Include="Assets\Materials\shaders\rock.shader" />
      <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
+     <None Include="Assets\Scenes\navmesh settings.txt" />
      <None Include="Assets\Prefabs\Skyboxes\dunes\Note.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.3/UnityEngine.UI.dll</HintPath>
