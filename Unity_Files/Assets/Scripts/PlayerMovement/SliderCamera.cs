@@ -20,8 +20,8 @@ public class SliderCamera : MonoBehaviour {
 		y = angles.x;
 		
 		// Make the rigid body not change rotation
-		if (GetComponent<Rigidbody>())
-			GetComponent<Rigidbody>().freezeRotation = true;
+		if (rigidbody)
+			rigidbody.freezeRotation = true;
 	}
 	
 	void LateUpdate () {

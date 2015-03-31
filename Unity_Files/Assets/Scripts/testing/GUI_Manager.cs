@@ -17,22 +17,22 @@ public class GUI_Manager : MonoBehaviour
             switch (child.name)
             {
                 case "GUI_Health":
-                    health = child.GetComponent<GUIText>();
+                    health = child.guiText;
                     break;
                 case "GUI_Stamina":
-                    stamina = child.GetComponent<GUIText>();
+                    stamina = child.guiText;
                     break;
                 case "GUI_CharState":
-                    charState = child.GetComponent<GUIText>();
+                    charState = child.guiText;
                     break;
                 case "GUI_SelectedItem":
-                    selectedItem = child.GetComponent<GUIText>();
+                    selectedItem = child.guiText;
                     break;
                 case "GUI_Message":
-                    message = child.GetComponent<GUIText>();
+                    message = child.guiText;
                     break;
                 case "GUI_Fader":
-                    screenFader = child.GetComponent<GUITexture>();
+                    screenFader = child.guiTexture;
                     screenFader.pixelInset = new Rect(0f, 0f, Screen.width, Screen.height);
                     break;
                 default:

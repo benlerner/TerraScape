@@ -4,8 +4,8 @@
      
      if (Input.GetKeyDown (KeyCode.W))
     {
-    GetComponent.<AudioSource>().clip = AudioFile;
-    GetComponent.<AudioSource>().Play();
+    audio.clip = AudioFile;
+    audio.Play();
      
     }
      

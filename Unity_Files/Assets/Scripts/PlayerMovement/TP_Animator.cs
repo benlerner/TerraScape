@@ -70,7 +70,7 @@ public class TP_Animator : MonoBehaviour
         //on activation
         instance = this;
         pelvis = transform.FindChild("RootJnt") as Transform;
-        characterAnimations = transform.FindChild("a_zenobia_walk").GetComponent<Animation>();
+        characterAnimations = transform.FindChild("a_zenobia_walk").animation;
     }
 
     void Update()
@@ -323,9 +323,9 @@ public class TP_Animator : MonoBehaviour
 
     void Climbing()
     {
-        if (GetComponent<Animation>().isPlaying)
+        if (animation.isPlaying)
         {
-            var time = GetComponent<Animation>()["Climbing"].time;
+            var time = animation["Climbing"].time;
             if (time > climbJumpStartTime && time < climbAnchorTime)
             {
                 transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x,

@@ -80,7 +80,7 @@ public class PlayerSlider : MonoBehaviour {
 			}*/
 
 
-			Vector3 velocityDirection = GetComponent<Rigidbody>().velocity.normalized;
+			Vector3 velocityDirection = rigidbody.velocity.normalized;
 			Vector3 facingDirection = transform.TransformDirection(Vector3.forward);
 			//if velocity is not in the same direction as the transform, add a force to 
 			if (velocityDirection != facingDirection)
@@ -91,12 +91,12 @@ public class PlayerSlider : MonoBehaviour {
 				Vector3 perpendicular = Vector3.Cross(facingDirection, velocityDirection);
 				direction = Mathf.Sign(Vector3.Dot(perpendicular, transform.TransformDirection(Vector3.up)));//-1 if left, 1 if right
 
-				Vector3 rotateForce = Vector3.left * GetComponent<Rigidbody>().velocity.magnitude * GetComponent<Rigidbody>().mass * direction * turnForce *
+				Vector3 rotateForce = Vector3.left * rigidbody.velocity.magnitude * rigidbody.mass * direction * turnForce *
 					Mathf.Sin(Vector3.Angle(velocityDirection, facingDirection) * Mathf.Deg2Rad);
-				GetComponent<Rigidbody>().AddRelativeForce(rotateForce);
+				rigidbody.AddRelativeForce(rotateForce);
 			}
 
-			GetComponent<Rigidbody>().AddForce(Vector3.down * extraForce);
+			rigidbody.AddForce(Vector3.down * extraForce);
 		}
 
 		//make sure zenobia does not tilt too far
@@ -135,9 +135,9 @@ public class PlayerSlider : MonoBehaviour {
 		transform.eulerAngles = new Vector3 (pitchAngle, transform.eulerAngles.y, rollAngle);
 	
 		//limit speed
-		if (GetComponent<Rigidbody>().velocity.sqrMagnitude > maxSpeed * maxSpeed)
+		if (rigidbody.velocity.sqrMagnitude > maxSpeed * maxSpeed)
 		{
-			GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity.normalized * maxSpeed;
+			rigidbody.velocity = rigidbody.velocity.normalized * maxSpeed;
 		}
 	}
 

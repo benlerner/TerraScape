@@ -161,7 +161,7 @@ public class TP_Camera : MonoBehaviour
             if (hitInfo.distance < nearestDistance || nearestDistance == -1)
                 nearestDistance = hitInfo.distance;
 
-        if (Physics.Linecast(from, to + transform.forward * -GetComponent<Camera>().nearClipPlane, out hitInfo) && IgnoreOcclusion(hitInfo.collider))
+        if (Physics.Linecast(from, to + transform.forward * -camera.nearClipPlane, out hitInfo) && IgnoreOcclusion(hitInfo.collider))
             if (hitInfo.distance < nearestDistance || nearestDistance == -1)
                 nearestDistance = hitInfo.distance;
 
@@ -259,11 +259,11 @@ public class TP_Camera : MonoBehaviour
         else
         {
             tempCamera = new GameObject("Main Camera");
-            tempCamera.AddComponent<Camera>();
+            tempCamera.AddComponent("Camera");
             tempCamera.tag = "MainCamera";
         }
 
-        tempCamera.AddComponent<TP_Camera>();
+        tempCamera.AddComponent("TP_Camera");
         camera = tempCamera.GetComponent("TP_Camera") as TP_Camera;
 
         //Use targetLookAt if it exists, otherwise create new and assign

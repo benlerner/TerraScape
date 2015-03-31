@@ -44,7 +44,7 @@ public class ShieldAnimator : MonoBehaviour
 	public void Walk()
 	{
 
-		transform.FindChild("shieldCreature_inProgress_v5_unsmoothed_walk").GetComponent<Animation>().CrossFade("Walk");
+		transform.FindChild("shieldCreature_inProgress_v5_unsmoothed_walk").animation.CrossFade("Walk");
 	}
 
 	public void Run()
