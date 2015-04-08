@@ -4,8 +4,8 @@ function Update() {
 
 	if (Input.GetKeyDown (KeyCode.E))
 	{
-		audio.clip = AudioFile;
-		audio.Play();
+		GetComponent.<AudioSource>().clip = AudioFile;
+		GetComponent.<AudioSource>().Play();
 		
 	}
 		

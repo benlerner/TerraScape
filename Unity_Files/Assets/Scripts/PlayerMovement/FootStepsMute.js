@@ -4,7 +4,7 @@ function Update(){
 
 	if (Input.GetKeyUp(KeyCode.W))
 	{
-		audio.clip = AudioFile;
-		audio.Stop();
+		GetComponent.<AudioSource>().clip = AudioFile;
+		GetComponent.<AudioSource>().Stop();
 	}
 }

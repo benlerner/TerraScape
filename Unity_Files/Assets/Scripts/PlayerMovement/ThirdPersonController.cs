@@ -271,8 +271,8 @@ public class ThirdPersonController : MonoBehaviour
 		Debug.Log ("Sliding");
 		
 		//enable ridigdbody
-		rigidbody.isKinematic = false;
-		rigidbody.detectCollisions = true;
+		GetComponent<Rigidbody>().isKinematic = false;
+		GetComponent<Rigidbody>().detectCollisions = true;
 		
 		slider.enabled = true;
 		
@@ -287,17 +287,17 @@ public class ThirdPersonController : MonoBehaviour
 		float minY = initSlideSpeed * Mathf.Sin(initSlideAngle * Mathf.Deg2Rad);
 
 		//character jumps forward when it starts sliding, give some initial upward and forward velocity if there is none
-		Vector3 newVelocity = rigidbody.velocity;
+		Vector3 newVelocity = GetComponent<Rigidbody>().velocity;
 		newVelocity.x = 0;
-		if (rigidbody.velocity.z < minZ)
+		if (GetComponent<Rigidbody>().velocity.z < minZ)
 		{
 			newVelocity.z = minZ;
 		}
-		if (rigidbody.velocity.y < minY)
+		if (GetComponent<Rigidbody>().velocity.y < minY)
 		{
 			newVelocity.y = minY;
 		}
-		rigidbody.velocity = transform.TransformDirection(newVelocity);
+		GetComponent<Rigidbody>().velocity = transform.TransformDirection(newVelocity);
 	}
 
 	public void stopSliding()
@@ -305,11 +305,11 @@ public class ThirdPersonController : MonoBehaviour
 		isSliding = false;
 		movable = true;
 		Debug.Log ("Stop Sliding Please");
-		moveDirection = rigidbody.velocity.normalized;
+		moveDirection = GetComponent<Rigidbody>().velocity.normalized;
 		//movement += transform.up * 1.0f;
 		//disable ridigdbody
-		rigidbody.isKinematic = true;
-		rigidbody.detectCollisions = false;
+		GetComponent<Rigidbody>().isKinematic = true;
+		GetComponent<Rigidbody>().detectCollisions = false;
 
 		slider.enabled = false;
 		controller.enabled = true;

@@ -1,7 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CreatureAI\Dune Roamer\DuneRoamerController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerMovement\ThirdPersonController.cs">
     <Files>
+      <File FileName="Assets\Scripts\PlayerMovement\ThirdPersonController.cs" Line="460" Column="41" />
       <File FileName="Assets\Scripts\CreatureAI\Dune Roamer\DuneRoamerController.cs" Line="192" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>

@@ -46,8 +46,8 @@ public class cinematicCamera : MonoBehaviour {
 				player.GetComponent<ThirdPersonController>().cutScene = cutSceneNumber;
 			}
 			if (animated){
-				cameraHolder.animation.Play();
-				playerHolder.animation.Play();
+				cameraHolder.GetComponent<Animation>().Play();
+				playerHolder.GetComponent<Animation>().Play();
 			}
 		}
 	}
