@@ -1,9 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerMovement\ThirdPersonController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerMovement\PlayerSlider.cs">
     <Files>
-      <File FileName="Assets\Scripts\PlayerMovement\ThirdPersonController.cs" Line="460" Column="41" />
-      <File FileName="Assets\Scripts\CreatureAI\Dune Roamer\DuneRoamerController.cs" Line="192" Column="4" />
+      <File FileName="Assets\Scripts\PlayerMovement\PlayerSlider.cs" Line="83" Column="76" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

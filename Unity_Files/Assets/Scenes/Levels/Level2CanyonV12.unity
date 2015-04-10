@@ -1736,6 +1736,14 @@ Prefab:
       propertyPath: laserPrefab
       value: 
       objectReference: {fileID: 100002, guid: ac1c48d40149d12419da3a4bb4cd5255, type: 2}
+    - target: {fileID: 11417440, guid: a302dd0fd7139eb419f8cd68669dc458, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: a302dd0fd7139eb419f8cd68669dc458, type: 2}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: a302dd0fd7139eb419f8cd68669dc458, type: 2}
@@ -3601,6 +3609,10 @@ Prefab:
     - target: {fileID: 13651974, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 111126, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
