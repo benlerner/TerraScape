@@ -37,6 +37,7 @@ GameObject:
   - 136: {fileID: 13600004}
   - 114: {fileID: 11417440}
   - 114: {fileID: 11452100}
+  - 114: {fileID: 11441266}
   m_Layer: 8
   m_Name: zenobia
   m_TagString: Player
@@ -1120,7 +1121,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100062}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .660000026, z: 0}
+  m_LocalPosition: {x: 96.0479813, y: 261.006866, z: -535.596924}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 465716}
@@ -2132,7 +2133,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 9f2cc72b5484bc641aeebcbff4246dd8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -2217,7 +2218,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpSpeed: 8
-  gravity: 10
   tracker: {fileID: 400062}
   rotateSpeed: 30
   controller: {fileID: 14300000}
@@ -2232,7 +2232,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100062}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8557c72e16c73fb41b3f0a7fcc9c7358, type: 3}
   m_Name: 
@@ -2264,11 +2264,33 @@ MonoBehaviour:
   currentStamina: 50
   staminaRegen: 3
   inventory:
-  - {fileID: 11426600, guid: 6c1b70fa0c35775428166e180b611dfb, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
   journal: []
   selectedIndex: 0
   forIndex: 0
   backIndex: 0
+--- !u!114 &11441266
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100062}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8557c72e16c73fb41b3f0a7fcc9c7358, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forwardSpeed: 10
+  sprintSpeed: 15
+  backwardSpeed: 8
+  strafingSpeed: 6
+  slideSpeed: 10
+  jumpSpeed: 6
+  gravity: 21
+  terminalVelocity: 20
+  slideThreshold: .800000012
+  maxControllableSlideMagnitude: .400000006
 --- !u!114 &11452100
 MonoBehaviour:
   m_ObjectHideFlags: 1
