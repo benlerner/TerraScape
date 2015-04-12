@@ -162,6 +162,7 @@ public class DuneRoamerController : MonoBehaviour {
 			hitObject = DuneRoamerHit.Trap;
 		} else if (tag.Equals("DRBreakable"))
 		{
+			Debug.Log("Hit rocks");
 			//only break rocks if charging or rolling
 			if (fsm.CurrentStateID.Equals(StateID.AttackStateID) || fsm.CurrentStateID.Equals(StateID.RollStateID))
 			{
@@ -367,6 +368,9 @@ public class ApproachDRState : FSMState
 	{
 		Debug.Log ("Entered approach state.");
 
+		controller.navAgent.enabled = false;
+		controller.navAgent.enabled = true;
+		controller.navAgent.enabled = false;
 		controller.navAgent.enabled = true;
 	}
 
@@ -410,7 +414,6 @@ public class ApproachDRState : FSMState
 				controller.SetTransition(Transition.RollRange);
 			}
 		}
-		Debug.Log(hitInfo.transform);
 		Debug.DrawLine (controllerPosition, hitInfo.point, Color.red, 0.1f);
 	}
 

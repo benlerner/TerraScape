@@ -1682,7 +1682,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400062, guid: a302dd0fd7139eb419f8cd68669dc458, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 14300000, guid: a302dd0fd7139eb419f8cd68669dc458, type: 2}
       propertyPath: m_Center.y
@@ -1736,7 +1736,7 @@ Prefab:
       propertyPath: laserPrefab
       value: 
       objectReference: {fileID: 100002, guid: ac1c48d40149d12419da3a4bb4cd5255, type: 2}
-    - target: {fileID: 11417440, guid: a302dd0fd7139eb419f8cd68669dc458, type: 2}
+    - target: {fileID: 0}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
@@ -3596,7 +3596,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 19511226, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
       propertyPath: m_Radius
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6511226, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
       propertyPath: m_IsTrigger
@@ -3612,7 +3612,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 111126, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
@@ -9637,7 +9637,7 @@ Prefab:
     - target: {fileID: 11439894, guid: a515aea159831ba458adceb34a0e8142, type: 2}
       propertyPath: TargetLookAt
       value: 
-      objectReference: {fileID: 1347551035}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a515aea159831ba458adceb34a0e8142, type: 2}
   m_IsPrefabParent: 0
@@ -10552,10 +10552,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1342328445}
   m_RootOrder: 5
---- !u!4 &1347551035
-Transform:
-  m_PrefabParentObject: {fileID: 465746, guid: a302dd0fd7139eb419f8cd68669dc458, type: 2}
-  m_PrefabInternal: {fileID: 207954917}
 --- !u!1 &1347837359
 GameObject:
   m_PrefabParentObject: {fileID: 100154, guid: f152a06b41ebc814ca9c61d2d702f685, type: 3}
