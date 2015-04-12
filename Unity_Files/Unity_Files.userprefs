@@ -1,8 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerMovement\PlayerSlider.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Materials\shaders\TexBumDet.shader">
     <Files>
-      <File FileName="Assets\Scripts\PlayerMovement\PlayerSlider.cs" Line="83" Column="76" />
+      <File FileName="Assets\Materials\shaders\TexBumDet.shader" Line="29" Column="1" />
+      <File FileName="Assets\Materials\shaders\rock.shader" Line="27" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

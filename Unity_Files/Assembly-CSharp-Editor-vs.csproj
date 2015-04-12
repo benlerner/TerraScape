@@ -64,10 +64,10 @@
      <None Include="Assets\Prefabs\Skyboxes\dunes\Note.txt" />
      <None Include="Assets\LightShafts-master\ColorFilter.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Users/jc3347/Documents/TerraScape/Unity_Files/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>C:/Users/jc3347/Documents/TerraScape3/Unity_Files/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
  <Reference Include="Assembly-UnityScript">
- <HintPath>C:/Users/jc3347/Documents/TerraScape/Unity_Files/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
+ <HintPath>C:/Users/jc3347/Documents/TerraScape3/Unity_Files/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
