@@ -52,6 +52,7 @@ public class ThirdPersonController : MonoBehaviour
 		public GameObject laserPrefab;
 		public GameObject blastPrefab;
 		public GameObject snapperPrefab;
+		private bool laserOn = false;
 	// The speed when walking
 	public float walkSpeed= 2.0f;
 	// after trotAfterSeconds of walking we trot with trotSpeed
@@ -399,6 +400,7 @@ public class ThirdPersonController : MonoBehaviour
 		//not blocking unless key is held down
 		if (Input.GetKeyUp(KeyCode.E) && !hanging && !jumping && cutScene == 0 && !isSliding){
 			blocking = false;
+			laserOn = false;
 			movable = true;
 			Debug.Log("Guard is Down");
 		}
@@ -650,9 +652,12 @@ public class ThirdPersonController : MonoBehaviour
 	public void laser() {
 		itemUse = 1;
 		movable = false;
-		Vector3 laserTrans = transform.position;
-		Quaternion laserRot = transform.rotation;
-		Instantiate (laserPrefab, laserTrans, laserRot);
+		if (laserOn == false){
+			Vector3 laserTrans = transform.position;
+			Quaternion laserRot = transform.rotation;
+			Instantiate (laserPrefab, laserTrans, laserRot);
+		}
+		laserOn = true;
 	}
 	public void trap() {
 		//stop player movement

@@ -15,9 +15,10 @@ public class smashSignal : MonoBehaviour {
 		center.z = z;
 	}
 	void OnTriggerEnter(Collider other){
-		if (other.tag == "Breakable")
+		if (other.tag == "Breakable"){
 			target = other.gameObject;
 			target.GetComponent<destructionControl>().Break ();
+		}
 	}
 	// Update is called once per frame
 	/*void Update () {

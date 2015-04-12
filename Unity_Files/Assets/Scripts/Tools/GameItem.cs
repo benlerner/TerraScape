@@ -40,7 +40,7 @@ public class GameItem : MonoBehaviour
 
 	void OnTriggerStay(Collider other) {
 		GUI_Manager.message.text = "Press Q to pick up the " + itemName;
-		Debug.Log("Something touching item");
+		//Debug.Log("Something touching item");
 		if (other != target) //The colliding object isn't our object
 		{
 
