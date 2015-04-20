@@ -16,15 +16,19 @@ public class grabbableLedge : MonoBehaviour {
 	private Vector3 playerMeshPos;
 	private Transform playerMesh;
 	private Vector3 shiftPlayer;
+	private int children;
 	public Transform[] ledgePath;
 	private bool inControl = false;
+	private Vector3[] climbPath = new Vector3[3];
+	private bool shimmying = false;
 	// Use this for initialization
 	void Start () {
 		player = GameObject.Find("zenobia");
 		playerMesh = player.transform.GetChild (0);
 		target = player.GetComponent<CharacterController>();
 		playerMeshPos = new Vector3 (0f,0.066f,0f);
-		ledgePath = new Transform[transform.childCount];
+		children = transform.childCount;
+		ledgePath = new Transform[children];
 		int i=0;
 		foreach(Transform child in transform)
 		{
@@ -34,23 +38,28 @@ public class grabbableLedge : MonoBehaviour {
 	}
 
 	void Update() {
-		/*if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)){
-			movement += transform.right * shimmySpeed * Time.deltaTime;
-			
-			// Move the controller
-			collisionFlags = controller.Move(movement);
-			anim.SetBool("shimmy", true);
+		if(inControl){
+			if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+				climbUp();
+			else if (Input.GetButtonDown("Jump"))
+				returnControl();
+			else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)){
+
+				shimmy(false);
+				//anim.SetBool("shimmy", true);
+			}
+			else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)){
+				shimmy(true);
+				//anim.SetBool("shimmy", true);
+			}
+			else if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow)){
+			    iTween.Stop(player);
+				shimmying = false;
+				player.GetComponent<ThirdPersonController> ().shimmy = false;
+			}
 		}
-		else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)){
-			movement += transform.right * -shimmySpeed * Time.deltaTime;
-			
-			// Move the controller
-			collisionFlags = controller.Move(movement);
-			anim.SetBool("shimmy", true);
-		}
-		else
-			anim.SetBool("shimmy", false);*/
 	}
+
 	void OnTriggerEnter(Collider other) {
 		if (other != target) //The colliding object isn't our object
 		{
@@ -82,10 +91,37 @@ public class grabbableLedge : MonoBehaviour {
 			inControl = true;
 		}
 	}
-	void OnTriggerExit(Collider other) {
+	public void climbUp (){
+		inControl = false;
+		player.GetComponent<ThirdPersonController>().movable = false;
+		player.GetComponent<ThirdPersonController> ().climb = true;
+		Vector3 start = player.transform.position;
+		Vector3 arc = start + (player.transform.up * 2.0f) + (player.transform.forward * 0.5f);
+		Vector3 end = start + (player.transform.up * 1.6f) + (player.transform.forward * 1.0f);
+		climbPath [0] = start;
+		climbPath [1] = arc;
+		climbPath [2] = end;
+		iTween.MoveTo(player, iTween.Hash("position", end, "path", climbPath, "time", 1.0f, "oncomplete", "returnControl", "oncompletetarget", this.gameObject));
+		//verticalSpeed = ledgeClimbSpeed;
+		//movement += (new Vector3 (0, verticalSpeed, 0) + inAirVelocity) * Time.deltaTime;
+		
+		// Move the controller
+		//collisionFlags = controller.Move(movement);
+		
+	}
+	public void shimmy (bool direction){
+		if(!shimmying){
+			shimmying = true;
+			player.GetComponent<ThirdPersonController> ().shimmy = true;
+			if(direction)
+				iTween.MoveTo(player, iTween.Hash("position", ledgePath[0], "path", ledgePath, "speed", 1.0f));
+			else
+				iTween.MoveTo(player, iTween.Hash("position", ledgePath[children-1], "speed", 1.0f));
+		}
+	}
+	void returnControl() {
 		playerMesh.transform.Translate (-shiftPlayer);
 		player.GetComponent<ThirdPersonController> ().hanging = false;
-		player.GetComponent<ThirdPersonController> ().climb = false;
 		player.GetComponent<ThirdPersonController>().movable = true;
 		inControl = false;
 	}

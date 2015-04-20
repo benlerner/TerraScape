@@ -40,7 +40,7 @@ public class ThirdPersonController : MonoBehaviour
 		private bool switching = false;
 		private bool action = false;
 		public float ledgeClimbSpeed = 4.0f;
-		public float shimmySpeed = 1.0f;
+		public bool shimmy = false;
 		public bool climb = false;
 		public int cutScene = 0;
 		public static ThirdPersonController instance;
@@ -488,37 +488,8 @@ public class ThirdPersonController : MonoBehaviour
 			}
 		}
 		else if (hanging) {
-			//UpdateSmoothedMovementDirection();
-			if (Input.GetButtonDown("Jump")){
-				hanging = false;
-				movable = true;
-			}
-			if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
-				climb=true;
-			if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)){
-				movement += transform.right * shimmySpeed * Time.deltaTime;
-					
-				// Move the controller
-				collisionFlags = controller.Move(movement);
-				anim.SetBool("shimmy", true);
-			}
-			else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)){
-				movement += transform.right * -shimmySpeed * Time.deltaTime;
-					
-				// Move the controller
-				collisionFlags = controller.Move(movement);
-				anim.SetBool("shimmy", true);
-			}
-			else
-				anim.SetBool("shimmy", false);
-			if (climb){
-				anim.SetBool("shimmy", false);
-				verticalSpeed = ledgeClimbSpeed;
-				movement += (new Vector3 (0, verticalSpeed, 0) + inAirVelocity) * Time.deltaTime;
-					
-				// Move the controller
-				collisionFlags = controller.Move(movement);
-			}
+			anim.SetBool("shimmy",shimmy);
+			climb = false;
 
 		}
 		else if (isSliding)
@@ -613,6 +584,9 @@ public class ThirdPersonController : MonoBehaviour
 			management.TakeDamage(damage);
 		}
 	}
+
+
+
 	public void slide(){
 			//start or stop sliding
 			if (!isSliding){
