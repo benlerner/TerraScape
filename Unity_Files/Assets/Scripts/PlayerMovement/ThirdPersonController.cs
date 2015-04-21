@@ -298,7 +298,10 @@ public class ThirdPersonController : MonoBehaviour
 		{
 			newVelocity.y = minY;
 		}
-		GetComponent<Rigidbody>().velocity = transform.TransformDirection(newVelocity);
+		if (controller.isGrounded)
+		{
+			GetComponent<Rigidbody>().velocity = transform.TransformDirection(newVelocity);
+		}
 	}
 
 	public void stopSliding()
