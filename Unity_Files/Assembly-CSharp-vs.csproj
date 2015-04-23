@@ -94,6 +94,7 @@
      <Compile Include="Assets\Scripts\PlayerMovement\ThirdPersonController.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement\smashSignal.cs" />
      <Compile Include="Assets\Scripts\Tools\GameItem.cs" />
+     <Compile Include="Assets\Scripts\bossPlatform.cs" />
      <Compile Include="Assets\Scripts\testing\ClimbingVolume.cs" />
      <Compile Include="Assets\Scripts\testing\GUI_Manager.cs" />
      <Compile Include="Assets\Scripts\testing\Helper.cs" />
