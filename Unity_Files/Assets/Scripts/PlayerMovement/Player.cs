@@ -66,6 +66,7 @@ public class Player : MonoBehaviour
 		inventoryGui.setImage = inventory[selectedIndex].itemImage;
 		inventoryGui.forImage = inventory[forIndex].itemImage;
 		inventoryGui.backImage = inventory [backIndex].itemImage;
+		CycleItems (true);
     }
 
 	void Update()

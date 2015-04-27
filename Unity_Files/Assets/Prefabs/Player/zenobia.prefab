@@ -52,7 +52,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 416734}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandRing4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +67,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 497230}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 494254}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 481592}
   - 137: {fileID: 13749894}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: overshirt:polySurface1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 446636}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 444774}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 409950}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandIndex4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,7 +158,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 493802}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandPinky4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +174,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 415210}
   - 137: {fileID: 13780414}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: zen_hair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +190,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 468640}
   - 137: {fileID: 13710444}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: zen_rightEye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +205,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 404062}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandMiddle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,7 +221,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 449496}
   - 137: {fileID: 13707000}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: zen_bag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,7 +236,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 410290}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandRing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -252,7 +252,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 475014}
   - 137: {fileID: 13769256}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: turtleneck:polySurface1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +267,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 492178}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,7 +282,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 453864}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_Spine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +297,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 491388}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandPinky1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -312,7 +312,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 462700}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandPinky1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -327,7 +327,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 406678}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -342,7 +342,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 478370}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandPinky3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -358,7 +358,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 447178}
   - 137: {fileID: 13740134}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: zen_teethBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -373,7 +373,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 449594}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -389,7 +389,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 488226}
   - 137: {fileID: 13713940}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shoes:polySurface1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -404,7 +404,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 470420}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandRing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -419,7 +419,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 463280}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandMiddle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -434,7 +434,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 429272}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandPinky2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -449,7 +449,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 411748}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -464,7 +464,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 474002}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandRing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -479,7 +479,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 448186}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandIndex4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -494,7 +494,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 459000}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -509,7 +509,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 483904}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -524,7 +524,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 499048}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_Hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -539,7 +539,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 433346}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandPinky2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -554,7 +554,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 439320}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandThumb4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -570,7 +570,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 425118}
   - 137: {fileID: 13710418}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pantsLegs:polySurface1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -585,7 +585,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 447868}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -600,7 +600,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 475676}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandPinky4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -616,7 +616,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 471794}
   - 137: {fileID: 13715588}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: zen_Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -631,7 +631,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 441080}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -646,7 +646,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 476384}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandMiddle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -661,7 +661,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 499566}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -676,7 +676,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 416036}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandRing4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -691,7 +691,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 464220}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -706,7 +706,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 492032}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -721,7 +721,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 482768}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandPinky3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -736,7 +736,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 480294}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandThumb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -752,7 +752,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 430670}
   - 137: {fileID: 13712022}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: zen_scarf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -767,7 +767,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 458460}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -782,7 +782,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 438648}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: zen_v14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -798,7 +798,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 414488}
   - 137: {fileID: 13761914}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: zen_headHands
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -813,7 +813,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 421200}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -829,7 +829,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 417030}
   - 137: {fileID: 13743946}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: zen_teethTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -844,7 +844,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 482926}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -859,7 +859,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 486174}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -875,7 +875,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 473068}
   - 137: {fileID: 13799044}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sleeves:polySurface1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -890,7 +890,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 489576}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -905,7 +905,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 415206}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandThumb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -921,7 +921,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 472030}
   - 137: {fileID: 13754124}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: zen_belt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -936,7 +936,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 453318}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandMiddle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -952,7 +952,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 452114}
   - 95: {fileID: 9512828}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: zenobia_v14_004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -967,7 +967,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 451040}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -982,7 +982,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 449484}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_Spine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -997,7 +997,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 440506}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1012,7 +1012,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 465148}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1027,7 +1027,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 490590}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1042,7 +1042,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 401816}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandRing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1057,7 +1057,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 484258}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1072,7 +1072,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 498620}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_Reference1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1087,7 +1087,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 450602}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1102,7 +1102,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 415128}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1117,7 +1117,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 467786}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1133,7 +1133,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 460510}
   - 137: {fileID: 13725680}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: zen_leftEye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1148,7 +1148,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 416426}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandRing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1163,7 +1163,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 468194}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1178,7 +1178,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 490882}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1193,7 +1193,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 494690}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_LeftHandThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1209,7 +1209,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 494700}
   - 137: {fileID: 13767240}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: zen_skirt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1224,7 +1224,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 462622}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandRing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1239,7 +1239,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 405126}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1254,7 +1254,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 411170}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandThumb4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1269,7 +1269,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 402328}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zenobia_RightHandIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1295,7 +1295,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100062}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 96.0479813, y: 261.006866, z: -535.596924}
+  m_LocalPosition: {x: 75.4000015, y: 246.979996, z: -392.299988}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 452114}
@@ -2510,7 +2510,7 @@ MonoBehaviour:
   rotateSpeed: 500
   trotAfterSeconds: 3
   canJump: 1
-  initSlideSpeed: 1
+  initSlideSpeed: 7
   initSlideAngle: 25
   moveDirection: {x: 0, y: 0, z: 0}
   verticalSpeed: 0

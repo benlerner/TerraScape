@@ -28,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 139894}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 96.4899979, y: 262.380005, z: -539.72998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetLookAt: {fileID: 0}
   distance: 3.91000009
-  minDistance: 3
+  minDistance: 1
   maxDistance: 10
   distanceSmooth: .0500000007
   distanceResumeSmooth: 1
@@ -184,6 +184,10 @@ MonoBehaviour:
   occlusionDistanceStep: .5
   maxOcclusionChecks: 0
   movable: 1
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 4294966495
+  isOccluded: 0
 --- !u!124 &12439894
 Behaviour:
   m_ObjectHideFlags: 1
@@ -202,4 +206,3 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 139894}
   m_IsPrefabParent: 1
-  m_IsExploded: 1

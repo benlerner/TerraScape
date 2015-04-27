@@ -1869,15 +1869,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400062, guid: a302dd0fd7139eb419f8cd68669dc458, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 96.0479813
+      value: 95.9860001
       objectReference: {fileID: 0}
     - target: {fileID: 400062, guid: a302dd0fd7139eb419f8cd68669dc458, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 261.006866
+      value: 260.839996
       objectReference: {fileID: 0}
     - target: {fileID: 400062, guid: a302dd0fd7139eb419f8cd68669dc458, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -535.596924
+      value: -533.72998
       objectReference: {fileID: 0}
     - target: {fileID: 400062, guid: a302dd0fd7139eb419f8cd68669dc458, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1907,10 +1907,6 @@ Prefab:
       propertyPath: inventory.Array.data[1]
       value: 
       objectReference: {fileID: 826005915}
-    - target: {fileID: 11400000, guid: a302dd0fd7139eb419f8cd68669dc458, type: 2}
-      propertyPath: initSlideSpeed
-      value: 7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a302dd0fd7139eb419f8cd68669dc458, type: 2}
   m_IsPrefabParent: 0
@@ -10188,7 +10184,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 981050198}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Characters
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11661,11 +11657,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 439894, guid: a515aea159831ba458adceb34a0e8142, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 269.950012
+      value: 262.380005
       objectReference: {fileID: 0}
     - target: {fileID: 439894, guid: a515aea159831ba458adceb34a0e8142, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -543.190002
+      value: -539.72998
       objectReference: {fileID: 0}
     - target: {fileID: 439894, guid: a515aea159831ba458adceb34a0e8142, type: 2}
       propertyPath: m_LocalRotation.x
@@ -11686,10 +11682,6 @@ Prefab:
     - target: {fileID: 439894, guid: a515aea159831ba458adceb34a0e8142, type: 2}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11439894, guid: a515aea159831ba458adceb34a0e8142, type: 2}
-      propertyPath: TargetLookAt
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a515aea159831ba458adceb34a0e8142, type: 2}

@@ -9,6 +9,7 @@ public class FaultLine : MonoBehaviour
 
 	public void Activate()
     {
+		Camera.main.GetComponent<TP_Camera>().shake = true;
         if (triggerObject.GetComponent<Platform>() != null)
         {
             triggerObject.GetComponent<Platform>().Activate();

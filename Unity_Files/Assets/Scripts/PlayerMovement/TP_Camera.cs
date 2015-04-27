@@ -6,7 +6,7 @@ public class TP_Camera : MonoBehaviour
     public static TP_Camera instance;
     public Transform TargetLookAt;
     public float distance = 5f;
-    public float minDistance = 3f;
+    public float minDistance = 2f;
     public float maxDistance = 10f;
     public float distanceSmooth = 0.05f;
     public float distanceResumeSmooth = 1f;
@@ -37,8 +37,13 @@ public class TP_Camera : MonoBehaviour
     private float velocityDistance = 0f;
     private float distanceSmoothToggle = 0f;
     private float preOccludedDistance = 0f;
+	public LayerMask layerMask;
 
 	private PlaytesterMenu menu;
+
+	private bool isOccluded;
+	public bool shake = false;
+	private int shakeCount = 0;
 
     void Awake()
     {
@@ -57,6 +62,12 @@ public class TP_Camera : MonoBehaviour
     void LateUpdate()
     {
 		if (movable && !menu.menuOpen){
+		if (shake)
+			shakeCount ++;
+		if (shakeCount>=20){
+			shake = false;
+			shakeCount = 0;
+			}
         //move camera AFTER all other calculations have been made
 		//don't move camera while testing menu is open
         if (TargetLookAt == null)
@@ -70,16 +81,24 @@ public class TP_Camera : MonoBehaviour
 
         //loop, attempt to move camera
         int count = 0;
+
         /*do
         {
-            //While the camera is occluded, move the camera
-            CalculateDesiredPosition();
-            count++;
-        } while(CheckIfOccluded(count));*/
+			desiredDistance = Mathf.Clamp(distance - 1.0f, minDistance, maxDistance);
+			preOccludedDistance = desiredDistance;
+			distanceSmoothToggle = distanceSmooth;
+        } while(isOccluded);*/
 		CalculateDesiredPosition();
-        //force update position
-        UpdatePosition();
+		UpdatePosition();
+		CheckIfOccluded();
+		if(isOccluded){
+			desiredDistance --;
+			if (desiredDistance<minDistance)
+				desiredDistance = minDistance;
+			preOccludedDistance = desiredDistance;
+				distanceSmoothToggle = distanceSmooth;}
 		}
+
 		else{
 			return;
 		}
@@ -98,8 +117,7 @@ public class TP_Camera : MonoBehaviour
         //}
 
         mouseY = Helper.ClampAngle(mouseY, minLimitY, maxLimitY);
-
-        //on mouse wheel, zoom in/out
+		//on mouse wheel, zoom in/out
         if (Input.GetAxis("Mouse ScrollWheel") < -deadZone || Input.GetAxis("Mouse ScrollWheel") > deadZone)
         {
             desiredDistance = Mathf.Clamp(distance - Input.GetAxis("Mouse ScrollWheel") * mouseWheelSensitivity, minDistance, maxDistance);
@@ -114,13 +132,18 @@ public class TP_Camera : MonoBehaviour
         distance = Mathf.SmoothDamp(distance, desiredDistance, ref velocityDistance, distanceSmoothToggle);
 
         desiredPosition = CalculatePosition(mouseY, mouseX, distance);
-    }
+
+	}
 
     Vector3 CalculatePosition(float rotationX, float rotationY, float distance)
     {
         //camera direction/rotation
-        Vector3 direction = new Vector3(0, 0, -distance);
-        Quaternion rotation = Quaternion.Euler(rotationX, rotationY, 0);
+		Quaternion rotation;
+		Vector3 direction = new Vector3(0, 0, -distance);
+		if (shake)
+			rotation = Quaternion.Euler(rotationX+Random.Range(-10f,10f), rotationY+Random.Range(-10f,10f), 0);
+		else
+			rotation = Quaternion.Euler(rotationX, rotationY, 0);
 
         return TargetLookAt.position + rotation * direction;
     }
@@ -177,13 +200,23 @@ public class TP_Camera : MonoBehaviour
         return ignore;
     }
 
-    bool CheckIfOccluded(int count)
+    bool CheckIfOccluded()
     {
         //Determines if we are occluded, returns false if not
 
         //Assume there is no occlusion
-        bool isOccluded = false;
-        float nearestDistance = CheckCameraPoints(TargetLookAt.position, desiredPosition);
+		RaycastHit hitInfo;
+        isOccluded = false;
+		Helper.ClipPlanePoints clipPlanePoints = Helper.CalculateNearClipPlane(desiredPosition);
+		if (Physics.Linecast(TargetLookAt.position, clipPlanePoints.UpperLeft, out  hitInfo, layerMask))
+			isOccluded = true;
+		if (Physics.Linecast(TargetLookAt.position, clipPlanePoints.UpperRight, out  hitInfo, layerMask))
+			isOccluded = true;
+		if (Physics.Linecast(TargetLookAt.position, clipPlanePoints.LowerLeft, out  hitInfo, layerMask))
+			isOccluded = true;
+		if (Physics.Linecast(TargetLookAt.position, clipPlanePoints.LowerRight, out  hitInfo, layerMask))
+			isOccluded = true;
+        /*float nearestDistance = CheckCameraPoints(TargetLookAt.position, desiredPosition);
 
         if (nearestDistance != -1f)
         {
@@ -204,7 +237,7 @@ public class TP_Camera : MonoBehaviour
 
             desiredDistance = distance;
             distanceSmoothToggle = distanceResumeSmooth;
-        }
+        }*/
 
         return isOccluded;
     }
@@ -277,4 +310,7 @@ public class TP_Camera : MonoBehaviour
 
         camera.TargetLookAt = targetLookAt.transform;
     }
+
 }
+
+	
