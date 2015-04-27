@@ -610,7 +610,7 @@ public class ThirdPersonController : MonoBehaviour
 	public Vector3 projectileOffset = new Vector3 (0f, 2f, 0.5f);
 	public void snap(){
 		//stop player movement
-		movement = Vector3.zero;
+		movable = false;
 		//wait X seconds
 		//play snap windup animation
 		itemUse = 1;
@@ -619,8 +619,8 @@ public class ThirdPersonController : MonoBehaviour
 		{
 			snapTimer = 0f;
 			//play snapper blowback animation
-			Debug.Log(transform.position + " , " + (transform.position + projectileOffset));
-			Instantiate(snapperPrefab, transform.position + projectileOffset, transform.rotation);
+			Debug.Log(transform.position + " , " + (transform.position));
+			Instantiate(snapperPrefab, transform.position, transform.rotation);
 			//return player movement
 		}
 

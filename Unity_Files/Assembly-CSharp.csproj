@@ -74,6 +74,7 @@
      <Compile Include="Assets\Scripts\GUI\journalGUI.cs" />
      <Compile Include="Assets\Scripts\GUI\journalPageAdder.cs" />
      <Compile Include="Assets\Scripts\GUI\screenFade.cs" />
+     <Compile Include="Assets\Scripts\GUI\startMenu.cs" />
      <Compile Include="Assets\Scripts\Level Triggers\checkPoint.cs" />
      <Compile Include="Assets\Scripts\Level Triggers\cinematicCamera.cs" />
      <Compile Include="Assets\Scripts\Level Triggers\deathBox.cs" />

@@ -11,8 +11,10 @@ public class selfDestruct : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyUp (KeyCode.E))
 			setOff = true;
-		if (setOff)
+		if (setOff){
 			time++;
+			iTween.FadeUpdate(this.gameObject, 0f, 4f);
+		}
 		if (time >= timeLimit)
 			Destroy (gameObject, 0);
 	}
