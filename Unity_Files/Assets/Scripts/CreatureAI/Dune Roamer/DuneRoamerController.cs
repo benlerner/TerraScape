@@ -16,7 +16,7 @@ public class DuneRoamerController : MonoBehaviour {
 	
 	public float fieldOfView = 200f;
 	public float viewRange = 60f;
-	public float attackRange = 7f;
+	public float attackRange = 10f;
 	public float rollRange = 30f;
 	public float detectionRangeAbove = 4f;
 	public float detectionRangeBelow = -4f;
@@ -27,20 +27,19 @@ public class DuneRoamerController : MonoBehaviour {
 	bool alive = true;
 	
 	public float rollSpeed = 15f;
-	public float rollDamage = 70f;
+	public float rollDamage = 90f;
 
-	public float rollAngle = 5f;
-	public float rollForce = 65000f;
-
-	//has to wait 10 seconds before it can do another roll attack
-	public readonly float rollCooldown = 10f;
+	//time waited before it can do another roll attack
+	public readonly float rollCooldown = 20f;
 	public float rollTimer = 0f;
 
 	public DuneRoamerHit hitObject;
-	public SphereCollider rollingCollider;
-	public Collider[] walkingColliders;
 
 	public Animator animator;
+	public CharacterController mover;
+
+	//falling speed for when charging, rolling, or stunned
+	public float gravity = 10f;
 
 	//how long the object waits after dying before fading out
 	private float persistDuration = 5f;
@@ -49,12 +48,11 @@ public class DuneRoamerController : MonoBehaviour {
 	private float fadeTime = 3f;
 	private float startAlpha;
 
+	//used for checking if grounded
+	private float distToGround;
+
 	public bool shouldWander = true;
 	public bool detectedPlayer = false;
-
-	//BoxCollider in the center of the dune roamer - disable this when stunned or falling to make
-	//the dune roamer fall on its side
-	public BoxCollider centerCollider;
 
 	// Use this for initialization
 	void Start () {
@@ -64,11 +62,9 @@ public class DuneRoamerController : MonoBehaviour {
 		//startAlpha = renderer.material.color.a;
 		navAgent.speed = walkSpeed;
 
-		//make sure rigidbody is enabled
-		GetComponent<Rigidbody>().isKinematic = false;
-		GetComponent<Rigidbody>().detectCollisions = true;
+		animator = GetComponent<Animator> ();
 
-		animator = GetComponent<Animator> ();		
+		distToGround = GetComponent<BoxCollider> ().bounds.extents.y;
 	}
 	
 	// Update is called once per frame
@@ -147,7 +143,7 @@ public class DuneRoamerController : MonoBehaviour {
 		fsm.AddState (stunned);
 		fsm.AddState (falling);
 
-		//Debug.Log ("Entered idle state.");
+		Debug.Log ("Entered idle state.");
 	}
 
 	void OnCollisionEnter (Collision other)
@@ -191,7 +187,7 @@ public class DuneRoamerController : MonoBehaviour {
 			Debug.Log("Triggered player");
 		} else if (tag.Equals("DRBreakable"))
 		{
-			if (fsm.CurrentStateID.Equals(StateID.AttackStateID))
+			if (fsm.CurrentStateID.Equals(StateID.AttackStateID) || fsm.CurrentStateID.Equals(StateID.RollStateID))
 			{
 				other.gameObject.SendMessage("Shatter");
 				takeDamage(300f);
@@ -215,12 +211,8 @@ public class DuneRoamerController : MonoBehaviour {
 			navAgent.Stop();
 			navAgent.enabled = false;
 
-			foreach (Collider c in walkingColliders)
-			{
-				c.enabled = true;
-				c.isTrigger = false;
-			}
-			//rigidbody.AddRelativeTorque(Vector3.forward * 5000f, ForceMode.Impulse);
+			//play death animation
+
 			//die
 		} else
 		{
@@ -244,6 +236,11 @@ public class DuneRoamerController : MonoBehaviour {
 //		Debug.Log("Hit Zenobia! Impact direction = " + impactVector);
 		player.GetComponent<Player>().TakeImpactDamage(dmg, impactVector, impactForce);
 		hitObject = DuneRoamerHit.None;
+	}
+
+	public bool isGrounded()
+	{
+		return Physics.Raycast (transform.position, Vector3.down, 0.1f);
 	}
 }
 
@@ -271,7 +268,7 @@ public class IdleDRState : FSMState
 	private IdleState state = IdleState.Idle;
 	private Vector3 wanderPoint;
 
-	//update timer for idle state - only change action once per second
+	//update timer for idling - only change action once per second
 	private float updatePeriod = 1f;
 	private float timer = 0f;
 
@@ -284,17 +281,11 @@ public class IdleDRState : FSMState
 	public override void DoBeforeEntering ()
 	{
 		Debug.Log ("Entered idle state.");
+		controller.GetComponent<Rigidbody> ().velocity = Vector3.zero;
+		controller.GetComponent<Rigidbody> ().angularVelocity = Vector3.zero;
 		controller.navAgent.enabled = true;
-		controller.navAgent.Stop ();
-
-		//set walking colliders to be triggers so the rigidbody does not conflict when on sloped terrain
-		foreach(Collider c in controller.walkingColliders)
-		{
-			c.isTrigger = true;
-		}
-
-		//enable center collider
-		controller.centerCollider.enabled = true;
+		controller.GetComponent<Rigidbody> ().isKinematic = true;
+		controller.navAgent.ResetPath ();
 	}
 	
 	public override void Reason (GameObject player, GameObject npc)
@@ -323,7 +314,7 @@ public class IdleDRState : FSMState
 			}
 
 			//wander point reached or as close as it can get
-			if ((timer += Time.fixedDeltaTime) >= updatePeriod)
+			if ((timer += Time.deltaTime) >= updatePeriod)
 			{
 				timer = 0;
 				if (state == IdleState.Idle)
@@ -340,6 +331,7 @@ public class IdleDRState : FSMState
 						wanderPoint = controller.transform.position + new Vector3(Random.Range(-wanderRange, wanderRange),
 						                                                          0,
 						                                                          Random.Range(-wanderRange, wanderRange));
+						Debug.Log("New wander point: " + wanderPoint);
 						controller.navAgent.SetDestination(wanderPoint);
 						controller.animator.SetBool("walk", true);
 					}
@@ -368,10 +360,10 @@ public class ApproachDRState : FSMState
 	{
 		Debug.Log ("Entered approach state.");
 
-		controller.navAgent.enabled = false;
+		/*controller.navAgent.enabled = false;
 		controller.navAgent.enabled = true;
 		controller.navAgent.enabled = false;
-		controller.navAgent.enabled = true;
+		controller.navAgent.enabled = true;*/
 	}
 
 	public override void Reason (GameObject player, GameObject npc)
@@ -380,41 +372,37 @@ public class ApproachDRState : FSMState
 		playerPosition = controller.player.transform.TransformPoint(new Vector3 (0, 1.06f, 0));
 		controllerPosition = controller.transform.TransformPoint(new Vector3 (0, 5f, 7f));
 		playerHeading = playerPosition - controllerPosition;
-		playerHeading.Normalize ();
 		float playerDistance = playerHeading.magnitude;
+		playerHeading.Normalize ();
 
-		float headingAngle = Vector3.Dot (controller.transform.forward, playerHeading);
-
+		//use this to calculate x and z position and ignore height
+		Vector3 playerFlat = playerHeading;
+		playerFlat.y = 0;
+		playerFlat.Normalize ();
+		float headingAngle = Vector3.Dot (controller.transform.forward, playerFlat);
+		Physics.Raycast (controllerPosition, playerHeading, out hitInfo);
 		if (playerDistance > controller.rollRange + 10f)
 		{
 			controller.SetTransition(Transition.OutOfRange);
 			controller.detectedPlayer = false;
 		}
 		//if dune roamer is in attack range and facing player and has line of sight to player, start attacking
+
 		else if (playerDistance < controller.attackRange &&
 		         headingAngle >= 0.99f &&
-		         Physics.Raycast(controllerPosition, playerHeading, out hitInfo, controller.attackRange))
+		         hitInfo.transform == player.transform)
 		{
-			if (hitInfo.transform == player.transform)
-			{
-//				Debug.Log("Angle to player: " + headingAngle);
-				controller.SetTransition(Transition.AttackRange);
-			}
+			controller.SetTransition(Transition.AttackRange);
 		}
 		//if dune roamer is in roll range and facing player and has line of sight to player, start rolling
 		//also check if not too close to attack range and roll is off cooldown.
 		else if (playerDistance < controller.rollRange &&
 		         controller.rollTimer == 0 &&
 		         headingAngle >= 0.99f &&
-		         Physics.Raycast(controllerPosition, playerHeading, out hitInfo, controller.rollRange))
+		         hitInfo.transform == player.transform)
 		{
-			if (hitInfo.transform == player.transform)
-			{
-//				Debug.Log("Angle to player: " + headingAngle);
-				controller.SetTransition(Transition.RollRange);
-			}
+			controller.SetTransition(Transition.RollRange);
 		}
-		Debug.DrawLine (controllerPosition, hitInfo.point, Color.red, 0.1f);
 	}
 
 	public override void Act (GameObject player, GameObject npc)
@@ -426,8 +414,6 @@ public class ApproachDRState : FSMState
 public class RollDRState : FSMState
 {
 	public DuneRoamerController controller;
-	public WheelCollider collider;
-	private float lastFrameSpeed;
 
 	public RollDRState (DuneRoamerController ctrlr)
 	{
@@ -438,18 +424,12 @@ public class RollDRState : FSMState
 	public override void DoBeforeEntering ()
 	{
 		Debug.Log ("Entered roll state.");
-		foreach (Collider c in controller.walkingColliders)
-		{
-			c.enabled = false;
-		}
-		controller.rollingCollider.enabled = true;
 		controller.navAgent.enabled = false;
+		controller.GetComponent<Rigidbody> ().isKinematic = false;
 
 		controller.transform.LookAt(controller.player.transform);
-
-		//enable rigidbody and start rolling
-		controller.GetComponent<Rigidbody>().AddRelativeForce (Vector3.up * Mathf.Sin(controller.rollAngle) * controller.rollForce, ForceMode.Impulse);
-		controller.GetComponent<Rigidbody>().AddRelativeForce (Vector3.forward * Mathf.Cos(controller.rollAngle) * controller.rollForce, ForceMode.Impulse);
+		
+		//anim.setBool("roll", true);
 	}
 
 	public override void Reason (GameObject player, GameObject npc)
@@ -458,9 +438,7 @@ public class RollDRState : FSMState
 		{
 		case DuneRoamerHit.Player:
 			//hit zenobia
-			controller.doPlayerImpact(90, 10000);
-			controller.SetTransition(Transition.PlayerImpact);
-			controller.rollTimer = controller.rollCooldown;
+			controller.doPlayerImpact(controller.rollDamage, 10000);
 			return;
 
 		case DuneRoamerHit.Wall:
@@ -477,60 +455,24 @@ public class RollDRState : FSMState
 			return;
 		}
 
-		/*
-		Vector3 currentFrameVelocity = controller.rigidbody.velocity;
-		currentFrameVelocity.y = 0;
-		float currentFrameSpeed = currentFrameVelocity.magnitude;
-
-		//positive means slow down
-		float currentFrameAcceleration = (lastFrameSpeed - currentFrameSpeed) / Time.fixedDeltaTime;
-
-		//if the dune roamer has slowed down a lot last frame, then it's hit something so go to stunned state.
-		if (currentFrameAcceleration > 120 || (currentFrameSpeed < lastFrameSpeed * 0.6 && currentFrameSpeed > 10))
-		{
-//			Debug.Log("Lost a lot of speed! Acceleration for this frame: " + currentFrameAcceleration);
-			controller.SetTransition(Transition.OtherImpact);
-			return;
-		}
-
-		//also, if the dune roamer tips too far to the side, put it in stunned state as well.
-		float tipAngle = controller.transform.localEulerAngles.z;
-		if ((tipAngle < 90f && tipAngle > 15f) || (tipAngle > 270f && tipAngle - 360f < -15f))
-		{
-//			Debug.Log("Tipped over! Z angle (roll): " + controller.transform.localEulerAngles.z);
-			controller.SetTransition(Transition.OtherImpact);
-		}*/
-
-		//if vertical velocity is above a certain threshold, start falling
+		/*//if vertical velocity is above a certain threshold, start falling
 		if (controller.GetComponent<Rigidbody>().velocity.y < -10f)
 		{
 			controller.SetTransition(Transition.InAir);
 			return;
-		}
+		}*/
 	}
 
 	public override void Act (GameObject player, GameObject npc)
 	{
-		controller.GetComponent<Rigidbody>().AddRelativeTorque (Vector3.right * 5000);
-		if (controller.GetComponent<Rigidbody>().velocity.sqrMagnitude > controller.rollSpeed * controller.rollSpeed)
+		Vector3 vel = controller.transform.TransformDirection (Vector3.forward) * controller.rollSpeed;
+		if (!controller.isGrounded())
 		{
-			controller.GetComponent<Rigidbody>().velocity = controller.GetComponent<Rigidbody>().velocity.normalized * controller.rollSpeed;
+			vel += new Vector3(0, -1 * controller.gravity, 0);
 		}
-		Vector3 lastFrameVelocity = controller.GetComponent<Rigidbody>().velocity;
-		lastFrameVelocity.y = 0;
-		lastFrameSpeed = lastFrameVelocity.magnitude;
+		controller.GetComponent<Rigidbody> ().velocity = vel;
+		controller.GetComponent<Rigidbody> ().angularVelocity = Vector3.zero;
 	}
-
-	public override void DoBeforeLeaving ()
-	{
-		foreach (Collider c in controller.walkingColliders)
-		{
-			c.enabled = true;
-		}
-		controller.rollingCollider.enabled = false;
-	}
-
-
 }
 
 public class AttackDRState : FSMState
@@ -538,25 +480,22 @@ public class AttackDRState : FSMState
 	public DuneRoamerController controller;
 	private float chargeForce = 200f;
 
-	private float chargeDuration = 1f;
+	private float chargeDuration = 5f;
 	private float chargeTimer = 0f;
+	private Vector3 target;
 
 	public AttackDRState (DuneRoamerController ctrlr)
 	{
 		stateID = StateID.AttackStateID;
 		controller = ctrlr;
-
-		foreach (Collider c in controller.walkingColliders)
-		{
-			c.isTrigger = true;
-		}
 	}
 
 	public override void DoBeforeEntering ()
 	{
 		Debug.Log ("Entered attack state.");
 		controller.transform.LookAt(controller.player.transform);
-		chargeDuration = Vector3.Distance (controller.transform.position, controller.player.transform.position) / controller.chargeSpeed + 3f;
+		controller.navAgent.enabled = false;
+		controller.GetComponent<Rigidbody> ().isKinematic = false;
 		controller.animator.SetBool ("walk", true);
 	}
 	public override void Reason (GameObject player, GameObject npc)
@@ -584,14 +523,19 @@ public class AttackDRState : FSMState
 	{
 		//[ANIMATE] play charging animation
 
-		controller.navAgent.Move (controller.transform.TransformDirection(Vector3.forward) * controller.chargeSpeed * Time.fixedDeltaTime);
+		Vector3 vel = controller.transform.TransformDirection (Vector3.forward) * controller.chargeSpeed;
+		if (!controller.isGrounded())
+		{
+			vel += new Vector3(0, -1 * controller.gravity, 0);
+		}
+		controller.GetComponent<Rigidbody> ().velocity = vel;
+		controller.GetComponent<Rigidbody> ().angularVelocity = Vector3.zero;
 		chargeTimer += Time.fixedDeltaTime;
 
 		switch (controller.hitObject)
 		{
 		case DuneRoamerHit.Player:
-//			Debug.Log("Headbutted player!");
-			controller.doPlayerImpact(40, 6000);
+			controller.doPlayerImpact(controller.attackDamage, 6000);
 			break;
 		}
 	}
@@ -607,13 +551,7 @@ public class TrappedDRState : FSMState
 	{
 		Debug.Log ("Entered trapped state.");
 
-		//set walking colliders to not be triggers since it is trapped and may need physics
-		foreach (Collider c in controller.walkingColliders)
-		{
-			c.isTrigger = false;
-		}
-
-		//play trapped animation loop
+		//play trapped animation
 	}
 	public TrappedDRState (DuneRoamerController ctrlr)
 	{
@@ -642,27 +580,17 @@ public class StunnedDRState : FSMState
 	private DuneRoamerController controller;
 	private float stunDuration = 5f;
 	private float stunTimer = 0f;
+	private Rigidbody rigidbody;
 
 	public override void DoBeforeEntering ()
 	{
 		Debug.Log ("Entered stunned state.");
-
-		//set walking colliders to not be triggers since it is stunned and needs physics
-		foreach (Collider c in controller.walkingColliders)
-		{
-			c.isTrigger = false;
-		}
-
-		//make it fall to the side by disabling center box collider
-		controller.centerCollider.enabled = false;
-
-		//stop movement of controller so it just falls over
-		controller.GetComponent<Rigidbody>().velocity = Vector3.zero;
 	}
 	public StunnedDRState (DuneRoamerController ctrlr)
 	{
 		stateID = StateID.StunnedStateID;
 		controller = ctrlr;
+		rigidbody = controller.GetComponent<Rigidbody> ();
 	}
 
 	public override void Reason (GameObject player, GameObject npc)
@@ -677,8 +605,10 @@ public class StunnedDRState : FSMState
 	public override void Act (GameObject player, GameObject npc)
 	{
 		//play stunned animation
-
+		//anim.setBool("stun", true);
 		stunTimer += Time.fixedDeltaTime;
+		rigidbody.velocity = new Vector3(0, -1 * controller.gravity, 0);
+		rigidbody.angularVelocity = Vector3.zero;
 	}
 }
 
@@ -690,15 +620,6 @@ public class FallingDRState : FSMState
 	public override void DoBeforeEntering ()
 	{
 		Debug.Log ("Entered falling state.");
-
-		//set walking colliders to not be triggers since it is falling and needs physics
-		foreach (Collider c in controller.walkingColliders)
-		{
-			c.isTrigger = false;
-		}
-
-		//disable center collider so it can't land on its feet and not fall over
-		controller.centerCollider.enabled = false;
 	}
 	public FallingDRState (DuneRoamerController ctrlr)
 	{

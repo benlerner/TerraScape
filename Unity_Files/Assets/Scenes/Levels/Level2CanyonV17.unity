@@ -4203,6 +4203,116 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300000, guid: c7354df5dd4644d3f881c862b6517d7b, type: 3}
+--- !u!1001 &402936879
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 499710, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -117.120003
+      objectReference: {fileID: 0}
+    - target: {fileID: 499710, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -5.17000008
+      objectReference: {fileID: 0}
+    - target: {fileID: 499710, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 297.959991
+      objectReference: {fileID: 0}
+    - target: {fileID: 499710, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -.0228997301
+      objectReference: {fileID: 0}
+    - target: {fileID: 499710, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: .780268013
+      objectReference: {fileID: 0}
+    - target: {fileID: 499710, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: .0110971322
+      objectReference: {fileID: 0}
+    - target: {fileID: 499710, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .624927402
+      objectReference: {fileID: 0}
+    - target: {fileID: 499710, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
+      propertyPath: m_RootOrder
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 443424, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: .796863794
+      objectReference: {fileID: 0}
+    - target: {fileID: 443424, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: .461821824
+      objectReference: {fileID: 0}
+    - target: {fileID: 443424, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -.150577351
+      objectReference: {fileID: 0}
+    - target: {fileID: 443424, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: -.35924226
+      objectReference: {fileID: 0}
+    - target: {fileID: 126646, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
+      propertyPath: m_Name
+      value: Dune Roamer V4 Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 499710, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
+      propertyPath: m_LocalScale.x
+      value: .748973608
+      objectReference: {fileID: 0}
+    - target: {fileID: 499710, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
+      propertyPath: m_LocalScale.y
+      value: .748973608
+      objectReference: {fileID: 0}
+    - target: {fileID: 499710, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
+      propertyPath: m_LocalScale.z
+      value: .748973608
+      objectReference: {fileID: 0}
+    - target: {fileID: 11463636, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
+      propertyPath: attackDamage
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 11463636, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
+      propertyPath: walkSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11463636, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
+      propertyPath: chargeSpeed
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 11463636, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
+      propertyPath: viewRange
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 11463636, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
+      propertyPath: rollRange
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 11463636, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
+      propertyPath: attackRange
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11463636, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
+      propertyPath: detectionRangeBelow
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 19579324, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
+      propertyPath: m_Radius
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530130, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &411796547
 Prefab:
   m_ObjectHideFlags: 0
@@ -4297,132 +4407,6 @@ Transform:
   - {fileID: 742708018}
   m_Father: {fileID: 1956195162}
   m_RootOrder: 0
---- !u!1001 &415535817
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 411126, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -111.68
-      objectReference: {fileID: 0}
-    - target: {fileID: 411126, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -4.63999987
-      objectReference: {fileID: 0}
-    - target: {fileID: 411126, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 299.519989
-      objectReference: {fileID: 0}
-    - target: {fileID: 411126, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: .0212826207
-      objectReference: {fileID: 0}
-    - target: {fileID: 411126, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -.693430066
-      objectReference: {fileID: 0}
-    - target: {fileID: 411126, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -.0139496913
-      objectReference: {fileID: 0}
-    - target: {fileID: 411126, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: -.720074534
-      objectReference: {fileID: 0}
-    - target: {fileID: 411126, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
-      propertyPath: m_RootOrder
-      value: 41
-      objectReference: {fileID: 0}
-    - target: {fileID: 411134, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: .796863914
-      objectReference: {fileID: 0}
-    - target: {fileID: 411134, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: .461821884
-      objectReference: {fileID: 0}
-    - target: {fileID: 411134, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -.150577366
-      objectReference: {fileID: 0}
-    - target: {fileID: 411134, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: -.35924229
-      objectReference: {fileID: 0}
-    - target: {fileID: 411126, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
-      propertyPath: m_LocalScale.x
-      value: .748973608
-      objectReference: {fileID: 0}
-    - target: {fileID: 411126, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
-      propertyPath: m_LocalScale.y
-      value: .748973608
-      objectReference: {fileID: 0}
-    - target: {fileID: 411126, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
-      propertyPath: m_LocalScale.z
-      value: .748973548
-      objectReference: {fileID: 0}
-    - target: {fileID: 11411226, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
-      propertyPath: attackDamage
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 11411226, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
-      propertyPath: chargeSpeed
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 11411226, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
-      propertyPath: walkSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 11411226, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
-      propertyPath: rollRange
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 11411226, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
-      propertyPath: shouldWander
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11411226, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
-      propertyPath: detectionRangeAbove
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 11411226, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
-      propertyPath: detectionRangeBelow
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 11411226, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
-      propertyPath: viewRange
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 19511226, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
-      propertyPath: m_Radius
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6511226, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11411226, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
-      propertyPath: rollForce
-      value: 8000
-      objectReference: {fileID: 0}
-    - target: {fileID: 13651974, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 111126, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 111126, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
-      propertyPath: m_Name
-      value: Dune Roamer Boss
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: e21cc6e41daad464191f2f3e696187a2, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &418602513
 GameObject:
   m_PrefabParentObject: {fileID: 100026, guid: 1c8b570bfde1a4c468414aea50114f8b, type: 3}
@@ -4873,27 +4857,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 499710, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
       propertyPath: m_RootOrder
-      value: 17
+      value: 43
       objectReference: {fileID: 0}
     - target: {fileID: 443424, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
       propertyPath: m_LocalRotation.x
-      value: .796863914
+      value: .796863794
       objectReference: {fileID: 0}
     - target: {fileID: 443424, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
       propertyPath: m_LocalRotation.y
-      value: .461821884
+      value: .461821824
       objectReference: {fileID: 0}
     - target: {fileID: 443424, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -.150577366
+      value: -.150577351
       objectReference: {fileID: 0}
     - target: {fileID: 443424, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -.35924229
+      value: -.35924226
       objectReference: {fileID: 0}
     - target: {fileID: 126646, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
       propertyPath: m_Name
-      value: Dune Roamer V4 01
+      value: Dune Roamer V4_01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
@@ -8307,6 +8291,78 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 357.799988
       objectReference: {fileID: 0}
+    - target: {fileID: 100088, guid: 1c8b570bfde1a4c468414aea50114f8b, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 100050, guid: 1c8b570bfde1a4c468414aea50114f8b, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 100202, guid: 1c8b570bfde1a4c468414aea50114f8b, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 100176, guid: 1c8b570bfde1a4c468414aea50114f8b, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 100196, guid: 1c8b570bfde1a4c468414aea50114f8b, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 100040, guid: 1c8b570bfde1a4c468414aea50114f8b, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 100194, guid: 1c8b570bfde1a4c468414aea50114f8b, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 100038, guid: 1c8b570bfde1a4c468414aea50114f8b, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 100186, guid: 1c8b570bfde1a4c468414aea50114f8b, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 100056, guid: 1c8b570bfde1a4c468414aea50114f8b, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 100172, guid: 1c8b570bfde1a4c468414aea50114f8b, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 100138, guid: 1c8b570bfde1a4c468414aea50114f8b, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 100102, guid: 1c8b570bfde1a4c468414aea50114f8b, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 100204, guid: 1c8b570bfde1a4c468414aea50114f8b, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 100152, guid: 1c8b570bfde1a4c468414aea50114f8b, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 100166, guid: 1c8b570bfde1a4c468414aea50114f8b, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 100168, guid: 1c8b570bfde1a4c468414aea50114f8b, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 100212, guid: 1c8b570bfde1a4c468414aea50114f8b, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c8b570bfde1a4c468414aea50114f8b, type: 3}
   m_IsPrefabParent: 0
@@ -11381,7 +11437,7 @@ Transform:
   - {fileID: 76633979}
   - {fileID: 1692193616}
   m_Father: {fileID: 0}
-  m_RootOrder: 32
+  m_RootOrder: 55
 --- !u!1 &1221546393
 GameObject:
   m_ObjectHideFlags: 0
@@ -11921,27 +11977,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 499710, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
       propertyPath: m_RootOrder
-      value: 22
+      value: 47
       objectReference: {fileID: 0}
     - target: {fileID: 443424, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
       propertyPath: m_LocalRotation.x
-      value: .796863794
+      value: .796863914
       objectReference: {fileID: 0}
     - target: {fileID: 443424, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
       propertyPath: m_LocalRotation.y
-      value: .461821824
+      value: .461821884
       objectReference: {fileID: 0}
     - target: {fileID: 443424, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -.150577351
+      value: -.150577366
       objectReference: {fileID: 0}
     - target: {fileID: 443424, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -.35924226
+      value: -.35924229
       objectReference: {fileID: 0}
     - target: {fileID: 126646, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
       propertyPath: m_Name
-      value: Dune Roamer V3_05
+      value: Dune Roamer V4_05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
@@ -12270,27 +12326,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 499710, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 443424, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
       propertyPath: m_LocalRotation.x
-      value: .796863914
+      value: .796863794
       objectReference: {fileID: 0}
     - target: {fileID: 443424, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
       propertyPath: m_LocalRotation.y
-      value: .461821884
+      value: .461821824
       objectReference: {fileID: 0}
     - target: {fileID: 443424, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -.150577366
+      value: -.150577351
       objectReference: {fileID: 0}
     - target: {fileID: 443424, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -.35924229
+      value: -.35924226
       objectReference: {fileID: 0}
     - target: {fileID: 126646, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
       propertyPath: m_Name
-      value: Dune Roamer V6
+      value: Dune Roamer V4_04
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
@@ -12994,6 +13050,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8c7934eb84c14421eab39a2d0543fc1b, type: 2}
+    - target: {fileID: 100000, guid: 18f2f9d13c6464827b023ab9da620896, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18f2f9d13c6464827b023ab9da620896, type: 3}
   m_IsPrefabParent: 0
@@ -14276,27 +14336,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 499710, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 443424, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
       propertyPath: m_LocalRotation.x
-      value: .796863914
+      value: .796863794
       objectReference: {fileID: 0}
     - target: {fileID: 443424, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
       propertyPath: m_LocalRotation.y
-      value: .461821884
+      value: .461821824
       objectReference: {fileID: 0}
     - target: {fileID: 443424, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -.150577366
+      value: -.150577351
       objectReference: {fileID: 0}
     - target: {fileID: 443424, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -.35924229
+      value: -.35924226
       objectReference: {fileID: 0}
     - target: {fileID: 126646, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
       propertyPath: m_Name
-      value: Dune Roamer V5
+      value: Dune Roamer V4_03
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
@@ -16075,23 +16135,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 499710, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 443424, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
       propertyPath: m_LocalRotation.x
-      value: .796863914
+      value: .796863794
       objectReference: {fileID: 0}
     - target: {fileID: 443424, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
       propertyPath: m_LocalRotation.y
-      value: .461821884
+      value: .461821824
       objectReference: {fileID: 0}
     - target: {fileID: 443424, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -.150577366
+      value: -.150577351
       objectReference: {fileID: 0}
     - target: {fileID: 443424, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -.35924229
+      value: -.35924226
+      objectReference: {fileID: 0}
+    - target: {fileID: 126646, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}
+      propertyPath: m_Name
+      value: Dune Roamer V4_02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c55fa250bf6e142d6865bebef3ffa3ea, type: 2}

@@ -269,7 +269,6 @@ public class ThirdPersonController : MonoBehaviour
 		isSliding = true;
 		movable = false;
 		hanging = false;
-		Debug.Log ("Sliding");
 		
 		//enable ridigdbody
 		GetComponent<Rigidbody>().isKinematic = false;
@@ -298,7 +297,7 @@ public class ThirdPersonController : MonoBehaviour
 		{
 			newVelocity.y = minY;
 		}
-		if (controller.isGrounded)
+		if (IsGrounded())
 		{
 			GetComponent<Rigidbody>().velocity = transform.TransformDirection(newVelocity);
 		}
