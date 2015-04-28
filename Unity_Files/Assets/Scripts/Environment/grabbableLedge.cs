@@ -94,7 +94,8 @@ public class grabbableLedge : MonoBehaviour {
 	public void climbUp (){
 		inControl = false;
 		player.GetComponent<ThirdPersonController>().movable = false;
-		player.GetComponent<ThirdPersonController> ().climb = true;
+		//player.GetComponent<ThirdPersonController> ().climb = true;
+		player.GetComponent<ThirdPersonController> ().hanging = false;
 		Vector3 start = player.transform.position;
 		Vector3 arc = start + (player.transform.up * 2.0f) + (player.transform.forward * 0.5f);
 		Vector3 end = start + (player.transform.up * 1.6f) + (player.transform.forward * 1.0f);

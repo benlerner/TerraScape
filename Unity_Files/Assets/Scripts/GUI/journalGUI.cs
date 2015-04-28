@@ -88,6 +88,9 @@ public class journalGUI : MonoBehaviour {
 		popUp ();
 	}
 
+	public void controlPage(){
+		selectedPage = 0;
+	}
 	public void turnPage(bool direction){
 		if (direction){
 			selectedPage++;

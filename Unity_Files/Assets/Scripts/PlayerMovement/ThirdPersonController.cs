@@ -54,6 +54,8 @@ public class ThirdPersonController : MonoBehaviour
 		public GameObject snapperPrefab;
 		private bool laserOn = false;
 		private Camera myCam;
+		private Transform playerMesh;
+		private Vector3 zenBodyPos;
 	// The speed when walking
 	public float walkSpeed= 2.0f;
 	// after trotAfterSeconds of walking we trot with trotSpeed
@@ -148,6 +150,8 @@ public class ThirdPersonController : MonoBehaviour
 		management = GetComponent<Player>();
 		controller = GetComponent<CharacterController>();
 		myCam = Camera.main;
+		playerMesh = this.transform.GetChild (0);
+		zenBodyPos = playerMesh.transform.localPosition;
 	}
 
 
@@ -392,8 +396,11 @@ public class ThirdPersonController : MonoBehaviour
 		//Debug.Log (transform.eulerAngles.y);
 		if (verticalSpeed <= -50)
 			moveSpeed = 0;
-		if (Input.GetKeyDown (KeyCode.P) && Input.GetKeyDown (KeyCode.O)){
+		if (Input.GetKeyDown (KeyCode.Alpha0)){
 			Application.LoadLevel(Application.loadedLevel);
+		}
+		if (Input.GetKeyDown (KeyCode.Alpha9)){
+			Application.LoadLevel(0);
 		}
 		if (!isControllable)
 		{
@@ -439,7 +446,7 @@ public class ThirdPersonController : MonoBehaviour
 			}
 		}
 		if (movable){
-
+			playerMesh.transform.localPosition = zenBodyPos;
 			anim.SetBool("shimmy", false);
 			UpdateSmoothedMovementDirection();
 			
