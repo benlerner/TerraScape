@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 7bbfdf2bda3ca2246bed71ec56a3bbbe
-timeCreated: 1430196001
+guid: 736e4e3435c486c4d955b046c61210ec
+timeCreated: 1430205606
 licenseType: Pro
 ModelImporter:
   serializedVersion: 18
@@ -489,6 +489,7 @@ ModelImporter:
     4300178: step_03
     4300180: landmarkTree
     4300182: landmarkPillar
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -542,7 +543,7 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   additionalBone: 0
   userData: 
   assetBundleName: 
