@@ -426,7 +426,7 @@ public class RollDRState : FSMState
 		Debug.Log ("Entered roll state.");
 		controller.navAgent.enabled = false;
 		controller.GetComponent<Rigidbody> ().isKinematic = false;
-
+		controller.animator.SetBool ("roll", true);
 		controller.transform.LookAt(controller.player.transform);
 		
 		//anim.setBool("roll", true);
@@ -439,6 +439,7 @@ public class RollDRState : FSMState
 		case DuneRoamerHit.Player:
 			//hit zenobia
 			controller.doPlayerImpact(controller.rollDamage, 10000);
+			controller.animator.SetBool ("roll", false);
 			return;
 
 		case DuneRoamerHit.Wall:
@@ -446,12 +447,14 @@ public class RollDRState : FSMState
 			controller.hitObject = DuneRoamerHit.None;
 			controller.SetTransition(Transition.OtherImpact);
 			controller.rollTimer = controller.rollCooldown;
+			controller.animator.SetBool ("roll", false);
 			return;
 
 		case DuneRoamerHit.Trap:
 			controller.hitObject = DuneRoamerHit.None;
 			controller.SetTransition(Transition.TrapImpact);
 			controller.rollTimer = controller.rollCooldown;
+			controller.animator.SetBool ("roll", false);
 			return;
 		}
 

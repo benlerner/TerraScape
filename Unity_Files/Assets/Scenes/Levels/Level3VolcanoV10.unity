@@ -1147,6 +1147,10 @@ Prefab:
       propertyPath: m_Name
       value: SnappingDevilV3
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 43eaf56a5c988436eb8afbc834c5981c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 250d760276ee40f4c9586eb91eef3cc7, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 43eaf56a5c988436eb8afbc834c5981c, type: 3}
   m_IsPrefabParent: 0

@@ -1985,7 +1985,7 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_Motion: {fileID: 7400000, guid: 868265c6f8b424aa5879adfffe85979e, type: 3}
+  m_Motion: {fileID: 7400000, guid: dab673b51ea8fd44d8cfdd55b7122bd5, type: 3}
   m_Tag: 
 --- !u!1102 &110281455
 AnimatorState:
@@ -2006,7 +2006,7 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_Motion: {fileID: 7400000, guid: bb181bd62621b244a8bb43d1385ad74f, type: 3}
+  m_Motion: {fileID: 7400002, guid: 00d15d205f476f64094446ac2e51afd2, type: 3}
   m_Tag: 
 --- !u!1102 &110281775
 AnimatorState:
