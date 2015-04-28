@@ -1295,7 +1295,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100062}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 75.4000015, y: 246.979996, z: -392.299988}
+  m_LocalPosition: {x: 17.2999992, y: 8.5, z: 54.9000015}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 452114}
@@ -2499,7 +2499,7 @@ MonoBehaviour:
   checkPoint: {fileID: 0}
   laserPrefab: {fileID: 100002, guid: ac1c48d40149d12419da3a4bb4cd5255, type: 2}
   blastPrefab: {fileID: 0}
-  snapperPrefab: {fileID: 0}
+  snapperPrefab: {fileID: 138226, guid: 8d0c6f6719456574c93a50439650763e, type: 2}
   walkSpeed: 7
   trotSpeed: 7
   runSpeed: 15
@@ -2560,6 +2560,8 @@ MonoBehaviour:
   currentStamina: 50
   staminaRegen: 3
   inventory:
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   journal: []

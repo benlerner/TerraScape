@@ -37,6 +37,7 @@ public class worm : MonoBehaviour {
 		if (other.tag == "bigBlock" && hits<2){
 			anim.SetTrigger("hit");
 			hits = hits + 1;
+			timer = 0;
 		}
 		else if (other.tag == "bigBlock" && hits==2){
 			anim.SetTrigger("death");

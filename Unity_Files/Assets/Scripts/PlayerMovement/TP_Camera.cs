@@ -64,7 +64,7 @@ public class TP_Camera : MonoBehaviour
 		if (movable && !menu.menuOpen){
 		if (shake)
 			shakeCount ++;
-		if (shakeCount>=20){
+		if (shakeCount>=100){
 			shake = false;
 			shakeCount = 0;
 			}
