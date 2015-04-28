@@ -1290,6 +1290,7 @@ GameObject:
   - 195: {fileID: 19521574}
   - 23: {fileID: 2352290}
   - 114: {fileID: 11464734}
+  - 65: {fileID: 6578930}
   m_Layer: 0
   m_Name: snappingDevil_v3_rig
   m_TagString: Untagged
@@ -2870,6 +2871,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 6.14990997, y: 4, z: 12}
   m_Center: {x: 0, y: 1.54999995, z: 0}
+--- !u!65 &6578930
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183462}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 3, z: 6}
+  m_Center: {x: 2.5, y: 1.5, z: 11}
 --- !u!65 &6582944
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2880,8 +2893,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7, y: 4, z: 8}
-  m_Center: {x: 0, y: 1.58000004, z: 8}
+  m_Size: {x: 7, y: 4, z: 6}
+  m_Center: {x: 0, y: 1.58000004, z: 10}
 --- !u!95 &9564438
 Animator:
   serializedVersion: 3
@@ -2913,6 +2926,7 @@ MonoBehaviour:
   navAgent: {fileID: 19521574}
   attackArea: {fileID: 6582944}
   anim: {fileID: 9564438}
+  attackZone: {fileID: 6578930}
 --- !u!137 &13724802
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

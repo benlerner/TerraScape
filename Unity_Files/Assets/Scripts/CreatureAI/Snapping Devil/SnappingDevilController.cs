@@ -7,11 +7,14 @@ public class SnappingDevilController : MonoBehaviour {
 	GameObject player;
 	public BoxCollider attackArea;
 	public Animator anim;
+	public BoxCollider attackZone;
 
-	private float attackCooldown = 2.0f;
+	private float attackCooldown = 1.0f;
 	private float attackTimer = 0f;
+	private bool attacking;
 
-	private static readonly Vector3 clawPoint = new Vector3 (2.5f,-1.5f,7); //location of claw relative to center
+	private static readonly Vector3 clawPoint = new Vector3 (2.5f, 1.5f, 8); //location of claw relative to center
+	private Vector3 playerPos;
 
 	// Use this for initialization
 	void Start () {
@@ -20,23 +23,25 @@ public class SnappingDevilController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		playerPos = player.transform.TransformPoint(new Vector3 (0, 1.06f, 0));
 		if (playerVisible())
 		{
 
-			navAgent.SetDestination(player.transform.position);
+			navAgent.SetDestination(playerPos);
 			//play walk animation
-			if (attackArea.bounds.Contains(player.transform.position))
+			if (attackArea.bounds.Contains(playerPos) || attacking)
 			{
+				attacking = true;
 				navAgent.Stop();
 				//play attack animation
 				if ((attackTimer += Time.deltaTime) >= attackCooldown)
 				{
+					attacking = false;
 					attackTimer = 0;
 					FireSnapper();
 				}
 			} else{
 				navAgent.Resume();
-				Debug.Log ("Player visible.");
 			}
 		} else
 		{
@@ -59,21 +64,26 @@ public class SnappingDevilController : MonoBehaviour {
 		//create effect
 		//check if any objects in between snapper and zenobia
 		RaycastHit hitObj;
-		Vector3 heading = player.transform.TransformPoint(new Vector3(0,1,0)) - transform.TransformPoint (clawPoint);
-		if (Physics.Raycast(clawPoint, transform.TransformDirection(Vector3.forward), out hitObj))
+		Vector3 heading = playerPos - transform.TransformPoint (clawPoint);
+		if (Physics.Raycast(clawPoint, heading * 1.5f, out hitObj))
 		{
 			Debug.DrawLine(transform.TransformPoint(clawPoint), hitObj.point, Color.green, 1.0f);
-			Debug.DrawRay(transform.TransformPoint(clawPoint), heading, Color.blue, 1.0f);
-			if (hitObj.transform == player.transform)
+			Debug.DrawRay(transform.TransformPoint(clawPoint), heading * 1.5f, Color.blue, 1.0f);
+			if (hitObj.transform == player.transform && attackZone.bounds.Contains(playerPos))
 			{
-				player.SendMessage ("TakeDamage", 40f);
+				Vector3 impactVector = playerPos - transform.position;
+				impactVector.y = 0;
+				impactVector.Normalize();
+				player.GetComponent<Player>().TakeImpactDamage(40f, impactVector, 1000f);
+				Debug.Log("Snapped player");
 			}
+			Debug.Log(hitObj.transform);
 		}
 	}
 	
 	//checks if the player is seen by the creature
 	bool playerVisible() {
-		if (Vector3.Distance(transform.position, player.transform.position) < 30 && Mathf.Abs(transform.position.y - player.transform.position.y) < 7)
+		if (Vector3.Distance(transform.position, playerPos) < 30 && Mathf.Abs(transform.position.y - playerPos.y) < 7)
 		{
 			return true;
 		}

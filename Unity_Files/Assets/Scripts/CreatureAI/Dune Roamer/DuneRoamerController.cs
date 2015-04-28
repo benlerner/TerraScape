@@ -439,6 +439,7 @@ public class RollDRState : FSMState
 		case DuneRoamerHit.Player:
 			//hit zenobia
 			controller.doPlayerImpact(controller.rollDamage, 10000);
+			controller.SetTransition(Transition.PlayerImpact);
 			controller.animator.SetBool ("roll", false);
 			return;
 

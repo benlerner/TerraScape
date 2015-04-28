@@ -14930,7 +14930,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 438528, guid: 772bfd2084e360142a1b72168d858f8e, type: 2}
       propertyPath: m_RootOrder
-      value: 19
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 438528, guid: 772bfd2084e360142a1b72168d858f8e, type: 2}
       propertyPath: m_LocalScale.x
@@ -14948,6 +14948,18 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: c8d56d114f3883c49bbcf4ab24d3eead, type: 2}
+    - target: {fileID: 6578930, guid: 772bfd2084e360142a1b72168d858f8e, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6578930, guid: 772bfd2084e360142a1b72168d858f8e, type: 2}
+      propertyPath: m_Size.z
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6578930, guid: 772bfd2084e360142a1b72168d858f8e, type: 2}
+      propertyPath: m_Center.z
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 772bfd2084e360142a1b72168d858f8e, type: 2}
   m_IsPrefabParent: 0
