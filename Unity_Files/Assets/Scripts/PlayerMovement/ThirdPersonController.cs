@@ -53,6 +53,7 @@ public class ThirdPersonController : MonoBehaviour
 		public GameObject blastPrefab;
 		public GameObject snapperPrefab;
 		private bool laserOn = false;
+		private Camera myCam;
 	// The speed when walking
 	public float walkSpeed= 2.0f;
 	// after trotAfterSeconds of walking we trot with trotSpeed
@@ -146,12 +147,13 @@ public class ThirdPersonController : MonoBehaviour
 		slider.enabled = false;
 		management = GetComponent<Player>();
 		controller = GetComponent<CharacterController>();
+		myCam = Camera.main;
 	}
 
 
 	void  UpdateSmoothedMovementDirection ()
 	{
-		Transform cameraTransform= Camera.main.transform;
+		Transform cameraTransform= myCam.transform;
 		bool grounded= IsGrounded();
 		// Forward vector relative to the camera along the x-z plane	
 		Vector3 forward= cameraTransform.TransformDirection(Vector3.forward);
@@ -614,7 +616,7 @@ public class ThirdPersonController : MonoBehaviour
 		//wait X seconds
 		//play snap windup animation
 		itemUse = 1;
-		Debug.Log ("Winding up snapper... t = " + snapTimer);
+		//Debug.Log ("Winding up snapper... t = " + snapTimer);
 		if ((snapTimer += Time.deltaTime) >= snapDuration)
 		{
 			snapTimer = 0f;

@@ -19,6 +19,11 @@ public class smashSignal : MonoBehaviour {
 			target = other.gameObject;
 			target.GetComponent<destructionControl>().Break ();
 		}
+		if (other.tag == "bigBlock"){
+			target = other.gameObject;
+			target.GetComponent<stalactiteTrigger>().activate();
+			Destroy(this, 0);
+		}
 	}
 	// Update is called once per frame
 	/*void Update () {
