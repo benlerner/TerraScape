@@ -629,7 +629,7 @@ public class ThirdPersonController : MonoBehaviour
 			snapTimer = 0f;
 			//play snapper blowback animation
 			Debug.Log(transform.position + " , " + (transform.position));
-			Instantiate(snapperPrefab, transform.position, transform.rotation);
+			Instantiate(snapperPrefab, transform.TransformPoint(new Vector3(0,1.06,1)), transform.rotation);
 			//return player movement
 		}
 
