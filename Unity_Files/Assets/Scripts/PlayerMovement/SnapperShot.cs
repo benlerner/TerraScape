@@ -31,9 +31,19 @@ public class SnapperShot : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-		other.gameObject.SendMessage ("snapperShotHit", SendMessageOptions.DontRequireReceiver);
+		if (other.gameObject.tag.Equals("Player"))
+        {
+            Vector3 impactVector = other.transform.TransformPoint(new Vector3(0,1.06f,0)) - transform.position;
+            impactVector.y = 0;
+            impactVector.Normalize();
+            other.GetComponent<Player>().TakeImpactDamage(30f,impactVector, 1000f);
+        } else
+        {
+            other.gameObject.SendMessage ("snapperShotHit", SendMessageOptions.DontRequireReceiver);
+        }
+
 		//maybe create a particle effect?
-	//	Destroy (gameObject);
+		Destroy (gameObject);
     }
     #endregion
 }
