@@ -1,9 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CreatureAI\Snapping Devil\SnappingDevilController.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerMovement/ThirdPersonController.cs">
     <Files>
-      <File FileName="Assets\Scripts\CreatureAI\Snapping Devil\SnappingDevilController.cs" Line="16" Column="72" />
-      <File FileName="Assets\Scripts\CreatureAI\Dune Roamer\DuneRoamerController.cs" Line="371" Column="10" />
+      <File FileName="Assets/Scripts/PlayerMovement/ThirdPersonController.cs" Line="632" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
