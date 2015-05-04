@@ -2926,7 +2926,11 @@ MonoBehaviour:
   navAgent: {fileID: 19521574}
   attackArea: {fileID: 6582944}
   anim: {fileID: 9564438}
-  attackZone: {fileID: 6578930}
+  snapperPrefab: {fileID: 138226, guid: 8d0c6f6719456574c93a50439650763e, type: 2}
+  detectionRange: 30
+  maxRange: 22
+  minRange: 15
+  stopRange: 0
 --- !u!137 &13724802
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
