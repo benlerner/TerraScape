@@ -41,9 +41,10 @@ public class SnapperShot : MonoBehaviour
         {
             other.gameObject.SendMessage ("snapperShotHit", SendMessageOptions.DontRequireReceiver);
         }
-
+		Debug.Log ("Hit object:" + other.transform);
 		//maybe create a particle effect?
 		Destroy (gameObject);
+
     }
     #endregion
 }
