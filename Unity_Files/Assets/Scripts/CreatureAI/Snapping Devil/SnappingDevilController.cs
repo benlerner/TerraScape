@@ -14,7 +14,7 @@ public class SnappingDevilController : MonoBehaviour {
 	public float minRange = 15f;
 	public float stopRange;
 
-	private float attackCooldown = 1.0f;
+	private float attackCooldown = 2.0f;
 	private float attackTimer = 0f;
 	private bool attacking;
 
@@ -48,15 +48,23 @@ public class SnappingDevilController : MonoBehaviour {
 			if (dist > maxRange && !attacking)
 			{
 				curState = AIState.Approaching;
+				navAgent.updateRotation = true;
+				navAgent.Resume();
 			}
 			else if ((dist < stopRange && curState == AIState.Approaching) || (dist > stopRange && curState == AIState.Retreating))
 			{
 				curState = AIState.Attacking;
+				//stand still so long as player is in attack range
+				navAgent.Stop();
+				navAgent.updateRotation = false;
+				navAgent.ResetPath();
 			}
 			else if (dist < minRange && !attacking && navAgent.remainingDistance <= float.Epsilon)
 			{
 				curState = AIState.Retreating;
 				hasRetreatPoint = false;
+				navAgent.updateRotation = true;
+				navAgent.Resume();
 			}
 		} else
 		{
@@ -72,6 +80,12 @@ public class SnappingDevilController : MonoBehaviour {
 
 		case AIState.Attacking:
 			attacking = true;
+			//rotate towards player
+			Vector3 playerHeading = player.transform.position - transform.position;
+			playerHeading.y = 0;
+			Quaternion rotation = Quaternion.LookRotation(playerHeading);
+			transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, navAgent.angularSpeed * Time.deltaTime);
+
 			if ((attackTimer += Time.deltaTime) >= attackCooldown)
 			{
 				FireSnapper();
