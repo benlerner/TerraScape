@@ -1304,6 +1304,7 @@ GameObject:
   - 195: {fileID: 19562184}
   - 23: {fileID: 2376948}
   - 114: {fileID: 11494116}
+  - 54: {fileID: 5431234}
   m_Layer: 0
   m_Name: MSnappingDevil
   m_TagString: Untagged
@@ -1640,8 +1641,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 187894}
-  m_LocalRotation: {x: 0, y: -.474982738, z: 0, w: .879995167}
-  m_LocalPosition: {x: 25.2999992, y: .680000007, z: -21.3999996}
+  m_LocalRotation: {x: 0, y: -.950044453, z: 0, w: -.312114686}
+  m_LocalPosition: {x: 36.1399994, y: -21.0200005, z: 216.710007}
   m_LocalScale: {x: .485035777, y: .485035807, z: .485035807}
   m_Children:
   - {fileID: 497586}
@@ -2857,6 +2858,21 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!54 &5431234
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 187894}
+  serializedVersion: 2
+  m_Mass: 100
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &6553834
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2902,8 +2918,8 @@ MonoBehaviour:
   anim: {fileID: 9579878}
   snapperPrefab: {fileID: 138226, guid: 8d0c6f6719456574c93a50439650763e, type: 2}
   detectionRange: 30
-  maxRange: 22
-  minRange: 15
+  maxRange: 20
+  minRange: 12
   stopRange: 0
 --- !u!137 &13744522
 SkinnedMeshRenderer:
