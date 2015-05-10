@@ -12,6 +12,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Level2Canyon/Level2CanyonV19.unity
   - enabled: 1
-    path: Assets/Scenes/Levels/Level3Volcano/Level3VolcanoV12.unity
+    path: Assets/Scenes/Levels/Level3Volcano/Level3VolcanoV14.unity
   - enabled: 1
-    path: Assets/Scenes/Levels/Level4Boss/BossLevel_v5.unity
+    path: Assets/Scenes/Levels/Level4Boss/BossLevel_v6.unity
