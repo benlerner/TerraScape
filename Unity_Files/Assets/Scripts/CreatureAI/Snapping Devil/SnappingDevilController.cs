@@ -11,14 +11,14 @@ public class SnappingDevilController : MonoBehaviour {
 
 	public float detectionRange = 30f;
 	public float maxRange = 22f;
-	public float minRange = 15f;
-	public float stopRange;
+	public float stopRange = 18f;
+	public float meleeRange = 10f;
 
 	private float attackCooldown = 2.0f;
 	private float attackTimer = 0f;
 	private bool attacking;
 
-	private static readonly Vector3 clawPoint = new Vector3 (2.5f, 1.5f, 8); //location of claw relative to center
+	public Transform shotPoint;
 	private Vector3 playerPos;
 	private Vector3 retreatPoint;
 	private bool hasRetreatPoint = false;
@@ -27,8 +27,7 @@ public class SnappingDevilController : MonoBehaviour {
 	{
 		None,
 		Approaching,
-		Attacking,
-		Retreating
+		Attacking
 	}
 
 	private AIState curState = AIState.None;
@@ -36,7 +35,6 @@ public class SnappingDevilController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag ("Player");
-		stopRange = (maxRange + minRange) / 2;
 	}
 	
 	// Update is called once per frame
@@ -51,7 +49,7 @@ public class SnappingDevilController : MonoBehaviour {
 				navAgent.updateRotation = true;
 				navAgent.Resume();
 			}
-			else if ((dist < stopRange && curState == AIState.Approaching) || (dist > stopRange && curState == AIState.Retreating))
+			else if (dist < stopRange && curState == AIState.Approaching)
 			{
 				curState = AIState.Attacking;
 				//stand still so long as player is in attack range
@@ -59,16 +57,10 @@ public class SnappingDevilController : MonoBehaviour {
 				navAgent.updateRotation = false;
 				navAgent.ResetPath();
 			}
-			else if (dist < minRange && !attacking && navAgent.remainingDistance <= float.Epsilon)
-			{
-				curState = AIState.Retreating;
-				hasRetreatPoint = false;
-				navAgent.updateRotation = true;
-				navAgent.Resume();
-			}
 		} else
 		{
 			curState = AIState.None;
+			attacking = false;
 		}
 
 		//do state
@@ -88,34 +80,19 @@ public class SnappingDevilController : MonoBehaviour {
 
 			if ((attackTimer += Time.deltaTime) >= attackCooldown)
 			{
-				FireSnapper();
+				if (dist <= meleeRange)
+				{
+					//melee attack
+					Vector3 impactVector = playerPos - transform.position;
+					impactVector.y = 0;
+					impactVector.Normalize();
+					player.GetComponent<Player>().TakeImpactDamage(30f,impactVector, 1000f);
+				} else
+				{
+					FireSnapper();
+				}
 				attackTimer = 0;
 				attacking = false;
-			}
-			break;
-
-		case AIState.Retreating:
-			float angle = 0;
-			while (!hasRetreatPoint)
-			{
-				Vector3 headingRight = Quaternion.AngleAxis (angle * -1f, transform.TransformDirection(Vector3.up)) * 
-					transform.TransformDirection(Vector3.back) * (dist - stopRange);
-				Vector3 headingLeft = Quaternion.AngleAxis (angle, transform.TransformDirection(Vector3.up)) * 
-					transform.TransformDirection(Vector3.back) * (dist - stopRange);
-				//check if there is blocking this path
-				if (!Physics.Raycast(transform.position, headingRight, stopRange - dist))
-				{
-					//set retreat point to endpoint of headingRight
-					retreatPoint = transform.TransformPoint(headingRight);
-					hasRetreatPoint = true;
-					navAgent.SetDestination(retreatPoint);
-				} else if (!Physics.Raycast(transform.position, headingLeft, stopRange - dist))
-				{
-					retreatPoint = transform.TransformPoint(headingLeft);
-					hasRetreatPoint = true;
-					navAgent.SetDestination(retreatPoint);
-				}
-				angle += 10f;
 			}
 			break;
 		}
@@ -123,7 +100,7 @@ public class SnappingDevilController : MonoBehaviour {
 
 	// The animation calls this function to fire
 	void FireSnapper () {
-		Instantiate (snapperPrefab, transform.TransformPoint (clawPoint), transform.rotation);
+		Instantiate (snapperPrefab, shotPoint.position, transform.rotation);
 	}
 	
 	//checks if the player is seen by the creature

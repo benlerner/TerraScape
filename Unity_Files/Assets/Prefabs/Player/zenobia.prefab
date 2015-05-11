@@ -2539,7 +2539,7 @@ MonoBehaviour:
   rotateSpeed: 30
   controller: {fileID: 14300000}
   maxSpeed: 30
-  turnForce: 5
+  turnForce: 3
   extraForce: 300
   maxPitchAngle: 30
   maxRollAngle: 20

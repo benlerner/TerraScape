@@ -1,8 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../particles/particles/Assets/Standard Assets/ParticleSystems/Scripts/Hose.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerMovement\Player.cs">
     <Files>
-      <File FileName="../../particles/particles/Assets/Standard Assets/ParticleSystems/Scripts/Hose.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CreatureAI\Snapping Devil\SnappingDevilController.cs" Line="85" Column="20" />
+      <File FileName="Assets\Scripts\PlayerMovement\SnapperShot.cs" Line="39" Column="84" />
+      <File FileName="Assets\Scripts\PlayerMovement\Player.cs" Line="143" Column="10" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
