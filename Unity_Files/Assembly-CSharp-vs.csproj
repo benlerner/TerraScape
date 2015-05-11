@@ -67,6 +67,7 @@
      <Compile Include="Assets\Scripts\Environment\destructionControl.cs" />
      <Compile Include="Assets\Scripts\Environment\faultRotateObject.cs" />
      <Compile Include="Assets\Scripts\Environment\grabbableLedge.cs" />
+     <Compile Include="Assets\Scripts\Environment\laserOff.cs" />
      <Compile Include="Assets\Scripts\Environment\rockBridgeTrigger.cs" />
      <Compile Include="Assets\Scripts\Environment\selfDestruct.cs" />
      <Compile Include="Assets\Scripts\Environment\stalactiteTrigger.cs" />
@@ -201,7 +202,7 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendForBloom.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Users/Ben/Documents/GitHub/TerraScape/Unity_Files/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>C:/Users/Alex/Desktop/Senior Project/ProjectFolder/TerraScape/Unity_Files/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

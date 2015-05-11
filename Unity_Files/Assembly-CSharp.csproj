@@ -67,6 +67,7 @@
      <Compile Include="Assets\Scripts\Environment\destructionControl.cs" />
      <Compile Include="Assets\Scripts\Environment\faultRotateObject.cs" />
      <Compile Include="Assets\Scripts\Environment\grabbableLedge.cs" />
+     <Compile Include="Assets\Scripts\Environment\laserOff.cs" />
      <Compile Include="Assets\Scripts\Environment\rockBridgeTrigger.cs" />
      <Compile Include="Assets\Scripts\Environment\selfDestruct.cs" />
      <Compile Include="Assets\Scripts\Environment\stalactiteTrigger.cs" />

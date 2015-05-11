@@ -46,7 +46,7 @@ public class ThirdPersonController : MonoBehaviour
 		public static ThirdPersonController instance;
 		private Player management;
 		private int switchTime;
-		public float toolInUse;
+		public int toolInUse;
 		private int itemUse;
 		public Transform checkPoint;
 		public GameObject laserPrefab;
@@ -530,7 +530,7 @@ public class ThirdPersonController : MonoBehaviour
 			anim.SetBool ("climb", climb);
 			anim.SetInteger ("cutScene", cutScene);
 			anim.SetBool ("switching", switching);
-			anim.SetFloat ("tool", toolInUse);
+			anim.SetInteger ("tool", toolInUse);
 			anim.SetInteger ("itemUse", itemUse);
 	/*	if(_animation) {
 			if(_characterState == CharacterState.Jumping) 
