@@ -1655,8 +1655,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 187894}
-  m_LocalRotation: {x: 0, y: -.474982738, z: 0, w: .879995167}
-  m_LocalPosition: {x: -278.839996, y: -40.7849998, z: 82.4660034}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -3.73000002, z: -9.89000034}
   m_LocalScale: {x: .485035777, y: .485035807, z: .485035807}
   m_Children:
   - {fileID: 414370}
@@ -2926,7 +2926,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   navAgent: {fileID: 19562184}
-  attackArea: {fileID: 0}
   anim: {fileID: 9579878}
   snapperPrefab: {fileID: 138226, guid: 8d0c6f6719456574c93a50439650763e, type: 2}
   detectionRange: 30

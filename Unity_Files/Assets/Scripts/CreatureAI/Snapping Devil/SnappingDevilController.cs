@@ -5,7 +5,6 @@ public class SnappingDevilController : MonoBehaviour {
 	
 	public NavMeshAgent navAgent;
 	GameObject player;
-	public BoxCollider attackArea;
 	public Animator anim;
 	public GameObject snapperPrefab;
 
@@ -23,6 +22,8 @@ public class SnappingDevilController : MonoBehaviour {
 	private Vector3 retreatPoint;
 	private bool hasRetreatPoint = false;
 
+	private Quaternion lookRotation;
+	private float distToGround = 0f;
 	private enum AIState
 	{
 		None,
@@ -35,6 +36,9 @@ public class SnappingDevilController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag ("Player");
+		lookRotation = transform.rotation;
+		navAgent.updateRotation = false;
+		distToGround = gameObject.GetComponent<Collider> ().bounds.extents.y;
 	}
 	
 	// Update is called once per frame
@@ -54,7 +58,6 @@ public class SnappingDevilController : MonoBehaviour {
 				curState = AIState.Attacking;
 				//stand still so long as player is in attack range
 				navAgent.Stop();
-				navAgent.updateRotation = false;
 				navAgent.ResetPath();
 			}
 		} else
@@ -71,36 +74,67 @@ public class SnappingDevilController : MonoBehaviour {
 			break;
 
 		case AIState.Attacking:
-			attacking = true;
-			//rotate towards player
-			Vector3 playerHeading = player.transform.position - transform.position;
-			playerHeading.y = 0;
-			Quaternion rotation = Quaternion.LookRotation(playerHeading);
-			transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, navAgent.angularSpeed * Time.deltaTime);
-
-			if ((attackTimer += Time.deltaTime) >= attackCooldown)
+			float heading = Vector3.Dot(transform.TransformDirection(Vector3.forward), (playerPos - transform.position).normalized);
+			if (heading > 0.95 || attacking)
 			{
-				if (dist <= meleeRange)
+				attacking = true;
+				if ((attackTimer += Time.deltaTime) >= attackCooldown)
 				{
-					//melee attack
-					Vector3 impactVector = playerPos - transform.position;
-					impactVector.y = 0;
-					impactVector.Normalize();
-					player.GetComponent<Player>().TakeImpactDamage(30f,impactVector, 1000f);
-				} else
-				{
-					FireSnapper();
+					if (dist <= meleeRange)
+					{
+						//melee attack
+						Vector3 impactVector = playerPos - transform.position;
+						impactVector.y = 0;
+						impactVector.Normalize();
+						player.GetComponent<Player>().TakeImpactDamage(30f,impactVector, 1000f);
+					} else
+					{
+						FireSnapper();
+					}
+					attackTimer = 0;
+					attacking = false;
 				}
-				attackTimer = 0;
-				attacking = false;
 			}
+			if (heading <= 0.95)
+				attacking = false;
 			break;
+		}
+		//align with terrain and towards target
+		if (!attacking && navAgent.remainingDistance > 0.1f)
+		{
+			Vector3 normal = getNormal();
+			Vector3 direction = navAgent.steeringTarget - transform.position;
+			Debug.DrawLine(transform.position,navAgent.steeringTarget,Color.blue);
+
+			direction.y = 0.0f;
+
+			Debug.DrawLine(transform.position, transform.TransformPoint(direction),Color.red);
+			if(direction.magnitude > 0.1f && normal.magnitude > 0.1f) {
+				Quaternion qLook = Quaternion.LookRotation(direction, Vector3.up);
+				Quaternion qNorm = Quaternion.FromToRotation(Vector3.up, normal);
+				lookRotation = qNorm * qLook;
+			}
+			Debug.Log(lookRotation);
+			transform.localRotation = Quaternion.RotateTowards(transform.rotation, lookRotation, navAgent.angularSpeed * Time.deltaTime);
+		}
+	}
+
+	Vector3 getNormal ()
+	{
+		RaycastHit hitInfo;
+		if (Physics.Raycast(transform.position, Vector3.down, out hitInfo, 0.1f))
+		{
+			return hitInfo.normal;
+		} else
+		{
+			return Vector3.up;
 		}
 	}
 
 	// The animation calls this function to fire
 	void FireSnapper () {
-		Instantiate (snapperPrefab, shotPoint.position, transform.rotation);
+		SnapperShot shot = ((GameObject)Instantiate (snapperPrefab, shotPoint.position, transform.rotation)).GetComponentInChildren<SnapperShot>();
+		shot.isPlayer = false;
 	}
 	
 	//checks if the player is seen by the creature

@@ -4,6 +4,7 @@ using System.Collections;
 public class SnapperShot : MonoBehaviour
 {
     #region fields
+	public bool isPlayer;
 	public float moveSpeed = 10f;
 	public float maxDistance = 50f;
 	private float currentDistance = 0f;
@@ -41,7 +42,6 @@ public class SnapperShot : MonoBehaviour
         {
             other.gameObject.SendMessage ("snapperShotHit", SendMessageOptions.DontRequireReceiver);
         }
-		Debug.Log ("Hit object:" + other.transform);
 		//maybe create a particle effect?
 		Destroy (gameObject);
 
