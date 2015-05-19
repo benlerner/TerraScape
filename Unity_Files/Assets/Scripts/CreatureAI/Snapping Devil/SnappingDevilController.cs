@@ -23,7 +23,7 @@ public class SnappingDevilController : MonoBehaviour {
 	private bool hasRetreatPoint = false;
 
 	private Quaternion lookRotation;
-	private float distToGround = 0f;
+	private Vector3 size;
 	private enum AIState
 	{
 		None,
@@ -37,8 +37,8 @@ public class SnappingDevilController : MonoBehaviour {
 	void Start () {
 		player = GameObject.FindGameObjectWithTag ("Player");
 		lookRotation = transform.rotation;
-		navAgent.updateRotation = false;
-		distToGround = gameObject.GetComponent<Collider> ().bounds.extents.y;
+		navAgent.updateRotation = true;
+		size = gameObject.GetComponent<Collider> ().bounds.extents;
 	}
 	
 	// Update is called once per frame
@@ -50,7 +50,6 @@ public class SnappingDevilController : MonoBehaviour {
 			if (dist > maxRange && !attacking)
 			{
 				curState = AIState.Approaching;
-				navAgent.updateRotation = true;
 				navAgent.Resume();
 			}
 			else if (dist < stopRange && curState == AIState.Approaching)
@@ -74,10 +73,13 @@ public class SnappingDevilController : MonoBehaviour {
 			break;
 
 		case AIState.Attacking:
-			float heading = Vector3.Dot(transform.TransformDirection(Vector3.forward), (playerPos - transform.position).normalized);
-			if (heading > 0.95 || attacking)
-			{
 				attacking = true;
+			//rotate towards player
+			Vector3 playerHeading = player.transform.position - transform.position;
+			playerHeading.y = 0;
+			Quaternion rotation = Quaternion.LookRotation(playerHeading);
+			transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, navAgent.angularSpeed * Time.deltaTime);
+
 				if ((attackTimer += Time.deltaTime) >= attackCooldown)
 				{
 					if (dist <= meleeRange)
@@ -94,29 +96,28 @@ public class SnappingDevilController : MonoBehaviour {
 					attackTimer = 0;
 					attacking = false;
 				}
-			}
-			if (heading <= 0.95)
-				attacking = false;
 			break;
 		}
+		NavMeshHit hit;
+		NavMesh.SamplePosition (transform.TransformPoint (Vector3.forward * size.z), out hit, size.z, NavMesh.AllAreas);
+		Vector3 point = hit.position;
+		transform.LookAt(point);
+		/*
 		//align with terrain and towards target
-		if (!attacking && navAgent.remainingDistance > 0.1f)
+		if (navAgent.remainingDistance > 0.1f)
 		{
 			Vector3 normal = getNormal();
 			Vector3 direction = navAgent.steeringTarget - transform.position;
-			Debug.DrawLine(transform.position,navAgent.steeringTarget,Color.blue);
-
+			GameObject.Find("snappertest").transform.position = navAgent.steeringTarget;
 			direction.y = 0.0f;
-
-			Debug.DrawLine(transform.position, transform.TransformPoint(direction),Color.red);
 			if(direction.magnitude > 0.1f && normal.magnitude > 0.1f) {
 				Quaternion qLook = Quaternion.LookRotation(direction, Vector3.up);
 				Quaternion qNorm = Quaternion.FromToRotation(Vector3.up, normal);
-				lookRotation = qNorm * qLook;
+				lookRotation = qLook * qNorm;
+				Debug.Log(qLook + "," + qNorm);
 			}
-			Debug.Log(lookRotation);
-			transform.localRotation = Quaternion.RotateTowards(transform.rotation, lookRotation, navAgent.angularSpeed * Time.deltaTime);
-		}
+			//transform.localRotation = Quaternion.RotateTowards(transform.localRotation, lookRotation, navAgent.angularSpeed * Time.deltaTime);
+		}*/
 	}
 
 	Vector3 getNormal ()
