@@ -5729,6 +5729,10 @@ Prefab:
       propertyPath: textureOverlay
       value: 
       objectReference: {fileID: 2085109144}
+    - target: {fileID: 11430608, guid: a515aea159831ba458adceb34a0e8142, type: 2}
+      propertyPath: bloomThreshold
+      value: .99000001
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a515aea159831ba458adceb34a0e8142, type: 2}
   m_IsPrefabParent: 0

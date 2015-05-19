@@ -56,6 +56,11 @@ public class ThirdPersonController : MonoBehaviour
 		private Camera myCam;
 		private Transform playerMesh;
 		private Vector3 zenBodyPos;
+		public MeshRenderer shieldMesh;
+		public MeshRenderer laserMesh;
+		public MeshRenderer snapperMesh;
+		public MeshRenderer slideMesh;
+
 	// The speed when walking
 	public float walkSpeed= 2.0f;
 	// after trotAfterSeconds of walking we trot with trotSpeed
@@ -152,6 +157,11 @@ public class ThirdPersonController : MonoBehaviour
 		myCam = Camera.main;
 		playerMesh = this.transform.GetChild (0);
 		zenBodyPos = playerMesh.transform.localPosition;
+		snapperMesh.enabled = false;
+		laserMesh.enabled = false;
+		shieldMesh.enabled = false;
+		slideMesh.enabled = false;
+
 	}
 
 
@@ -414,9 +424,19 @@ public class ThirdPersonController : MonoBehaviour
 			laserOn = false;
 			movable = true;
 			Debug.Log("Guard is Down");
+			snapperMesh.enabled = false;
+			laserMesh.enabled = false;
+			shieldMesh.enabled = false;
+			slideMesh.enabled = false;
 		}
-		if(Input.GetKeyUp(KeyCode.E) && isSliding==false)
+		if(Input.GetKeyUp(KeyCode.E) && isSliding==false){
 			itemUse = 0;
+			snapperMesh.enabled = false;
+			laserMesh.enabled = false;
+			shieldMesh.enabled = false;
+			slideMesh.enabled = false;
+		}
+
 		if (Input.GetButtonDown ("Jump"))
 		{
 			lastJumpButtonTime = Time.time;
@@ -603,15 +623,22 @@ public class ThirdPersonController : MonoBehaviour
 			if (!isSliding){
 				startSliding();
 				itemUse = 2;
+				Vector3 playerMeshPos = new Vector3 (0f,-0.679f, 0f);
+				playerMesh.transform.localPosition = playerMeshPos;
+				slideMesh.enabled = true;
 			}else{
 				stopSliding();
 				itemUse = 0;
+				slideMesh.enabled = true;
+				Vector3 playerMeshZero = new Vector3 (0f,0f,0f);
+				playerMesh.transform.localPosition = playerMeshZero;
 			}
 	}
 	public void block(){
 		blocking = true;
 		Debug.Log ("Guard is up");
 		itemUse = 1;
+		shieldMesh.enabled = true;
 	}
 
 	public float snapDuration = 3f;
@@ -623,6 +650,7 @@ public class ThirdPersonController : MonoBehaviour
 		//wait X seconds
 		//play snap windup animation
 		itemUse = 1;
+		snapperMesh.enabled = true;
 		//Debug.Log ("Winding up snapper... t = " + snapTimer);
 		if ((snapTimer += Time.deltaTime) >= snapDuration)
 		{
@@ -644,6 +672,7 @@ public class ThirdPersonController : MonoBehaviour
 			Instantiate (laserPrefab, laserTrans, laserRot);
 		}
 		laserOn = true;
+		laserMesh.enabled = true;
 	}
 	public void trap() {
 		//stop player movement

@@ -6,7 +6,7 @@ public class TP_Camera : MonoBehaviour
     public static TP_Camera instance;
     public Transform TargetLookAt;
     public float distance = 5f;
-    public float minDistance = 2f;
+    public float minDistance = 2.5f;
     public float maxDistance = 10f;
     public float distanceSmooth = 0.05f;
     public float distanceResumeSmooth = 1f;

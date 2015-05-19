@@ -86,6 +86,8 @@ ModelImporter:
     100156: Zenobia_Spine1
     100158: Zenobia_Spine2
     100160: //RootNode
+    100162: Mesh
+    100164: shieldJoint
     400000: overshirt:polySurface1
     400002: pantsLegs:polySurface1
     400004: shoes:polySurface1
@@ -167,6 +169,8 @@ ModelImporter:
     400156: Zenobia_Spine1
     400158: Zenobia_Spine2
     400160: //RootNode
+    400162: Mesh
+    400164: shieldJoint
     4300000: zen_scarf
     4300002: zen_belt
     4300004: zen_bag
@@ -183,6 +187,7 @@ ModelImporter:
     4300026: turtleneck:polySurface1
     4300028: overshirt:polySurface1
     4300030: pantsLegs:polySurface1
+    4300032: Mesh
     9500000: //RootNode
     13700000: overshirt:polySurface1
     13700002: pantsLegs:polySurface1
@@ -200,6 +205,7 @@ ModelImporter:
     13700026: zen_skirt
     13700028: zen_teethBottom
     13700030: zen_teethTop
+    13700032: Mesh
   materials:
     importMaterials: 1
     materialName: 0

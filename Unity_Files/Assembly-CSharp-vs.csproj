@@ -50,6 +50,7 @@
      <Compile Include="Assets\LightShafts-master\LightShafts.Utils.cs" />
      <Compile Include="Assets\LightShafts-master\LightShafts.cs" />
      <Compile Include="Assets\Scripts\CreatureAI\BasicEnemyAI.cs" />
+     <Compile Include="Assets\Scripts\CreatureAI\Crag Crawler\worm.cs" />
      <Compile Include="Assets\Scripts\CreatureAI\Dune Roamer\DuneRoamerController.cs" />
      <Compile Include="Assets\Scripts\CreatureAI\EnemyController.cs" />
      <Compile Include="Assets\Scripts\CreatureAI\FSMSystem.cs" />
@@ -104,7 +105,6 @@
      <Compile Include="Assets\Scripts\testing\animationController.cs" />
      <Compile Include="Assets\Scripts\testing\destroyLedge.cs" />
      <Compile Include="Assets\targetLock.cs" />
-     <Compile Include="Assets\worm.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
@@ -202,7 +202,7 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendForBloom.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Users/Ben/Documents/GitHub/TerraScape/Unity_Files/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>C:/Users/Alex/Desktop/Senior Project/ProjectFolder/TerraScape/Unity_Files/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
