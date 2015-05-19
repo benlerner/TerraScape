@@ -15605,7 +15605,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11430608, guid: a515aea159831ba458adceb34a0e8142, type: 2}
       propertyPath: bloomThreshold
-      value: .889999986
+      value: .99000001
       objectReference: {fileID: 0}
     - target: {fileID: 11430608, guid: a515aea159831ba458adceb34a0e8142, type: 2}
       propertyPath: m_Enabled

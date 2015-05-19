@@ -35,7 +35,7 @@ public class SnappingDevilController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		player = GameObject.FindGameObjectWithTag ("Player");
+		player = GameObject.Find("zenobia");
 		lookRotation = transform.rotation;
 		navAgent.updateRotation = true;
 		size = gameObject.GetComponent<Collider> ().bounds.extents;

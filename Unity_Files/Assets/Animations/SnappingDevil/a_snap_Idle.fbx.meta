@@ -1,0 +1,503 @@
+fileFormatVersion: 2
+guid: 251e3e379c23c3f448eb59a5fc1f347b
+timeCreated: 1432019661
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: AntenaL
+    100004: AntenaL_End_J
+    100006: AntenaL_J
+    100008: AntenaR
+    100010: AntenaR_End_J
+    100012: AntenaR_J
+    100014: ArmL_J
+    100016: ArmR_J
+    100018: bottom
+    100020: Chest_J
+    100022: FootL_1
+    100024: FootL_2
+    100026: FootL_3
+    100028: FootR_1
+    100030: FootR_2
+    100032: FootR_3
+    100034: Head_J
+    100036: ikHandle1
+    100038: ikHandle2
+    100040: ikHandle3
+    100042: ikHandle4
+    100044: ikHandle5
+    100046: ikHandle6
+    100048: ikHandle7
+    100050: ikHandle8
+    100052: ikHandle9
+    100054: joint17
+    100056: joint18
+    100058: joint19
+    100060: joint20
+    100062: joint21
+    100064: joint22
+    100066: joint23
+    100068: joint24
+    100070: joint25
+    100072: joint26
+    100074: joint27
+    100076: joint28
+    100078: joint29
+    100080: joint30
+    100082: joint31
+    100084: joint34
+    100086: joint35
+    100088: joint36
+    100090: joint37
+    100092: joint38
+    100094: joint41
+    100096: joint42
+    100098: joint43
+    100100: joint44
+    100102: joint45
+    100104: joint55
+    100106: joint56
+    100108: joint57
+    100110: joint58
+    100112: joint59
+    100114: joint60
+    100116: joint61
+    100118: joint62
+    100120: joint63
+    100122: joint64
+    100124: joint65
+    100126: joint66
+    100128: joint67
+    100130: joint68
+    100132: joint69
+    100134: LegL_1
+    100136: LegL_2
+    100138: LegL_3
+    100140: LegR_1
+    100142: LegR_2
+    100144: LegR_3
+    100146: masterController
+    100148: Neck
+    100150: Neck_J
+    100152: SnapL_Lower
+    100154: SnapL_Upper
+    100156: snappingDevil1
+    100158: SnapR_Lower
+    100160: SnapR_Upper
+    100162: Spine_1
+    100164: Spine_1_J
+    100166: Spine_2
+    100168: Spine_2_J
+    100170: Spine_3
+    100172: Spine_3_J
+    100174: Tail
+    100176: Tail_1_J
+    100178: Tail_2_J
+    100180: Tail_3_J
+    100182: Tail_4_J
+    100184: Tail_5_J
+    100186: Tail_6_J
+    100188: TipL_J
+    100190: TipR_J
+    100192: ToothL
+    100194: ToothL_J
+    100196: ToothR
+    100198: ToothR_J
+    100200: WristL
+    100202: WristR
+    400000: //RootNode
+    400002: AntenaL
+    400004: AntenaL_End_J
+    400006: AntenaL_J
+    400008: AntenaR
+    400010: AntenaR_End_J
+    400012: AntenaR_J
+    400014: ArmL_J
+    400016: ArmR_J
+    400018: bottom
+    400020: Chest_J
+    400022: FootL_1
+    400024: FootL_2
+    400026: FootL_3
+    400028: FootR_1
+    400030: FootR_2
+    400032: FootR_3
+    400034: Head_J
+    400036: ikHandle1
+    400038: ikHandle2
+    400040: ikHandle3
+    400042: ikHandle4
+    400044: ikHandle5
+    400046: ikHandle6
+    400048: ikHandle7
+    400050: ikHandle8
+    400052: ikHandle9
+    400054: joint17
+    400056: joint18
+    400058: joint19
+    400060: joint20
+    400062: joint21
+    400064: joint22
+    400066: joint23
+    400068: joint24
+    400070: joint25
+    400072: joint26
+    400074: joint27
+    400076: joint28
+    400078: joint29
+    400080: joint30
+    400082: joint31
+    400084: joint34
+    400086: joint35
+    400088: joint36
+    400090: joint37
+    400092: joint38
+    400094: joint41
+    400096: joint42
+    400098: joint43
+    400100: joint44
+    400102: joint45
+    400104: joint55
+    400106: joint56
+    400108: joint57
+    400110: joint58
+    400112: joint59
+    400114: joint60
+    400116: joint61
+    400118: joint62
+    400120: joint63
+    400122: joint64
+    400124: joint65
+    400126: joint66
+    400128: joint67
+    400130: joint68
+    400132: joint69
+    400134: LegL_1
+    400136: LegL_2
+    400138: LegL_3
+    400140: LegR_1
+    400142: LegR_2
+    400144: LegR_3
+    400146: masterController
+    400148: Neck
+    400150: Neck_J
+    400152: SnapL_Lower
+    400154: SnapL_Upper
+    400156: snappingDevil1
+    400158: SnapR_Lower
+    400160: SnapR_Upper
+    400162: Spine_1
+    400164: Spine_1_J
+    400166: Spine_2
+    400168: Spine_2_J
+    400170: Spine_3
+    400172: Spine_3_J
+    400174: Tail
+    400176: Tail_1_J
+    400178: Tail_2_J
+    400180: Tail_3_J
+    400182: Tail_4_J
+    400184: Tail_5_J
+    400186: Tail_6_J
+    400188: TipL_J
+    400190: TipR_J
+    400192: ToothL
+    400194: ToothL_J
+    400196: ToothR
+    400198: ToothR_J
+    400200: WristL
+    400202: WristR
+    4300000: snappingDevil1
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: snappingDevil1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 48
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bottom
+        weight: 1
+      - path: Chest_J
+        weight: 1
+      - path: Chest_J/ArmL_J
+        weight: 1
+      - path: Chest_J/ArmL_J/joint34
+        weight: 1
+      - path: Chest_J/ArmL_J/joint34/joint35
+        weight: 1
+      - path: Chest_J/ArmL_J/joint34/joint35/joint36
+        weight: 1
+      - path: Chest_J/ArmL_J/joint34/joint35/joint36/joint37
+        weight: 1
+      - path: Chest_J/ArmL_J/joint34/joint35/joint36/joint38
+        weight: 1
+      - path: Chest_J/ArmR_J
+        weight: 1
+      - path: Chest_J/ArmR_J/joint41
+        weight: 1
+      - path: Chest_J/ArmR_J/joint41/joint42
+        weight: 1
+      - path: Chest_J/ArmR_J/joint41/joint42/joint43
+        weight: 1
+      - path: Chest_J/ArmR_J/joint41/joint42/joint43/joint44
+        weight: 1
+      - path: Chest_J/ArmR_J/joint41/joint42/joint43/joint45
+        weight: 1
+      - path: Chest_J/Neck_J
+        weight: 1
+      - path: Chest_J/Neck_J/Head_J
+        weight: 1
+      - path: Chest_J/Neck_J/Head_J/AntenaL_J
+        weight: 1
+      - path: Chest_J/Neck_J/Head_J/AntenaL_J/AntenaL_End_J
+        weight: 1
+      - path: Chest_J/Neck_J/Head_J/AntenaR_J
+        weight: 1
+      - path: Chest_J/Neck_J/Head_J/AntenaR_J/AntenaR_End_J
+        weight: 1
+      - path: Chest_J/Neck_J/Head_J/ToothL_J
+        weight: 1
+      - path: Chest_J/Neck_J/Head_J/ToothL_J/TipL_J
+        weight: 1
+      - path: Chest_J/Neck_J/Head_J/ToothR_J
+        weight: 1
+      - path: Chest_J/Neck_J/Head_J/ToothR_J/TipR_J
+        weight: 1
+      - path: Chest_J/Spine_1_J
+        weight: 1
+      - path: Chest_J/Spine_1_J/joint17
+        weight: 1
+      - path: Chest_J/Spine_1_J/joint17/joint18
+        weight: 1
+      - path: Chest_J/Spine_1_J/joint17/joint18/joint19
+        weight: 1
+      - path: Chest_J/Spine_1_J/joint17/joint18/joint19/joint20
+        weight: 1
+      - path: Chest_J/Spine_1_J/joint17/joint18/joint19/joint20/joint21
+        weight: 1
+      - path: Chest_J/Spine_1_J/joint65
+        weight: 1
+      - path: Chest_J/Spine_1_J/joint65/joint66
+        weight: 1
+      - path: Chest_J/Spine_1_J/joint65/joint66/joint67
+        weight: 1
+      - path: Chest_J/Spine_1_J/joint65/joint66/joint67/joint68
+        weight: 1
+      - path: Chest_J/Spine_1_J/joint65/joint66/joint67/joint68/joint69
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/joint22
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/joint22/joint23
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/joint22/joint23/joint24
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/joint22/joint23/joint24/joint25
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/joint22/joint23/joint24/joint25/joint26
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/joint60
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/joint60/joint61
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/joint60/joint61/joint62
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/joint60/joint61/joint62/joint63
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/joint60/joint61/joint62/joint63/joint64
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/Spine_3_J
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/Spine_3_J/joint27
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/Spine_3_J/joint27/joint28
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/Spine_3_J/joint27/joint28/joint29
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/Spine_3_J/joint27/joint28/joint29/joint30
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/Spine_3_J/joint27/joint28/joint29/joint30/joint31
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/Spine_3_J/joint55
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/Spine_3_J/joint55/joint56
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/Spine_3_J/joint55/joint56/joint57
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/Spine_3_J/joint55/joint56/joint57/joint58
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/Spine_3_J/joint55/joint56/joint57/joint58/joint59
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/Spine_3_J/Tail_1_J
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/Spine_3_J/Tail_1_J/Tail_2_J
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/Spine_3_J/Tail_1_J/Tail_2_J/Tail_3_J
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/Spine_3_J/Tail_1_J/Tail_2_J/Tail_3_J/Tail_4_J
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/Spine_3_J/Tail_1_J/Tail_2_J/Tail_3_J/Tail_4_J/Tail_5_J
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/Spine_3_J/Tail_1_J/Tail_2_J/Tail_3_J/Tail_4_J/Tail_5_J/Tail_6_J
+        weight: 1
+      - path: ikHandle1
+        weight: 1
+      - path: ikHandle2
+        weight: 1
+      - path: ikHandle3
+        weight: 1
+      - path: ikHandle4
+        weight: 1
+      - path: ikHandle5
+        weight: 1
+      - path: ikHandle6
+        weight: 1
+      - path: ikHandle7
+        weight: 1
+      - path: ikHandle8
+        weight: 1
+      - path: ikHandle9
+        weight: 1
+      - path: masterController
+        weight: 1
+      - path: masterController/Spine_1
+        weight: 1
+      - path: masterController/Spine_1/LegL_1
+        weight: 1
+      - path: masterController/Spine_1/LegL_1/FootL_1
+        weight: 1
+      - path: masterController/Spine_1/LegR_1
+        weight: 1
+      - path: masterController/Spine_1/LegR_1/FootR_1
+        weight: 1
+      - path: masterController/Spine_1/Neck
+        weight: 1
+      - path: masterController/Spine_1/Neck/AntenaL
+        weight: 1
+      - path: masterController/Spine_1/Neck/AntenaR
+        weight: 1
+      - path: masterController/Spine_1/Neck/ToothL
+        weight: 1
+      - path: masterController/Spine_1/Neck/ToothR
+        weight: 1
+      - path: masterController/Spine_1/WristL
+        weight: 1
+      - path: masterController/Spine_1/WristL/SnapL_Lower
+        weight: 1
+      - path: masterController/Spine_1/WristL/SnapL_Upper
+        weight: 1
+      - path: masterController/Spine_1/WristR
+        weight: 1
+      - path: masterController/Spine_1/WristR/SnapR_Lower
+        weight: 1
+      - path: masterController/Spine_1/WristR/SnapR_Upper
+        weight: 1
+      - path: masterController/Spine_2
+        weight: 1
+      - path: masterController/Spine_2/LegL_2
+        weight: 1
+      - path: masterController/Spine_2/LegL_2/FootL_2
+        weight: 1
+      - path: masterController/Spine_2/LegR_2
+        weight: 1
+      - path: masterController/Spine_2/LegR_2/FootR_2
+        weight: 1
+      - path: masterController/Spine_3
+        weight: 1
+      - path: masterController/Spine_3/LegL_3
+        weight: 1
+      - path: masterController/Spine_3/LegL_3/FootL_3
+        weight: 1
+      - path: masterController/Spine_3/LegR_3
+        weight: 1
+      - path: masterController/Spine_3/LegR_3/FootR_3
+        weight: 1
+      - path: masterController/Tail
+        weight: 1
+      - path: snappingDevil1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 106
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
