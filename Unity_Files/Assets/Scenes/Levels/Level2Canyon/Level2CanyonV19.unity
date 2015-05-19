@@ -20062,55 +20062,6 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300094, guid: 1c8b570bfde1a4c468414aea50114f8b, type: 3}
---- !u!1 &1565822935
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1565822936}
-  - 195: {fileID: 1565822937}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1565822936
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1565822935}
-  m_LocalRotation: {x: 0, y: -.474982738, z: 0, w: .879995167}
-  m_LocalPosition: {x: -283.190002, y: -40.8100014, z: 86.4199982}
-  m_LocalScale: {x: .485035777, y: .485035807, z: .485035807}
-  m_Children:
-  - {fileID: 2119103234}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
---- !u!195 &1565822937
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1565822935}
-  m_Enabled: 1
-  m_Radius: 6
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 4
-  m_BaseOffset: .189999998
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &1575018933
 GameObject:
   m_ObjectHideFlags: 0
@@ -25675,6 +25626,7 @@ GameObject:
   - 65: {fileID: 2119103238}
   - 23: {fileID: 2119103236}
   - 114: {fileID: 2119103235}
+  - 195: {fileID: 2119103237}
   m_Layer: 0
   m_Name: MSnappingDevil
   m_TagString: Untagged
@@ -25688,9 +25640,9 @@ Transform:
   m_PrefabParentObject: {fileID: 411946, guid: 1cafea39b497fc64b8cfec4d89394f04, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2119103233}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: -.474982738, z: 0, w: .879995167}
+  m_LocalPosition: {x: -283.190002, y: -40.8100014, z: 86.4199982}
+  m_LocalScale: {x: .485035777, y: .485035807, z: .485035807}
   m_Children:
   - {fileID: 2028137800}
   - {fileID: 214438665}
@@ -25705,7 +25657,7 @@ Transform:
   - {fileID: 1179385504}
   - {fileID: 958514803}
   - {fileID: 1332458925}
-  m_Father: {fileID: 1565822936}
+  m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!114 &2119103235
 MonoBehaviour:
@@ -25719,7 +25671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c990eb62663c7b4ab0b6e6433c4822b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navAgent: {fileID: 1565822937}
+  navAgent: {fileID: 2119103237}
   anim: {fileID: 2119103239}
   snapperPrefab: {fileID: 138226, guid: 8d0c6f6719456574c93a50439650763e, type: 2}
   detectionRange: 30
@@ -25752,6 +25704,26 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!195 &2119103237
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2119103233}
+  m_Enabled: 1
+  m_Radius: 6
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 4
+  m_BaseOffset: .189999998
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!65 &2119103238
 BoxCollider:
   m_ObjectHideFlags: 0

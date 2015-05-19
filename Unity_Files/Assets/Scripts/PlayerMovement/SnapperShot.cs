@@ -32,13 +32,13 @@ public class SnapperShot : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-		if (other.gameObject.tag.Equals("Player"))
+		if (other.gameObject.tag.Equals("Player") && !isPlayer)
         {
             Vector3 impactVector = other.transform.TransformPoint(new Vector3(0,1.06f,0)) - transform.position;
             impactVector.y = 0;
             impactVector.Normalize();
             other.GetComponent<Player>().TakeImpactDamage(30f,impactVector, 1000f);
-        } else
+        } else if (isPlayer)
         {
             other.gameObject.SendMessage ("snapperShotHit", SendMessageOptions.DontRequireReceiver);
         }
