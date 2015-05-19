@@ -98,6 +98,8 @@ public class SnappingDevilController : MonoBehaviour {
 				}
 			break;
 		}
+		/*
+		NavMeshAgent.Raycast
 		NavMeshHit hit;
 		NavMesh.SamplePosition (transform.TransformPoint (Vector3.forward * size.z), out hit, size.z, NavMesh.AllAreas);
 		Vector3 point = hit.position;
