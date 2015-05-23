@@ -98,28 +98,16 @@ public class SnappingDevilController : MonoBehaviour {
 				}
 			break;
 		}
-		/*
-		NavMeshAgent.Raycast
-		NavMeshHit hit;
-		NavMesh.SamplePosition (transform.TransformPoint (Vector3.forward * size.z), out hit, size.z, NavMesh.AllAreas);
-		Vector3 point = hit.position;
-		transform.LookAt(point);
-		/*
 		//align with terrain and towards target
 		if (navAgent.remainingDistance > 0.1f)
 		{
 			Vector3 normal = getNormal();
-			Vector3 direction = navAgent.steeringTarget - transform.position;
-			GameObject.Find("snappertest").transform.position = navAgent.steeringTarget;
-			direction.y = 0.0f;
-			if(direction.magnitude > 0.1f && normal.magnitude > 0.1f) {
-				Quaternion qLook = Quaternion.LookRotation(direction, Vector3.up);
+			if(normal.magnitude > 0.1f) {
 				Quaternion qNorm = Quaternion.FromToRotation(Vector3.up, normal);
-				lookRotation = qLook * qNorm;
-				Debug.Log(qLook + "," + qNorm);
+				lookRotation = qNorm;
 			}
-			//transform.localRotation = Quaternion.RotateTowards(transform.localRotation, lookRotation, navAgent.angularSpeed * Time.deltaTime);
-		}*/
+			transform.localRotation *= lookRotation;
+		}
 	}
 
 	Vector3 getNormal ()
@@ -138,6 +126,7 @@ public class SnappingDevilController : MonoBehaviour {
 	void FireSnapper () {
 		SnapperShot shot = ((GameObject)Instantiate (snapperPrefab, shotPoint.position, transform.rotation)).GetComponentInChildren<SnapperShot>();
 		shot.isPlayer = false;
+		shot.gameObject.transform.rotation = Quaternion.LookRotation (playerPos - shotPoint.position);//Aim at the player
 	}
 	
 	//checks if the player is seen by the creature
