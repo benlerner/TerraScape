@@ -34,7 +34,11 @@ Material:
         second:
           m_Texture: {fileID: 2800000, guid: 86593a65f4d3a4e73919c6529013635b, type: 3}
           m_Scale: {x: 1, y: 1}
+<<<<<<< HEAD
           m_Offset: {x: -.0366406962, y: -.102593966}
+=======
+          m_Offset: {x: -.0212891363, y: -.0596096143}
+>>>>>>> 247341cdf39070ae0e8756e0cd996e51feb6ecc9
       data:
         first:
           name: _MainTex2
@@ -52,16 +56,16 @@ Material:
     m_Floats:
       data:
         first:
-          name: _Displacement
-        second: .0375000015
-      data:
-        first:
           name: _DistortX
         second: .100000001
       data:
         first:
           name: _DistortY
         second: .100000001
+      data:
+        first:
+          name: _Displacement
+        second: .0375000015
       data:
         first:
           name: _RefractTexTiling
