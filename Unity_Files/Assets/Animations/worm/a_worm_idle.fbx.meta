@@ -40,6 +40,27 @@ ModelImporter:
     100064: joint8
     100066: joint9
     100068: wormCreature
+    100070: head
+    100072: ikHandle1
+    100074: ikHandle2
+    100076: ikHandle3
+    100078: ikHandle4
+    100080: ikHandle5
+    100082: ikHandle6
+    100084: ikHandle7
+    100086: jaw
+    100088: masterController
+    100090: mouth
+    100092: neck
+    100094: nurbsCircle1
+    100096: nurbsCircle10
+    100098: nurbsCircle11
+    100100: nurbsCircle12
+    100102: nurbsCircle13
+    100104: nurbsCircle2
+    100106: nurbsCircle3
+    100108: nurbsCircle4
+    100110: nurbsCircle5
     400000: //RootNode
     400002: ArmL
     400004: ArmL1
@@ -75,6 +96,27 @@ ModelImporter:
     400064: joint8
     400066: joint9
     400068: wormCreature
+    400070: head
+    400072: ikHandle1
+    400074: ikHandle2
+    400076: ikHandle3
+    400078: ikHandle4
+    400080: ikHandle5
+    400082: ikHandle6
+    400084: ikHandle7
+    400086: jaw
+    400088: masterController
+    400090: mouth
+    400092: neck
+    400094: nurbsCircle1
+    400096: nurbsCircle10
+    400098: nurbsCircle11
+    400100: nurbsCircle12
+    400102: nurbsCircle13
+    400104: nurbsCircle2
+    400106: nurbsCircle3
+    400108: nurbsCircle4
+    400110: nurbsCircle5
     4300000: wormCreature
     7400000: Take 001
     9500000: //RootNode

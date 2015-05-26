@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: c42e13b05e2b44308954eb2b7f3b4020
 ModelImporter:
-  serializedVersion: 16
+  serializedVersion: 18
   fileIDToRecycleName:
     100000: Jamila
     100002: Jamila:ARIEL
@@ -1199,7 +1199,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Zen_jump
       takeName: Zen_climb_001_x2d
-      firstFrame: 81
+      firstFrame: 93
       lastFrame: 128
       wrapMode: 0
       orientationOffsetY: 0
@@ -1807,11 +1807,13 @@ ModelImporter:
     generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
+    keepQuads: 0
     weldVertices: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     splitTangentsAcrossUV: 1
@@ -1834,3 +1836,5 @@ ModelImporter:
   animationType: 2
   additionalBone: 0
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 

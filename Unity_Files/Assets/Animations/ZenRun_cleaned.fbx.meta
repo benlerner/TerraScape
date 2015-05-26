@@ -169,6 +169,7 @@ ModelImporter:
     4300014: belt:pTorus3
     4300016: scarf:pPlane1
     7400000: runCycle
+    7400002: runStart
     9500000: //RootNode
     13700000: bag:pCube4
     13700002: belt:pTorus3
@@ -199,13 +200,193 @@ ModelImporter:
       name: runCycle
       takeName: Take 001
       firstFrame: 202
-      lastFrame: 216
+      lastFrame: 231
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bag:pCube4
+        weight: 1
+      - path: belt:pTorus3
+        weight: 1
+      - path: Jamila
+        weight: 1
+      - path: scarf:pPlane1
+        weight: 1
+      - path: System
+        weight: 1
+      - path: Unlabeled_Markers
+        weight: 1
+      - path: Zen_Ctrl:Reference
+        weight: 1
+      - path: zen_hair
+        weight: 1
+      - path: zen_leftEye
+        weight: 1
+      - path: zen_Legs
+        weight: 1
+      - path: zen_rightEye
+        weight: 1
+      - path: zen_skirt
+        weight: 1
+      - path: zen_torso
+        weight: 1
+      - path: Zenobia_Reference1
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_LeftUpLeg
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_LeftUpLeg/Zenobia_LeftLeg
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_LeftUpLeg/Zenobia_LeftLeg/Zenobia_LeftFoot
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_LeftUpLeg/Zenobia_LeftLeg/Zenobia_LeftFoot/Zenobia_LeftToeBase
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_RightUpLeg
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_RightUpLeg/Zenobia_RightLeg
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_RightUpLeg/Zenobia_RightLeg/Zenobia_RightFoot
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_RightUpLeg/Zenobia_RightLeg/Zenobia_RightFoot/Zenobia_RightToeBase
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_LeftShoulder
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_LeftShoulder/Zenobia_LeftArm
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_LeftShoulder/Zenobia_LeftArm/Zenobia_LeftForeArm
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_LeftShoulder/Zenobia_LeftArm/Zenobia_LeftForeArm/Zenobia_LeftHand
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_LeftShoulder/Zenobia_LeftArm/Zenobia_LeftForeArm/Zenobia_LeftHand/Zenobia_LeftHandIndex1
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_LeftShoulder/Zenobia_LeftArm/Zenobia_LeftForeArm/Zenobia_LeftHand/Zenobia_LeftHandIndex1/Zenobia_LeftHandIndex2
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_LeftShoulder/Zenobia_LeftArm/Zenobia_LeftForeArm/Zenobia_LeftHand/Zenobia_LeftHandIndex1/Zenobia_LeftHandIndex2/Zenobia_LeftHandIndex3
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_LeftShoulder/Zenobia_LeftArm/Zenobia_LeftForeArm/Zenobia_LeftHand/Zenobia_LeftHandIndex1/Zenobia_LeftHandIndex2/Zenobia_LeftHandIndex3/Zenobia_LeftHandIndex4
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_LeftShoulder/Zenobia_LeftArm/Zenobia_LeftForeArm/Zenobia_LeftHand/Zenobia_LeftHandMiddle1
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_LeftShoulder/Zenobia_LeftArm/Zenobia_LeftForeArm/Zenobia_LeftHand/Zenobia_LeftHandMiddle1/Zenobia_LeftHandMiddle2
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_LeftShoulder/Zenobia_LeftArm/Zenobia_LeftForeArm/Zenobia_LeftHand/Zenobia_LeftHandMiddle1/Zenobia_LeftHandMiddle2/Zenobia_LeftHandMiddle3
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_LeftShoulder/Zenobia_LeftArm/Zenobia_LeftForeArm/Zenobia_LeftHand/Zenobia_LeftHandMiddle1/Zenobia_LeftHandMiddle2/Zenobia_LeftHandMiddle3/Zenobia_LeftHandMiddle4
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_LeftShoulder/Zenobia_LeftArm/Zenobia_LeftForeArm/Zenobia_LeftHand/Zenobia_LeftHandPinky1
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_LeftShoulder/Zenobia_LeftArm/Zenobia_LeftForeArm/Zenobia_LeftHand/Zenobia_LeftHandPinky1/Zenobia_LeftHandPinky2
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_LeftShoulder/Zenobia_LeftArm/Zenobia_LeftForeArm/Zenobia_LeftHand/Zenobia_LeftHandPinky1/Zenobia_LeftHandPinky2/Zenobia_LeftHandPinky3
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_LeftShoulder/Zenobia_LeftArm/Zenobia_LeftForeArm/Zenobia_LeftHand/Zenobia_LeftHandPinky1/Zenobia_LeftHandPinky2/Zenobia_LeftHandPinky3/Zenobia_LeftHandPinky4
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_LeftShoulder/Zenobia_LeftArm/Zenobia_LeftForeArm/Zenobia_LeftHand/Zenobia_LeftHandRing1
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_LeftShoulder/Zenobia_LeftArm/Zenobia_LeftForeArm/Zenobia_LeftHand/Zenobia_LeftHandRing1/Zenobia_LeftHandRing2
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_LeftShoulder/Zenobia_LeftArm/Zenobia_LeftForeArm/Zenobia_LeftHand/Zenobia_LeftHandRing1/Zenobia_LeftHandRing2/Zenobia_LeftHandRing3
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_LeftShoulder/Zenobia_LeftArm/Zenobia_LeftForeArm/Zenobia_LeftHand/Zenobia_LeftHandRing1/Zenobia_LeftHandRing2/Zenobia_LeftHandRing3/Zenobia_LeftHandRing4
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_LeftShoulder/Zenobia_LeftArm/Zenobia_LeftForeArm/Zenobia_LeftHand/Zenobia_LeftHandThumb1
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_LeftShoulder/Zenobia_LeftArm/Zenobia_LeftForeArm/Zenobia_LeftHand/Zenobia_LeftHandThumb1/Zenobia_LeftHandThumb2
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_LeftShoulder/Zenobia_LeftArm/Zenobia_LeftForeArm/Zenobia_LeftHand/Zenobia_LeftHandThumb1/Zenobia_LeftHandThumb2/Zenobia_LeftHandThumb3
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_LeftShoulder/Zenobia_LeftArm/Zenobia_LeftForeArm/Zenobia_LeftHand/Zenobia_LeftHandThumb1/Zenobia_LeftHandThumb2/Zenobia_LeftHandThumb3/Zenobia_LeftHandThumb4
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_Neck
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_Neck/Zenobia_Head
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_RightShoulder
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_RightShoulder/Zenobia_RightArm
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_RightShoulder/Zenobia_RightArm/Zenobia_RightForeArm
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_RightShoulder/Zenobia_RightArm/Zenobia_RightForeArm/Zenobia_RightHand
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_RightShoulder/Zenobia_RightArm/Zenobia_RightForeArm/Zenobia_RightHand/Zenobia_RightHandIndex1
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_RightShoulder/Zenobia_RightArm/Zenobia_RightForeArm/Zenobia_RightHand/Zenobia_RightHandIndex1/Zenobia_RightHandIndex2
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_RightShoulder/Zenobia_RightArm/Zenobia_RightForeArm/Zenobia_RightHand/Zenobia_RightHandIndex1/Zenobia_RightHandIndex2/Zenobia_RightHandIndex3
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_RightShoulder/Zenobia_RightArm/Zenobia_RightForeArm/Zenobia_RightHand/Zenobia_RightHandIndex1/Zenobia_RightHandIndex2/Zenobia_RightHandIndex3/Zenobia_RightHandIndex4
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_RightShoulder/Zenobia_RightArm/Zenobia_RightForeArm/Zenobia_RightHand/Zenobia_RightHandMiddle1
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_RightShoulder/Zenobia_RightArm/Zenobia_RightForeArm/Zenobia_RightHand/Zenobia_RightHandMiddle1/Zenobia_RightHandMiddle2
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_RightShoulder/Zenobia_RightArm/Zenobia_RightForeArm/Zenobia_RightHand/Zenobia_RightHandMiddle1/Zenobia_RightHandMiddle2/Zenobia_RightHandMiddle3
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_RightShoulder/Zenobia_RightArm/Zenobia_RightForeArm/Zenobia_RightHand/Zenobia_RightHandMiddle1/Zenobia_RightHandMiddle2/Zenobia_RightHandMiddle3/Zenobia_RightHandMiddle4
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_RightShoulder/Zenobia_RightArm/Zenobia_RightForeArm/Zenobia_RightHand/Zenobia_RightHandPinky1
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_RightShoulder/Zenobia_RightArm/Zenobia_RightForeArm/Zenobia_RightHand/Zenobia_RightHandPinky1/Zenobia_RightHandPinky2
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_RightShoulder/Zenobia_RightArm/Zenobia_RightForeArm/Zenobia_RightHand/Zenobia_RightHandPinky1/Zenobia_RightHandPinky2/Zenobia_RightHandPinky3
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_RightShoulder/Zenobia_RightArm/Zenobia_RightForeArm/Zenobia_RightHand/Zenobia_RightHandPinky1/Zenobia_RightHandPinky2/Zenobia_RightHandPinky3/Zenobia_RightHandPinky4
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_RightShoulder/Zenobia_RightArm/Zenobia_RightForeArm/Zenobia_RightHand/Zenobia_RightHandRing1
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_RightShoulder/Zenobia_RightArm/Zenobia_RightForeArm/Zenobia_RightHand/Zenobia_RightHandRing1/Zenobia_RightHandRing2
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_RightShoulder/Zenobia_RightArm/Zenobia_RightForeArm/Zenobia_RightHand/Zenobia_RightHandRing1/Zenobia_RightHandRing2/Zenobia_RightHandRing3
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_RightShoulder/Zenobia_RightArm/Zenobia_RightForeArm/Zenobia_RightHand/Zenobia_RightHandRing1/Zenobia_RightHandRing2/Zenobia_RightHandRing3/Zenobia_RightHandRing4
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_RightShoulder/Zenobia_RightArm/Zenobia_RightForeArm/Zenobia_RightHand/Zenobia_RightHandThumb1
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_RightShoulder/Zenobia_RightArm/Zenobia_RightForeArm/Zenobia_RightHand/Zenobia_RightHandThumb1/Zenobia_RightHandThumb2
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_RightShoulder/Zenobia_RightArm/Zenobia_RightForeArm/Zenobia_RightHand/Zenobia_RightHandThumb1/Zenobia_RightHandThumb2/Zenobia_RightHandThumb3
+        weight: 1
+      - path: Zenobia_Reference1/Zenobia_Hips/Zenobia_Spine/Zenobia_Spine1/Zenobia_Spine2/Zenobia_RightShoulder/Zenobia_RightArm/Zenobia_RightForeArm/Zenobia_RightHand/Zenobia_RightHandThumb1/Zenobia_RightHandThumb2/Zenobia_RightHandThumb3/Zenobia_RightHandThumb4
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: runStart
+      takeName: Take 001
+      firstFrame: 164
+      lastFrame: 203
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
