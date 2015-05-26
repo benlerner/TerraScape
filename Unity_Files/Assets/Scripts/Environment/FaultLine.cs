@@ -9,6 +9,7 @@ public class FaultLine : MonoBehaviour
     private int timer = 0;
     public int particleTime = 30;
     private bool particlesActive = false;
+    public AudioClip shoot;
     
     void FixedUpdate(){
         if (particlesActive == true)
@@ -16,7 +17,10 @@ public class FaultLine : MonoBehaviour
         if (timer >= particleTime)
             particles.enableEmission = false;
     }
-	public void OnTriggerEnter(){Activate ();}
+	public void OnTriggerEnter(){
+    GetComponent<AudioSource>().PlayOneShot(shoot);
+    Activate ();
+    }
 	public void Activate()
     {
 		Camera.main.GetComponent<TP_Camera>().shake = true;
