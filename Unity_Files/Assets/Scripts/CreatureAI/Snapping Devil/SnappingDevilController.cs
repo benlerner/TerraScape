@@ -99,6 +99,7 @@ public class SnappingDevilController : MonoBehaviour {
 					} else
 					{
 						FireSnapper();
+                        anim.SetTrigger("snap");
 					}
 					attackTimer = 0;
 					attacking = false;
