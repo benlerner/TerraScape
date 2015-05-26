@@ -2927,7 +2927,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navAgent: {fileID: 19562184}
   anim: {fileID: 9579878}
-  snapperPrefab: {fileID: 138226, guid: 8d0c6f6719456574c93a50439650763e, type: 2}
+  snapperPrefab: {fileID: 104414, guid: e2cea7c8b1a32440bae796188f067356, type: 2}
   detectionRange: 30
   maxRange: 22
   stopRange: 18
