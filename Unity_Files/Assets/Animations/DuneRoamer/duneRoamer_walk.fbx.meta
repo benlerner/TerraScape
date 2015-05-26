@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 6069e0ab8740b704093e09603844afc5
 ModelImporter:
-  serializedVersion: 16
+  serializedVersion: 18
   fileIDToRecycleName:
     100000: //RootNode
     100002: joint1
@@ -57,6 +57,43 @@ ModelImporter:
     100102: joint8
     100104: joint9
     100106: shieldCreature_v7:Mesh
+    100108: directionalLight1
+    100110: directionalLight2
+    100112: directionalLight3
+    100114: head
+    100116: ikHandle1
+    100118: ikHandle2
+    100120: ikHandle3
+    100122: ikHandle4
+    100124: ikHandle5
+    100126: ikHandle6
+    100128: ikHandle7
+    100130: ikHandle8
+    100132: lbFoot
+    100134: lbShoulder
+    100136: lbToe
+    100138: leftEar
+    100140: leftFlank
+    100142: lfFoot
+    100144: lfShoulder
+    100146: lfToe
+    100148: mouth
+    100150: rbFoot
+    100152: rbShoulder
+    100154: rbToe
+    100156: rfFoot
+    100158: rfShoulder
+    100160: rfToe
+    100162: rightEar
+    100164: rightFlank
+    100166: rotator
+    100168: spine1
+    100170: spine2
+    100172: spine3
+    100174: spine4
+    100176: spine5
+    100178: tail
+    100180: whole
     400000: //RootNode
     400002: joint1
     400004: joint10
@@ -111,8 +148,46 @@ ModelImporter:
     400102: joint8
     400104: joint9
     400106: shieldCreature_v7:Mesh
+    400108: directionalLight1
+    400110: directionalLight2
+    400112: directionalLight3
+    400114: head
+    400116: ikHandle1
+    400118: ikHandle2
+    400120: ikHandle3
+    400122: ikHandle4
+    400124: ikHandle5
+    400126: ikHandle6
+    400128: ikHandle7
+    400130: ikHandle8
+    400132: lbFoot
+    400134: lbShoulder
+    400136: lbToe
+    400138: leftEar
+    400140: leftFlank
+    400142: lfFoot
+    400144: lfShoulder
+    400146: lfToe
+    400148: mouth
+    400150: rbFoot
+    400152: rbShoulder
+    400154: rbToe
+    400156: rfFoot
+    400158: rfShoulder
+    400160: rfToe
+    400162: rightEar
+    400164: rightFlank
+    400166: rotator
+    400168: spine1
+    400170: spine2
+    400172: spine3
+    400174: spine4
+    400176: spine5
+    400178: tail
+    400180: whole
     4300000: shieldCreature_v7:Mesh
     7400000: DR_walk
+    7400002: Take 001
     9500000: //RootNode
     13700000: shieldCreature_v7:Mesh
   materials:
@@ -132,17 +207,17 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: DR_walk
+      name: Take 001
       takeName: Take 001
       firstFrame: 1
-      lastFrame: 96
+      lastFrame: 46
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       loopTime: 1
-      loopBlend: 0
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -156,6 +231,28 @@ ModelImporter:
       events: []
       transformMask:
       - path: 
+        weight: 1
+      - path: directionalLight1
+        weight: 1
+      - path: directionalLight2
+        weight: 1
+      - path: directionalLight3
+        weight: 1
+      - path: ikHandle1
+        weight: 1
+      - path: ikHandle2
+        weight: 1
+      - path: ikHandle3
+        weight: 1
+      - path: ikHandle4
+        weight: 1
+      - path: ikHandle5
+        weight: 1
+      - path: ikHandle6
+        weight: 1
+      - path: ikHandle7
+        weight: 1
+      - path: ikHandle8
         weight: 1
       - path: joint1
         weight: 1
@@ -270,6 +367,58 @@ ModelImporter:
         weight: 1
       - path: shieldCreature_v7:Mesh
         weight: 1
+      - path: whole
+        weight: 1
+      - path: whole/rotator
+        weight: 1
+      - path: whole/rotator/leftFlank
+        weight: 1
+      - path: whole/rotator/rightFlank
+        weight: 1
+      - path: whole/rotator/spine1
+        weight: 1
+      - path: whole/rotator/spine1/spine2
+        weight: 1
+      - path: whole/rotator/spine1/spine2/head
+        weight: 1
+      - path: whole/rotator/spine1/spine2/head/leftEar
+        weight: 1
+      - path: whole/rotator/spine1/spine2/head/mouth
+        weight: 1
+      - path: whole/rotator/spine1/spine2/head/rightEar
+        weight: 1
+      - path: whole/rotator/spine1/spine2/lbShoulder
+        weight: 1
+      - path: whole/rotator/spine1/spine2/lbShoulder/rfFoot
+        weight: 1
+      - path: whole/rotator/spine1/spine2/lbShoulder/rfFoot/rfToe
+        weight: 1
+      - path: whole/rotator/spine1/spine2/lfShoulder
+        weight: 1
+      - path: whole/rotator/spine1/spine2/lfShoulder/lfFoot
+        weight: 1
+      - path: whole/rotator/spine1/spine2/lfShoulder/lfFoot/lfToe
+        weight: 1
+      - path: whole/rotator/spine3
+        weight: 1
+      - path: whole/rotator/spine3/spine4
+        weight: 1
+      - path: whole/rotator/spine3/spine4/spine5
+        weight: 1
+      - path: whole/rotator/spine3/spine4/spine5/rbShoulder
+        weight: 1
+      - path: whole/rotator/spine3/spine4/spine5/rbShoulder/rbFoot
+        weight: 1
+      - path: whole/rotator/spine3/spine4/spine5/rbShoulder/rbFoot/rbToe
+        weight: 1
+      - path: whole/rotator/spine3/spine4/spine5/rfShoulder
+        weight: 1
+      - path: whole/rotator/spine3/spine4/spine5/rfShoulder/lbFoot
+        weight: 1
+      - path: whole/rotator/spine3/spine4/spine5/rfShoulder/lbFoot/lbToe
+        weight: 1
+      - path: whole/rotator/spine3/spine4/spine5/tail
+        weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
     isReadable: 1
@@ -283,11 +432,13 @@ ModelImporter:
     generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
+    keepQuads: 0
     weldVertices: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     splitTangentsAcrossUV: 1
@@ -310,3 +461,5 @@ ModelImporter:
   animationType: 2
   additionalBone: 0
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 

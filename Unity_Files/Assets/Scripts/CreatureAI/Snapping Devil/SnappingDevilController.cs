@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class SnappingDevilController : MonoBehaviour {
@@ -39,6 +39,7 @@ public class SnappingDevilController : MonoBehaviour {
 		lookRotation = transform.rotation;
 		navAgent.updateRotation = true;
 		size = gameObject.GetComponent<Collider> ().bounds.extents;
+        anim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -62,6 +63,8 @@ public class SnappingDevilController : MonoBehaviour {
 		} else
 		{
 			curState = AIState.None;
+            anim.SetBool("walk", false);
+            anim.SetBool("shoot", false);
 			attacking = false;
 		}
 
@@ -70,10 +73,14 @@ public class SnappingDevilController : MonoBehaviour {
 		{
 		case AIState.Approaching:
 			navAgent.SetDestination(playerPos);
+            anim.SetBool("walk", true);
+            anim.SetBool("shoot", false);
 			break;
 
 		case AIState.Attacking:
 				attacking = true;
+            anim.SetBool("walk", false);
+            anim.SetBool("shoot", true);
 			//rotate towards player
 			Vector3 playerHeading = player.transform.position - transform.position;
 			playerHeading.y = 0;

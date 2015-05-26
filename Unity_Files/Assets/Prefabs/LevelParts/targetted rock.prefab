@@ -221,7 +221,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 159004}
   serializedVersion: 2
-  m_Mass: 1000
+  m_Mass: 200
   m_Drag: 0
   m_AngularDrag: .00100000005
   m_UseGravity: 1
@@ -333,6 +333,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  force: 50
+  rb: {fileID: 5459004}
 --- !u!198 &19825496
 ParticleSystem:
   m_ObjectHideFlags: 1

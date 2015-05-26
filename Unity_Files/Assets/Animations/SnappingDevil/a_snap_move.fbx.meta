@@ -232,11 +232,245 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 32
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bottom
+        weight: 1
+      - path: Chest_J
+        weight: 1
+      - path: Chest_J/ArmL_J
+        weight: 1
+      - path: Chest_J/ArmL_J/joint34
+        weight: 1
+      - path: Chest_J/ArmL_J/joint34/joint35
+        weight: 1
+      - path: Chest_J/ArmL_J/joint34/joint35/joint36
+        weight: 1
+      - path: Chest_J/ArmL_J/joint34/joint35/joint36/joint37
+        weight: 1
+      - path: Chest_J/ArmL_J/joint34/joint35/joint36/joint38
+        weight: 1
+      - path: Chest_J/ArmR_J
+        weight: 1
+      - path: Chest_J/ArmR_J/joint41
+        weight: 1
+      - path: Chest_J/ArmR_J/joint41/joint42
+        weight: 1
+      - path: Chest_J/ArmR_J/joint41/joint42/joint43
+        weight: 1
+      - path: Chest_J/ArmR_J/joint41/joint42/joint43/joint44
+        weight: 1
+      - path: Chest_J/ArmR_J/joint41/joint42/joint43/joint45
+        weight: 1
+      - path: Chest_J/Neck_J
+        weight: 1
+      - path: Chest_J/Neck_J/Head_J
+        weight: 1
+      - path: Chest_J/Neck_J/Head_J/AntenaL_J
+        weight: 1
+      - path: Chest_J/Neck_J/Head_J/AntenaL_J/AntenaL_End_J
+        weight: 1
+      - path: Chest_J/Neck_J/Head_J/AntenaR_J
+        weight: 1
+      - path: Chest_J/Neck_J/Head_J/AntenaR_J/AntenaR_End_J
+        weight: 1
+      - path: Chest_J/Neck_J/Head_J/ToothL_J
+        weight: 1
+      - path: Chest_J/Neck_J/Head_J/ToothL_J/TipL_J
+        weight: 1
+      - path: Chest_J/Neck_J/Head_J/ToothR_J
+        weight: 1
+      - path: Chest_J/Neck_J/Head_J/ToothR_J/TipR_J
+        weight: 1
+      - path: Chest_J/Spine_1_J
+        weight: 1
+      - path: Chest_J/Spine_1_J/joint17
+        weight: 1
+      - path: Chest_J/Spine_1_J/joint17/joint18
+        weight: 1
+      - path: Chest_J/Spine_1_J/joint17/joint18/joint19
+        weight: 1
+      - path: Chest_J/Spine_1_J/joint17/joint18/joint19/joint20
+        weight: 1
+      - path: Chest_J/Spine_1_J/joint17/joint18/joint19/joint20/joint21
+        weight: 1
+      - path: Chest_J/Spine_1_J/joint65
+        weight: 1
+      - path: Chest_J/Spine_1_J/joint65/joint66
+        weight: 1
+      - path: Chest_J/Spine_1_J/joint65/joint66/joint67
+        weight: 1
+      - path: Chest_J/Spine_1_J/joint65/joint66/joint67/joint68
+        weight: 1
+      - path: Chest_J/Spine_1_J/joint65/joint66/joint67/joint68/joint69
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/joint22
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/joint22/joint23
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/joint22/joint23/joint24
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/joint22/joint23/joint24/joint25
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/joint22/joint23/joint24/joint25/joint26
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/joint60
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/joint60/joint61
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/joint60/joint61/joint62
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/joint60/joint61/joint62/joint63
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/joint60/joint61/joint62/joint63/joint64
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/Spine_3_J
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/Spine_3_J/joint27
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/Spine_3_J/joint27/joint28
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/Spine_3_J/joint27/joint28/joint29
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/Spine_3_J/joint27/joint28/joint29/joint30
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/Spine_3_J/joint27/joint28/joint29/joint30/joint31
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/Spine_3_J/joint55
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/Spine_3_J/joint55/joint56
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/Spine_3_J/joint55/joint56/joint57
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/Spine_3_J/joint55/joint56/joint57/joint58
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/Spine_3_J/joint55/joint56/joint57/joint58/joint59
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/Spine_3_J/Tail_1_J
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/Spine_3_J/Tail_1_J/Tail_2_J
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/Spine_3_J/Tail_1_J/Tail_2_J/Tail_3_J
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/Spine_3_J/Tail_1_J/Tail_2_J/Tail_3_J/Tail_4_J
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/Spine_3_J/Tail_1_J/Tail_2_J/Tail_3_J/Tail_4_J/Tail_5_J
+        weight: 1
+      - path: Chest_J/Spine_1_J/Spine_2_J/Spine_3_J/Tail_1_J/Tail_2_J/Tail_3_J/Tail_4_J/Tail_5_J/Tail_6_J
+        weight: 1
+      - path: directionalLight1
+        weight: 1
+      - path: directionalLight2
+        weight: 1
+      - path: ikHandle1
+        weight: 1
+      - path: ikHandle2
+        weight: 1
+      - path: ikHandle3
+        weight: 1
+      - path: ikHandle4
+        weight: 1
+      - path: ikHandle5
+        weight: 1
+      - path: ikHandle6
+        weight: 1
+      - path: ikHandle7
+        weight: 1
+      - path: ikHandle8
+        weight: 1
+      - path: ikHandle9
+        weight: 1
+      - path: masterController
+        weight: 1
+      - path: masterController/Spine_1
+        weight: 1
+      - path: masterController/Spine_1/LegL_1
+        weight: 1
+      - path: masterController/Spine_1/LegL_1/FootL_1
+        weight: 1
+      - path: masterController/Spine_1/LegR_1
+        weight: 1
+      - path: masterController/Spine_1/LegR_1/FootR_1
+        weight: 1
+      - path: masterController/Spine_1/Neck
+        weight: 1
+      - path: masterController/Spine_1/Neck/AntenaL
+        weight: 1
+      - path: masterController/Spine_1/Neck/AntenaR
+        weight: 1
+      - path: masterController/Spine_1/Neck/ToothL
+        weight: 1
+      - path: masterController/Spine_1/Neck/ToothR
+        weight: 1
+      - path: masterController/Spine_1/WristL
+        weight: 1
+      - path: masterController/Spine_1/WristL/SnapL_Lower
+        weight: 1
+      - path: masterController/Spine_1/WristL/SnapL_Upper
+        weight: 1
+      - path: masterController/Spine_1/WristR
+        weight: 1
+      - path: masterController/Spine_1/WristR/SnapR_Lower
+        weight: 1
+      - path: masterController/Spine_1/WristR/SnapR_Upper
+        weight: 1
+      - path: masterController/Spine_2
+        weight: 1
+      - path: masterController/Spine_2/LegL_2
+        weight: 1
+      - path: masterController/Spine_2/LegL_2/FootL_2
+        weight: 1
+      - path: masterController/Spine_2/LegR_2
+        weight: 1
+      - path: masterController/Spine_2/LegR_2/FootR_2
+        weight: 1
+      - path: masterController/Spine_3
+        weight: 1
+      - path: masterController/Spine_3/LegL_3
+        weight: 1
+      - path: masterController/Spine_3/LegL_3/FootL_3
+        weight: 1
+      - path: masterController/Spine_3/LegR_3
+        weight: 1
+      - path: masterController/Spine_3/LegR_3/FootR_3
+        weight: 1
+      - path: masterController/Tail
+        weight: 1
+      - path: snappingDevil1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 106
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
