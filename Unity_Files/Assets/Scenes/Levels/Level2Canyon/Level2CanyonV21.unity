@@ -1362,6 +1362,18 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 50f66dfa2c8e41b4b876fefcaf8253f5,
         type: 3}
+    - target: {fileID: 103016, guid: af8d73c0531f08946aa54ebecbca55a1, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 103014, guid: af8d73c0531f08946aa54ebecbca55a1, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 144226, guid: af8d73c0531f08946aa54ebecbca55a1, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: af8d73c0531f08946aa54ebecbca55a1, type: 2}
   m_IsPrefabParent: 0
@@ -1731,6 +1743,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerObject: {fileID: 1312777518}
+  particles: {fileID: 0}
+  useParticles: 0
+  particleTime: 30
 --- !u!65 &194786754
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6621,6 +6636,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerObject: {fileID: 1558152770}
+  particles: {fileID: 0}
+  useParticles: 0
+  particleTime: 30
 --- !u!65 &588614827
 BoxCollider:
   m_ObjectHideFlags: 0
