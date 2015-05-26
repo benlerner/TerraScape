@@ -44,6 +44,7 @@ public class worm : MonoBehaviour {
 		}
 		else if (other.tag == "bigBlock" && hits==2){
 			anim.SetTrigger("death");
+            GetComponent<AudioSource>().PlayOneShot(shoot);
 		}
 	}
 }
