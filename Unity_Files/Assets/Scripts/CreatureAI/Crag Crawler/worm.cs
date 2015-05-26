@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class worm : MonoBehaviour {
@@ -9,6 +9,8 @@ public class worm : MonoBehaviour {
 	private int timer = 0;
 	public GameObject projectile;
 	public Transform origin;
+    public AudioClip shoot;
+    
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator>();
@@ -38,6 +40,7 @@ public class worm : MonoBehaviour {
 			anim.SetTrigger("hit");
 			hits = hits + 1;
 			timer = 0;
+            GetComponent<AudioSource>().PlayOneShot(shoot);
 		}
 		else if (other.tag == "bigBlock" && hits==2){
 			anim.SetTrigger("death");

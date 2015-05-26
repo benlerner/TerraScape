@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class stalactiteTrigger : MonoBehaviour {
@@ -18,6 +18,7 @@ public class stalactiteTrigger : MonoBehaviour {
 	private Vector3 fall;
 	private Camera mainCamera;
 	private Camera myCamera;
+    //public AudioClip shoot;
 	
 	// Use this for initialization
 	void Start () {
@@ -62,6 +63,7 @@ public class stalactiteTrigger : MonoBehaviour {
 		}
 	}
 	public void activate(){
+        //GetComponent<AudioSource>().PlayOneShot(shoot);
 		player.GetComponent<ThirdPersonController>().stopSliding();
 		player.GetComponent<ThirdPersonController>().moveSpeed = 0.0f;
 		player.GetComponent<ThirdPersonController>().verticalSpeed = 0.0f;
