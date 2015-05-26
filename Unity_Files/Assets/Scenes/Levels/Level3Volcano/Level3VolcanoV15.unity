@@ -7512,6 +7512,7 @@ MonoBehaviour:
   particles: {fileID: 0}
   useParticles: 0
   particleTime: 30
+  shoot: {fileID: 0}
 --- !u!4 &697399135
 Transform:
   m_PrefabParentObject: {fileID: 439604, guid: 8d9abc8673ac34295b2a26655c4a663d, type: 2}
@@ -23701,6 +23702,7 @@ MonoBehaviour:
   particles: {fileID: 0}
   useParticles: 0
   particleTime: 30
+  shoot: {fileID: 0}
 --- !u!114 &1779913202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23716,6 +23718,7 @@ MonoBehaviour:
   particles: {fileID: 0}
   useParticles: 0
   particleTime: 30
+  shoot: {fileID: 0}
 --- !u!4 &1779913203
 Transform:
   m_PrefabParentObject: {fileID: 439604, guid: 8d9abc8673ac34295b2a26655c4a663d, type: 2}
