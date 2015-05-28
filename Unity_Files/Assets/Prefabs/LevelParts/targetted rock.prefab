@@ -84,6 +84,8 @@ GameObject:
   - 54: {fileID: 5459004}
   - 114: {fileID: 11470414}
   - 114: {fileID: 11407406}
+  - 114: {fileID: 11416672}
+  - 135: {fileID: 13558602}
   m_Layer: 0
   m_Name: targetted rock
   m_TagString: Breakable
@@ -162,7 +164,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 159004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.03999996, y: -1.29999995, z: 34.9399986}
+  m_LocalPosition: {x: 48.5180893, y: -26.0052242, z: 60.9569778}
   m_LocalScale: {x: .329267651, y: .329267591, z: .329267681}
   m_Children:
   - {fileID: 459448}
@@ -249,7 +251,7 @@ BoxCollider:
   m_GameObject: {fileID: 159004}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 6, y: 6, z: 6}
   m_Center: {x: 0, y: -.00248396397, z: -.103759766}
@@ -309,6 +311,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeLimit: 240
+--- !u!114 &11416672
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24ba5d5ec6ddc4d9f833317101a57da8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 192556, guid: 7b7d7688213bd47a28dce5ae8be07748, type: 2}
+  isPlayer: 0
 --- !u!114 &11459004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -335,6 +350,18 @@ MonoBehaviour:
   player: {fileID: 0}
   force: 50
   rb: {fileID: 5459004}
+--- !u!135 &13558602
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159004}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.75
+  m_Center: {x: .289999992, y: .280000001, z: -.430000007}
 --- !u!198 &19825496
 ParticleSystem:
   m_ObjectHideFlags: 1

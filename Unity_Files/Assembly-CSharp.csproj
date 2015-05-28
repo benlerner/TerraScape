@@ -51,6 +51,7 @@
      <Compile Include="Assets\LightShafts-master\LightShafts.Utils.cs" />
      <Compile Include="Assets\LightShafts-master\LightShafts.cs" />
      <Compile Include="Assets\Scripts\CreatureAI\BasicEnemyAI.cs" />
+     <Compile Include="Assets\Scripts\CreatureAI\Crag Crawler\Fireballs.cs" />
      <Compile Include="Assets\Scripts\CreatureAI\Crag Crawler\worm.cs" />
      <Compile Include="Assets\Scripts\CreatureAI\Dune Roamer\DuneRoamerController.cs" />
      <Compile Include="Assets\Scripts\CreatureAI\EnemyController.cs" />
