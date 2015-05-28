@@ -2841,7 +2841,7 @@ MonoBehaviour:
   checkPoint: {fileID: 0}
   laserPrefab: {fileID: 100002, guid: ac1c48d40149d12419da3a4bb4cd5255, type: 2}
   blastPrefab: {fileID: 0}
-  snapperPrefab: {fileID: 138226, guid: 8d0c6f6719456574c93a50439650763e, type: 2}
+  snapperPrefab: {fileID: 104414, guid: e2cea7c8b1a32440bae796188f067356, type: 2}
   shieldMesh: {fileID: 2315062}
   laserMesh: {fileID: 2348042}
   snapperMesh: {fileID: 2305728}
@@ -2861,6 +2861,7 @@ MonoBehaviour:
   moveDirection: {x: 0, y: 0, z: 0}
   verticalSpeed: 0
   moveSpeed: 0
+  isSliding: 0
   blocking: 0
   inAirVelocity: {x: 0, y: 0, z: 0}
   slidingColliders:

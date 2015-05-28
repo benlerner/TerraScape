@@ -27,7 +27,7 @@ public class stalactiteTrigger : MonoBehaviour {
 		myCamera = transform.GetChild (0).GetComponent<Camera> ();
 		playerHolder = transform.GetChild (1);
 		cameraBase = transform.GetChild (0).position;
-		fall = new Vector3 (0, 70, 0);
+		fall = new Vector3 (0, 100, 0);
 	}
 
 	// Update is called once per frame
