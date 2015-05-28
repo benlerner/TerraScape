@@ -63,14 +63,17 @@ public class cinematicCamera : MonoBehaviour {
 			Camera.main.transform.position = cameraHolder.transform.position;
 			Camera.main.transform.rotation = cameraHolder.transform.rotation;
 		}
-		if (timeStarted){
-			timer += 1;
-		}
+
 		if (timer >= time) {
 			player.GetComponent<ThirdPersonController>().movable = true;
 			Camera.main.transform.GetComponent<TP_Camera>().movable = true;
 			player.GetComponent<ThirdPersonController>().cutScene = 0;
 			Destroy (gameObject, 0);
+		}
+	}
+	void FixedUpdate(){
+		if (timeStarted){
+			timer += 1;
 		}
 	}
 }

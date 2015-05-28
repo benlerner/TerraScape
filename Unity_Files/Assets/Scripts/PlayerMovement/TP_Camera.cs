@@ -141,7 +141,7 @@ public class TP_Camera : MonoBehaviour
 		Quaternion rotation;
 		Vector3 direction = new Vector3(0, 0, -distance);
 		if (shake)
-			rotation = Quaternion.Euler(rotationX+Random.Range(-10f,10f), rotationY+Random.Range(-10f,10f), 0);
+			rotation = Quaternion.Euler(rotationX+Random.Range(-5f,5f), rotationY+Random.Range(-5f,5f), 0);
 		else
 			rotation = Quaternion.Euler(rotationX, rotationY, 0);
 

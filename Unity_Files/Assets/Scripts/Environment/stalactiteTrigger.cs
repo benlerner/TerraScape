@@ -33,9 +33,9 @@ public class stalactiteTrigger : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (shake){
-			cameraShake.x = cameraBase.x + Random.Range(-10f, 10f);
-			cameraShake.y = cameraBase.y + Random.Range(-10f, 10f);
-			cameraShake.z = cameraBase.z + Random.Range(-10f, 10f);
+			cameraShake.x = cameraBase.x + Random.Range(-5f, 5f);
+			cameraShake.y = cameraBase.y + Random.Range(-5f, 5f);
+			cameraShake.z = cameraBase.z + Random.Range(-5f, 5f);
 		}
 		if (active){
 			player.transform.position = playerHolder.transform.position;
@@ -49,7 +49,7 @@ public class stalactiteTrigger : MonoBehaviour {
 		if (timer >= shakeDuration){
 			shake = false;
 			cameraShake = cameraBase;
-			iTween.MoveBy(stalactite, fall, 3f); 
+			iTween.MoveBy(stalactite, fall, 4f); 
 		}
 		if (timer >= time) {
 			player.GetComponent<ThirdPersonController>().movable = true;

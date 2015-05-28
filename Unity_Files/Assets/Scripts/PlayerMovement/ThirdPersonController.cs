@@ -127,7 +127,7 @@ public class ThirdPersonController : MonoBehaviour
 	private float lastJumpStartHeight= 0.0f;
 
 	//is the player sliding?
-	private bool isSliding = false;
+	public bool isSliding = false;
 
 	//is the player blocking with the shield?a
 	public bool blocking = false;
@@ -155,7 +155,7 @@ public class ThirdPersonController : MonoBehaviour
 		management = GetComponent<Player>();
 		controller = GetComponent<CharacterController>();
 		myCam = Camera.main;
-		playerMesh = this.transform.GetChild (0);
+		playerMesh = this.transform.GetChild (3);
 		zenBodyPos = playerMesh.transform.localPosition;
 		snapperMesh.enabled = false;
 		laserMesh.enabled = false;

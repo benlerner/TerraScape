@@ -265,7 +265,9 @@ public void TakeDamage(float dmgAmt)
             }
             else if (useItem.itemName == "Shield")
             {
-				if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+				if (controller.isSliding)
+					return;
+				else if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
 				{
 					//GUI_Manager.message.text = "Shield can be used to slide.";
 					controller.slide();

@@ -3087,7 +3087,7 @@ MonoBehaviour:
   player: {fileID: 1516828188}
   stalactite: {fileID: 559580061}
   time: 500
-  shakeDuration: 30
+  shakeDuration: 50
 --- !u!33 &762244881
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -8168,8 +8168,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1516828188}
   stalactite: {fileID: 1711692085}
-  time: 100
-  shakeDuration: 40
+  time: 140
+  shakeDuration: 50
 --- !u!64 &1391047825
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10450,8 +10450,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1516828188}
   stalactite: {fileID: 1193091164}
-  time: 100
-  shakeDuration: 30
+  time: 140
+  shakeDuration: 50
 --- !u!33 &1926527451
 MeshFilter:
   m_ObjectHideFlags: 0
