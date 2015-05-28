@@ -1369,7 +1369,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100062}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.8400002, y: -2.24000001, z: 6}
+  m_LocalPosition: {x: 95.9860001, y: 260.839996, z: -533.72998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400000}
@@ -2861,6 +2861,7 @@ MonoBehaviour:
   moveDirection: {x: 0, y: 0, z: 0}
   verticalSpeed: 0
   moveSpeed: 0
+  blocking: 0
   inAirVelocity: {x: 0, y: 0, z: 0}
   slidingColliders:
   - {fileID: 13600000}
@@ -2902,10 +2903,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 100
+  healthBar: {fileID: 0}
+  staminaBar: {fileID: 0}
   maxStamina: 50
   currentStamina: 50
+  blocking: 0
   staminaRegen: 3
   inventory:
+  - {fileID: 0}
   - {fileID: 0}
   journal: []
   selectedIndex: 0

@@ -130,7 +130,7 @@ public class ThirdPersonController : MonoBehaviour
 	private bool isSliding = false;
 
 	//is the player blocking with the shield?a
-	private bool blocking = false;
+	public bool blocking = false;
 
 	public Vector3 inAirVelocity= Vector3.zero;
 
@@ -640,6 +640,8 @@ public class ThirdPersonController : MonoBehaviour
 		itemUse = 1;
 		shieldMesh.enabled = true;
 	}
+    
+    
 
 	public float snapDuration = 3f;
 	public float snapTimer = 0f;

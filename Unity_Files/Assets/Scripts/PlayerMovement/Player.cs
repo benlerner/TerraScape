@@ -1,5 +1,6 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Xml;
 
@@ -8,16 +9,17 @@ public class Player : MonoBehaviour
     //The Player class handles game logic, such as the handling of health, stamina, items, etc.
     public float maxHealth = 100;
     public float currentHealth = 100;
-	private RectTransform healthBar;
-	private RectTransform staminaBar;
+	public Image healthBar;
+	public Image staminaBar;
     public float maxStamina = 50;
     public float currentStamina = 50;
-	private float minBarValue;
-	private float maxBarValue;
-	private float healthBarX;
-	private float staminaBarX;
-	private float healthY;
-	private float staminaY;
+	//private float minBarValue;
+	//private float maxBarValue;
+	//private float healthBarX;
+	//private float staminaBarX;
+	//private float healthY;
+	//private float staminaY;
+    public bool blocking;
 
 	public float staminaRegen = 3; //stamina regained per second
 	private bool regenStaminaNow = true; //don't regenerate stamina when it's being used
@@ -46,13 +48,13 @@ public class Player : MonoBehaviour
 		controller = GetComponent<ThirdPersonController> ();
 		inventoryObj = GameObject.FindGameObjectWithTag ("inventory");
 		inventoryGui = inventoryObj.GetComponent<inventoryGUI>();
-		healthBar = GameObject.FindGameObjectWithTag ("health").GetComponent<RectTransform>();
-		staminaBar = GameObject.FindGameObjectWithTag ("stamina").GetComponent<RectTransform>();
+		healthBar = GameObject.FindGameObjectWithTag ("health").GetComponent<Image>();
+		staminaBar = GameObject.FindGameObjectWithTag ("stamina").GetComponent<Image>();
 		impactReciever = GetComponent<ImpactReceiver> ();
-		healthBarX = healthBar.localPosition.x;
-		staminaBarX = staminaBar.localPosition.x;
-		maxBarValue = healthBar.localPosition.y;
-		minBarValue = healthBar.localPosition.y - healthBar.rect.height;
+		//healthBarX = healthBar.localPosition.x;
+		//staminaBarX = staminaBar.localPosition.x;
+		//maxBarValue = healthBar.localPosition.y;
+		//minBarValue = healthBar.localPosition.y - healthBar.rect.height;
         journalXML = new XmlDocument();
         TextAsset filename = Resources.Load("journalEntries") as TextAsset;
         journalXML.LoadXml(filename.text);
@@ -79,6 +81,11 @@ public class Player : MonoBehaviour
 				currentStamina = maxStamina;
 			}
 		}
+        //Health and Stamina Bars
+        healthBar.fillAmount = currentHealth / maxHealth;
+        {
+        staminaBar.fillAmount = currentStamina / maxStamina;
+        }
 		//GUI_Manager.stamina.text = "Stamina: " + Mathf.Floor(currentStamina);
 		//GUI_Manager.health.text = "Health: " + currentHealth;
 		regenStaminaNow = true;
@@ -105,13 +112,14 @@ public class Player : MonoBehaviour
 		else{
 			controller.toolInUse = 0;
 		}
-		healthY = MapValues (currentHealth, 0, maxHealth, minBarValue, maxBarValue);
-		staminaY = MapValues (currentStamina, 0, maxStamina, minBarValue, maxBarValue);
+		//healthY = MapValues (currentHealth, 0, maxHealth, minBarValue, maxBarValue);
+		//staminaY = MapValues (currentStamina, 0, maxStamina, minBarValue, maxBarValue);
 		//float staminaY = MapValues (currentStamina, 0, maxStamina, maxBarValue, minBarValue);
-		healthBar.transform.localPosition = new Vector3 (healthBarX, healthY);
-		staminaBar.transform.localPosition = new Vector3 (staminaBarX, staminaY);
+		//healthBar.transform.localPosition = new Vector3 (healthBarX, healthY);
+		//staminaBar.transform.localPosition = new Vector3 (staminaBarX, staminaY);
 	}
 
+    
 	
 	private float MapValues(float x, float inMin, float inMax, float outMin, float outMax){
 		return(x - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
@@ -133,18 +141,15 @@ public class Player : MonoBehaviour
 		//GUI_Manager.stamina.text = "Stamina: " + Mathf.Floor(currentStamina);
 	}
 
-    public void TakeDamage(float dmgAmt)
-    {
-        //Reduces our current health and updates game information
-        currentHealth -= dmgAmt;
-        //GUI_Manager.health.text = "Health: " + currentHealth;
-		//Debug.Log ("Current health is " + currentHealth);
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
-    }
-
+//public void UpdateStamina ()
+//{
+//    staminaBar.fillAmount = currentStamina / maxStamina;
+//}
+    
+   // public void UpdateHealth ()
+//{
+//    staminaBar.fillAmount = currentHealth / maxHealth;
+//}
 	//causes Zenobia to take damage and be knocked in forceDirection
 	public void TakeImpactDamage (float dmgAmt, Vector3 forceDirection, float forceMagnitude)
 	{
@@ -163,7 +168,24 @@ public class Player : MonoBehaviour
 		currentHealth = maxHealth;
 		currentStamina = maxStamina;
     }
-
+    
+public void TakeDamage(float dmgAmt)
+    {
+        if (blocking = true && currentStamina > 0){
+            currentStamina -= dmgAmt;
+        }
+            
+        else
+        //Reduces our current health and updates game information
+        currentHealth -= dmgAmt;
+        //GUI_Manager.health.text = "Health: " + currentHealth;
+		//Debug.Log ("Current health is " + currentHealth);
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+    
     public void CollectItem(GameItem item)
     {
         //Picks up the item that TP_Controller is intersecting, and add it to the inventory.
