@@ -83,7 +83,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 101198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 48.2913971, y: -16.4041138, z: 203.464157}
+  m_LocalPosition: {x: 49.9000015, y: -21.3799992, z: 203.100006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 468666}
@@ -108,7 +108,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 184762}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
-  m_LocalPosition: {x: 0, y: -4.98999977, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 418492}
@@ -132,7 +132,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 5
+      scalar: 10
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -147,7 +147,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: .200000003
+          value: .300000012
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -279,7 +279,7 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 687865855
+        rgba: 681944485
       minMaxState: 0
     startSize:
       scalar: 6.25
@@ -349,7 +349,7 @@ ParticleSystem:
       minMaxState: 0
     gravityModifier: 1
     inheritVelocity: 0
-    maxNumParticles: 300
+    maxNumParticles: 500
   ShapeModule:
     serializedVersion: 2
     enabled: 1
@@ -368,7 +368,7 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 10
+      scalar: 3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -485,7 +485,7 @@ ParticleSystem:
       maxGradient:
         key0:
           serializedVersion: 2
-          rgba: 4294967295
+          rgba: 3942645759
         key1:
           serializedVersion: 2
           rgba: 16777215
@@ -1387,8 +1387,8 @@ ParticleSystem:
     serializedVersion: 2
     enabled: 1
     type: 4
-    radius: .00999999978
-    angle: 5.8499999
+    radius: .310000002
+    angle: 17.7999992
     length: 5
     boxX: 1
     boxY: 1
@@ -1401,7 +1401,7 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 37.9900017
+      scalar: 5
       maxCurve:
         serializedVersion: 2
         m_Curve:
