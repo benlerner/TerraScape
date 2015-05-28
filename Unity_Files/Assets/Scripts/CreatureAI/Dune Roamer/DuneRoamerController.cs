@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class DuneRoamerController : MonoBehaviour {
@@ -25,12 +25,14 @@ public class DuneRoamerController : MonoBehaviour {
 	public float currentHealth = 1000f;
 	
 	bool alive = true;
+    public bool dropTool = false;
+    public GameObject loot;
 	
 	public float rollSpeed = 15f;
 	public float rollDamage = 90f;
 
 	//time waited before it can do another roll attack
-	public readonly float rollCooldown = 20f;
+	public readonly float rollCooldown = 2f;
 	public float rollTimer = 0f;
 
 	public DuneRoamerHit hitObject;
@@ -92,11 +94,14 @@ public class DuneRoamerController : MonoBehaviour {
 		}
 		if (currentHealth == 0)
 		{
+            
 			//[ANIMATE] play death animation
 
 			//
 			if ((persistTimer += Time.deltaTime) >= persistDuration)
 			{
+                var pos = new Vector3(0f, 1f, 0f);
+                Instantiate (loot, transform.position + pos, transform.rotation);
 				Destroy (gameObject);
 			}
 		}
@@ -204,6 +209,7 @@ public class DuneRoamerController : MonoBehaviour {
 		if (dmg > currentHealth)
 		{
 			currentHealth = 0;
+            
 			Debug.Log("Dune roamer died!");
 			animator.SetBool("walk", false);
 
