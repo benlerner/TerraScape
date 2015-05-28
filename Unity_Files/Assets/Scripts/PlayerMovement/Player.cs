@@ -171,7 +171,7 @@ public class Player : MonoBehaviour
     
 public void TakeDamage(float dmgAmt)
     {
-        if (blocking = true && currentStamina > 0){
+        if (blocking == true && currentStamina > 0){
             currentStamina -= dmgAmt;
         }
             
