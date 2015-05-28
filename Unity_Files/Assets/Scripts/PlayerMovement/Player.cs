@@ -69,6 +69,9 @@ public class Player : MonoBehaviour
 		inventoryGui.forImage = inventory[forIndex].itemImage;
 		inventoryGui.backImage = inventory [backIndex].itemImage;
 		CycleItems (true);
+        blocking = false;
+        
+        
     }
 
 	void Update()
@@ -86,6 +89,7 @@ public class Player : MonoBehaviour
         {
         staminaBar.fillAmount = currentStamina / maxStamina;
         }
+        blocking = controller.blocking;
 		//GUI_Manager.stamina.text = "Stamina: " + Mathf.Floor(currentStamina);
 		//GUI_Manager.health.text = "Health: " + currentHealth;
 		regenStaminaNow = true;
@@ -150,6 +154,12 @@ public class Player : MonoBehaviour
 //{
 //    staminaBar.fillAmount = currentHealth / maxHealth;
 //}
+   // public void block(){
+	//	blocking = true;
+	//	Debug.Log ("Guard is up");
+		//itemUse = 1;
+		//shieldMesh.enabled = true;
+//	}
 	//causes Zenobia to take damage and be knocked in forceDirection
 	public void TakeImpactDamage (float dmgAmt, Vector3 forceDirection, float forceMagnitude)
 	{

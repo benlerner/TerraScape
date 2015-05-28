@@ -130,7 +130,7 @@ public class ThirdPersonController : MonoBehaviour
 	public bool isSliding = false;
 
 	//is the player blocking with the shield?a
-	public bool blocking = false;
+	public bool blocking;
 
 	public Vector3 inAirVelocity= Vector3.zero;
 
@@ -161,6 +161,8 @@ public class ThirdPersonController : MonoBehaviour
 		laserMesh.enabled = false;
 		shieldMesh.enabled = false;
 		slideMesh.enabled = false;
+        blocking = false;
+        Debug.Log("you know wat blocking is");
 
 	}
 
@@ -635,6 +637,7 @@ public class ThirdPersonController : MonoBehaviour
 			}
 	}
 	public void block(){
+  
 		blocking = true;
 		Debug.Log ("Guard is up");
 		itemUse = 1;
