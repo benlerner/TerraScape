@@ -6,4 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Levels/Level1Tutorial/Level1TutorialV21.unity
+    path: Assets/Scenes/Start_03.unity
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level1Tutorial/Level1TutorialV22.unity
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level2Canyon/Level2CanyonV23.unity
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level3Volcano/Level3VolcanoV17.unity
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level4Boss/BossLevel_v9.unity
