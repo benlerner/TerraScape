@@ -1592,7 +1592,7 @@ Transform:
   m_Children:
   - {fileID: 1763030868}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 15
 --- !u!1001 &195941073
 Prefab:
   m_ObjectHideFlags: 0
@@ -5778,6 +5778,10 @@ Prefab:
     - target: {fileID: 100000, guid: 05c6464eb8fa4d845a307c49f4356f03, type: 2}
       propertyPath: m_Name
       value: ledge 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 05c6464eb8fa4d845a307c49f4356f03, type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 05c6464eb8fa4d845a307c49f4356f03, type: 2}
