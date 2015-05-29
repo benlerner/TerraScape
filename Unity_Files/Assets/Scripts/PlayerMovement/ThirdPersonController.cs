@@ -141,6 +141,8 @@ public class ThirdPersonController : MonoBehaviour
 	public CapsuleCollider[] slidingColliders;
 
 	private bool isControllable= true;
+    
+    public ParticleSystem shieldDust;
 
 
 
@@ -162,7 +164,8 @@ public class ThirdPersonController : MonoBehaviour
 		shieldMesh.enabled = false;
 		slideMesh.enabled = false;
         blocking = false;
-        Debug.Log("you know wat blocking is");
+        //Debug.Log("you know wat blocking is");
+        shieldDust.enableEmission = false;
 
 	}
 
@@ -628,12 +631,14 @@ public class ThirdPersonController : MonoBehaviour
 				Vector3 playerMeshPos = new Vector3 (0f,-0.679f, 0f);
 				playerMesh.transform.localPosition = playerMeshPos;
 				slideMesh.enabled = true;
+                shieldDust.GetComponent<ParticleSystem>().enableEmission = true;
 			}else{
 				stopSliding();
 				itemUse = 0;
-				slideMesh.enabled = true;
+				slideMesh.enabled = false;
 				Vector3 playerMeshZero = new Vector3 (0f,0f,0f);
 				playerMesh.transform.localPosition = playerMeshZero;
+                shieldDust.GetComponent<ParticleSystem>().enableEmission = false;
 			}
 	}
 	public void block(){
