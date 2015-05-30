@@ -21,6 +21,7 @@ TagManager:
   - Wall
   - DRBreakable
   - bigBlock
+  - worm
   layers:
   - Default
   - TransparentFX
