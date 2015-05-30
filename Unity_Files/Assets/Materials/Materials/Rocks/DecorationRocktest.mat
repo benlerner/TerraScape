@@ -32,7 +32,7 @@ Material:
         first:
           name: _Detail
         second:
-          m_Texture: {fileID: 2800000, guid: 770023bdb8c7a4091b1e99f99c32e8da, type: 3}
+          m_Texture: {fileID: 2800000, guid: 1fd37786e69bf45859a1e5e832b07828, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats: {}
